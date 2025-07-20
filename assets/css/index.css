@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+HU:wght@100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&family=Playwrite+HU:wght@100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nerko+One&display=swap'); /* Nerko One*/
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Lobster&family=Nerko+One&display=swap'); /*Acme Lobster Nerko One*/
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap'); /*Fredoka One*/
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap'); /*Courgette*/
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');/*Comfortaa*/
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Righteous&display=swap');/*Concert One*/
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');/*Righteous*/
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Monda:wght@700&family=Righteous&display=swap');/*Monda*/
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap');/*Maven Pro*/
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap'); /*Nunito*/
+@import url('https://fonts.googleapis.com/css2?family=Honk:MORF@16&family=Paytone+One&display=swap');/*Paytone One*/
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Tint&display=swap');/*Bungee Tint*/
+@import url('https://fonts.googleapis.com/css2?family=Style+Script&display=swap'); /*Style Script*/
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&display=swap'); /*Agbalumo*/
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baumans&display=swap');/*Baumans*/
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');/*Audiowide*/
+@import url('https://fonts.googleapis.com/css2?family=Tourney:ital,wght@0,100..900;1,100..900&display=swap');
+/*Nunito Maven Pro Righteous Monda Concert One Courgette Fredoka One Lobster Nerko One Poppins Playwrite HU*/
+/*Agbalumo     Style Script     Bungee Tint     Paytone One     Nunito  DM Sans      Plus Jakarta    Manrope*/
+
+@media (min-width: 781px) {
+    body {
+        margin: 0;
+        padding: 0;
+        min-height: 100%;
+    }
+    .mainArea {
+        width: 70%;
+        margin: auto;
+        box-shadow: -5px 0 5px rgba(0, 0, 0, 0.2), 5px 0 5px rgba(0, 0, 0, 0.2);
+        min-height: 100vh;
+        font-family: "Maven Pro", sans-serif;
+        font-size: 17px;
+        display: flex;
+        flex-direction: column;
+    }
+    .topArea h2 {
+        margin: 0;
+        padding: 0;
+        font-size: 34px;
+        margin-top: 0; /* Remove default h2 margin */
+        font-family: "Tourney", sans-serif;
+        font-weight: bold;
+    }
+    .topArea {
+        padding: 20px;
+        color: black;
+        text-align: center;
+        background-image: linear-gradient(to right top, #c5f1f4, #aae1f5);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Bottom shadow */
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    .contentArea {
+        padding: 20px;
+        flex-grow: 2;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .bottomArea {
+        padding: 15px;
+        color: #000000;  
+    }
+    .footerArea {
+        border-top:#000000 5px double;
+        display: flex;
+        flex-direction: row;
+        font-family: "Maven Pro";
+        font-size: 13px;
+    }
+    .footerArea p {
+        flex: 1;
+        margin: 8px;
+        text-align: justify;
+    }
+    .footerDetails {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+}
+@media (max-width: 780px) {
+    body {
+        margin: 0;
+        padding: 0;
+        min-height: 100%;
+    }
+    .mainArea {
+        width: 100%;
+        margin: auto;
+        min-height: 100vh;
+        font-family: "Maven Pro", sans-serif;
+        font-size: 14px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .topArea {
+        padding: 10px;
+        background-color: #4172e6;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+    }
+    .topArea h2 {
+        margin: 0;
+        padding: 0;
+        font-size: 25px;
+        margin-top: 0; /* Remove default h2 margin */
+        color: white;
+        font-family:"Baumans" ;
+    }
+    .contentArea {
+        padding: 15px;
+        flex-grow: 2;
+        display: flex;
+        flex-direction: column;
+    }
+    .bottomArea {
+        padding: 15px;
+        color: #000000;  
+    }
+    .footerArea {
+        border-top:#000000 5px double;
+        display: flex;
+        flex-direction: column;
+        font-family: "Maven Pro";
+        font-size: 13px;
+    }
+    .footerArea p {
+        flex: 1;
+        margin: 4px;
+        text-align: justify;
+    }
+    .footerDetails {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    }
+}

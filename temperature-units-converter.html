@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Einstein Calculators</title>
+  <link rel="icon" type="image/x-icon" href="./assets/icons/atom.svg" />
+  <link rel="stylesheet" href="./assets/css/index.css" />
+  <link rel="stylesheet" href="./assets/css/converters.css" />
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <!-- KaTeX CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous" />
+  <!-- KaTeX JS & Auto-render -->
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+
+
+  <script defer src="./assets/js/mass-energy.js"></script>
+</head>
+<body>
+  <div class="mainArea">
+    <!-- TOP AREA -->
+    <div class="topArea">  
+        <h2 onclick="location.href='./index.html'">Einstein Calculators</h2>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="contentArea">
+        <main>
+            <h1 class="formHeader">Convert Mass to Energy (E = mc²)</h1>
+            <form id="massEnergyForm" class="formInvestment">
+                <input class="inputFields" type="number" id="massInput" min="0.000001" step="any" required />
+                <label for="massInput">Mass in grams</label><br /><br />
+
+                <button class="button101" type="submit">Convert</button>
+                <button class="button101" type="button" id="clearBtn">Clear</button>
+            </form>
+
+            <div id="resultArea" class="resultAreaInvestment" aria-live="polite"></div>
+        </main>
+    </div>
+
+
+    <!-- FOOTER -->
+    <div class="bottomArea">
+      <footer class="footerArea">
+        <p>📢 Interested in advertising? We welcome partnerships and sponsors. Get in touch to discuss 
+          visibility and collaboration opportunities.</p>
+        <p class="footerDetails">
+          <span>Contact: <a href="mailto:drysoftware1@gmail.com">drysoftware1@gmail.com</a></span>  
+          <span>SVG icon: <a href="https://www.svgrepo.com/svg/241057/european-union-europe">SVG Repo</a></span>
+          <span>Top Area Gradient: <a href="https://mycolor.space/">mycolor.space</a></span>
+        </p>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>
