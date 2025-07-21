@@ -49,9 +49,11 @@
         margin-top: 0; /* Remove default h2 margin */
         font-family: "Tourney", sans-serif;
         font-weight: bold;
+        cursor: pointer;
     }
     .topIcon {
-      width: 40px;
+        width: 40px;
+        cursor: pointer;
     }
     .topArea {
         padding: 20px;

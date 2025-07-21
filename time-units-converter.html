@@ -1,60 +1,431 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Einstein Calculators</title>
-  <link rel="icon" type="image/x-icon" href="./assets/icons/atom.svg" />
-  <link rel="stylesheet" href="./assets/css/index.css" />
-  <link rel="stylesheet" href="./assets/css/converters.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Time Units Converter</title>
+  <link rel="icon" type="image/x-icon" href="./assets/icons/atom.svg">
+  <link rel="stylesheet" href="./assets/css/index.css">
+  <link rel="stylesheet" href="./assets/css/converters.css">
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-  <!-- KaTeX CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous" />
-  <!-- KaTeX JS & Auto-render -->
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
-
-
-  <script defer src="./assets/js/time-dilation.js"></script>
 </head>
 <body>
   <div class="mainArea">
     <!-- TOP AREA -->
-    <div class="topArea">  
-        <h2 onclick="location.href='./index.html'">Einstein Calculators</h2>
+    <div class="topArea">
+      <img src="./assets/icons/meter.svg" class="topIcon" alt="Time Converter">
+      &nbsp;&nbsp;&nbsp;
+      <h2 onclick="location.href='./index.html'">Unit Converters</h2>
     </div>
 
     <!-- MAIN CONTENT -->
     <div class="contentArea">
       <main>
-        <h1 class="formHeader">Time Dilation Calculator</h1>
-        <form id="dilationForm" class="formInvestment">
-          <input class="inputFields" type="number" name="spaceshipTime" min="1" max="100000000000000" required />
-          <label>Spaceship time (in seconds)</label><br><br>
-
-          <input class="inputFields" type="number" name="spaceshipVelocity" step="any" max="100000000000000000000" required />
-          <label>Spaceship velocity (in km/second)</label><br><br>
-
-          <button class="button101" type="submit">Calculate</button>
-          <button class="button101" type="button" id="clearBtn">Clear</button>
+        <h1 class="formHeader">Time Units Converter</h1>
+        <form id="timeConverterForm" class="formInvestment">
+          <input type="number" class="inputFields" id="nanosecond" name="nanosecond" value="" min="0" max="1000000000" 
+          step="any" />
+          <label>Nanoseconds (ns)</label><br><br>
+          <input type="number" class="inputFields" id="microsecond" name="microsecond" value="" min="0" max="1000000000" 
+          step="any" />
+          <label>Microseconds (µs)</label><br><br>
+          <input type="number" class="inputFields" id="millisecond" name="millisecond" value="" min="0" max="1000000000" 
+          step="any" />
+          <label>Milliseconds (ms)</label><br><br>
+          <input type="number" class="inputFields" id="second" name="second" value="" min="0" max="1000000000" 
+          step="any" />
+          <label>Seconds (s)</label><br><br>
+          <input type="number" class="inputFields" id="minute" name="minute" value="" min="0" max="1000000000" 
+          step="any" />
+          <label>Minutes (min)</label><br><br>
+          <input type="number" class="inputFields" id="hour" name="hour" value="" min="0" max="1000000000" 
+          step="any" />
+          <label>Hours (h)</label><br><br>
+          <input type="number" class="inputFields" id="day" name="day" value="" min="0" max="1000000000" 
+          step="any" />
+          <label>Days (d)</label><br><br>
+          <input type="number" class="inputFields" id="week" name="week" value="" min="0" max="1000000000" 
+          step="any" />
+          <label>Weeks</label><br><br>
+          <input type="number" class="inputFields" id="month" name="month" value="" min="0" max="1000000000" 
+          step="any" />
+          <label>Months</label><br><br>
+          <input type="number" class="inputFields" id="year" name="year" value="" min="0" max="1000000000" 
+          step="any" />
+          <label>Years</label><br><br>
+          <input type="number" class="inputFields" id="decade" name="decade" value="" min="0" max="1000000000" 
+          step="any" />
+          <label>Decades</label><br><br>
+          <input type="number" class="inputFields" id="century" name="century" value="" min="0" max="1000000000" 
+          step="any" />
+          <label>Centuries</label><br><br>
+          <input type="number" class="inputFields" id="julianYear" name="julianYear" value="" min="0" max="1000000000" 
+          step="any" />
+          <label>Julian Year</label><br><br>
+          <input type="number" class="inputFields" id="siderealYear" name="siderealYear" value="" min="0" max="1000000000" 
+          step="any" />
+          <label>Sidereal Year</label><br><br>
+          <input type="number" class="inputFields" id="planckTime" name="planckTime" value="" min="0" max="1000000000" 
+          step="any" />
+          <label>Planck Time</label><br><br>
+          <input type="number" class="inputFields" id="fortnight" name="fortnight" value="" min="0" max="1000000000" 
+          step="any" />
+          <label>Fortnight</label><br><br>
+          <button class="button101" type="button" onclick="clearFields()">Clear</button>
         </form>
-
-        <div id="resultArea" class="resultAreaInvestment" aria-live="polite">Speed of light: 299,792.4580 km/s</div>
       </main>
     </div>
 
     <!-- FOOTER -->
     <div class="bottomArea">
       <footer class="footerArea">
-        <p>📢 Interested in advertising? We welcome partnerships and sponsors. Get in touch to discuss 
-          visibility and collaboration opportunities.</p>
         <p class="footerDetails">
-          <span>Contact: <a href="mailto:drysoftware1@gmail.com">drysoftware1@gmail.com</a></span>  
-          <span>SVG icon: <a href="https://www.svgrepo.com/svg/241057/european-union-europe">SVG Repo</a></span>
-          <span>Top Area Gradient: <a href="https://mycolor.space/">mycolor.space</a></span>
+          <span>Contact: <a href="mailto:drysoftware1@gmail.com">drysoftware1@gmail.com</a></span>
         </p>
+        <p>📢 Interested in advertising? We welcome partnerships and sponsors. 
+          Get in touch to discuss visibility and collaboration opportunities.</p>
       </footer>
     </div>
   </div>
+
+  <script>
+    const pageIdVisitorPage = "unit_time";
+
+    /*
+    document.addEventListener("DOMContentLoaded", function() {
+      axios.post(`/serversavevisitor/${pageIdVisitorPage}`, {})
+        .catch(error => console.error('Error logging visit:', error.message));
+    });
+    */
+
+    // Conversion logic
+    function convertValues(name, value) {
+      const conversions = {
+        nanosecond: {
+          nanosecond: value,
+          microsecond: value / 1e3,
+          millisecond: value / 1e6,
+          second: value / 1e9,
+          minute: value / 6e10,
+          hour: value / 3.6e12,
+          day: value / 8.64e13,
+          week: value / 6.048e14,
+          month: value / 2.628e15,
+          year: value / 3.154e16,
+          decade: value / 3.154e17,
+          century: value / 3.154e18,
+          julianYear: value / 3.15576e16,
+          siderealYear: value / 3.15581498e16,
+          planckTime: value / 5.391e-44,
+          fortnight: value / 1.2096e15
+        },
+        microsecond: {
+          nanosecond: value * 1e3,
+          microsecond: value,
+          millisecond: value / 1e3,
+          second: value / 1e6,
+          minute: value / 6e7,
+          hour: value / 3.6e9,
+          day: value / 8.64e10,
+          week: value / 6.048e11,
+          month: value / 2.628e12,
+          year: value / 3.154e13,
+          decade: value / 3.154e14,
+          century: value / 3.154e15,
+          julianYear: value / 3.15576e13,
+          siderealYear: value / 3.15581498e13,
+          planckTime: value / 5.391e-41,
+          fortnight: value / 1.2096e12
+        },
+        millisecond: {
+          nanosecond: value * 1e6,
+          microsecond: value * 1e3,
+          millisecond: value,
+          second: value / 1e3,
+          minute: value / 6e4,
+          hour: value / 3.6e6,
+          day: value / 8.64e7,
+          week: value / 6.048e8,
+          month: value / 2.628e9,
+          year: value / 3.154e10,
+          decade: value / 3.154e11,
+          century: value / 3.154e12,
+          julianYear: value / 3.15576e10,
+          siderealYear: value / 3.15581498e10,
+          planckTime: value / 5.391e-38,
+          fortnight: value / 1.2096e9
+        },
+        second: {
+          nanosecond: value * 1e9,
+          microsecond: value * 1e6,
+          millisecond: value * 1e3,
+          second: value,
+          minute: value / 60,
+          hour: value / 3600,
+          day: value / 86400,
+          week: value / 604800,
+          month: value / 2.628e6,
+          year: value / 3.154e7,
+          decade: value / 3.154e8,
+          century: value / 3.154e9,
+          julianYear: value / 3.15576e7,
+          siderealYear: value / 3.15581498e7,
+          planckTime: value / 5.391e-35,
+          fortnight: value / 1.2096e6
+        },
+        minute: {
+          nanosecond: value * 6e10,
+          microsecond: value * 6e7,
+          millisecond: value * 6e4,
+          second: value * 60,
+          minute: value,
+          hour: value / 60,
+          day: value / 1440,
+          week: value / 10080,
+          month: value / 43800,
+          year: value / 525600,
+          decade: value / 5.256e6,
+          century: value / 5.256e7,
+          julianYear: value / 525960,
+          siderealYear: value / 525964.663,
+          planckTime: value / 3.2346e-33,
+          fortnight: value / 20160
+        },
+        hour: {
+          nanosecond: value * 3.6e12,
+          microsecond: value * 3.6e9,
+          millisecond: value * 3.6e6,
+          second: value * 3600,
+          minute: value * 60,
+          hour: value,
+          day: value / 24,
+          week: value / 168,
+          month: value / 730.001,
+          year: value / 8760,
+          decade: value / 87600,
+          century: value / 876000,
+          julianYear: value / 8766,
+          siderealYear: value / 8766.077,
+          planckTime: value / 1.94076e-31,
+          fortnight: value / 336
+        },
+        day: {
+          nanosecond: value * 8.64e13,
+          microsecond: value * 8.64e10,
+          millisecond: value * 8.64e7,
+          second: value * 86400,
+          minute: value * 1440,
+          hour: value * 24,
+          day: value,
+          week: value / 7,
+          month: value / 30.44,
+          year: value / 365.25,
+          decade: value / 3652.5,
+          century: value / 36525,
+          julianYear: value / 365.25,
+          siderealYear: value / 365.256363,
+          planckTime: value / 4.662e-30,
+          fortnight: value / 14
+        },
+        week: {
+          nanosecond: value * 6.048e14,
+          microsecond: value * 6.048e11,
+          millisecond: value * 6.048e8,
+          second: value * 604800,
+          minute: value * 10080,
+          hour: value * 168,
+          day: value * 7,
+          week: value,
+          month: value / 4.345,
+          year: value / 52.1786,
+          decade: value / 521.786,
+          century: value / 5217.86,
+          julianYear: value / 52.1786,
+          siderealYear: value / 52.179,
+          planckTime: value / 3.2637e-28,
+          fortnight: value / 2
+        },
+        month: {
+          nanosecond: value * 2.628e15,
+          microsecond: value * 2.628e12,
+          millisecond: value * 2.628e9,
+          second: value * 2.628e6,
+          minute: value * 43800,
+          hour: value * 730.001,
+          day: value * 30.44,
+          week: value * 4.345,
+          month: value,
+          year: value / 12,
+          decade: value / 120,
+          century: value / 1200,
+          julianYear: value / 12,
+          siderealYear: value / 12.002,
+          planckTime: value / 1.2285e-26,
+          fortnight: value / 2.174
+        },
+        year: {
+          nanosecond: value * 3.154e16,
+          microsecond: value * 3.154e13,
+          millisecond: value * 3.154e10,
+          second: value * 3.154e7,
+          minute: value * 525600,
+          hour: value * 8760,
+          day: value * 365.25,
+          week: value * 52.1786,
+          month: value * 12,
+          year: value,
+          decade: value / 10,
+          century: value / 100,
+          julianYear: value,
+          siderealYear: value / 1.00002,
+          planckTime: value / 3.8866e-25,
+          fortnight: value * 26.089
+        },
+        decade: {
+          nanosecond: value * 3.154e17,
+          microsecond: value * 3.154e14,
+          millisecond: value * 3.154e11,
+          second: value * 3.154e8,
+          minute: value * 5.256e6,
+          hour: value * 87600,
+          day: value * 3652.5,
+          week: value * 521.786,
+          month: value * 120,
+          year: value * 10,
+          decade: value,
+          century: value / 10,
+          julianYear: value * 10,
+          siderealYear: value * 9.99979,
+          planckTime: value / 3.8866e-24,
+          fortnight: value * 260.89
+        },
+        century: {
+          nanosecond: value * 3.154e18,
+          microsecond: value * 3.154e15,
+          millisecond: value * 3.154e12,
+          second: value * 3.154e9,
+          minute: value * 5.256e7,
+          hour: value * 876000,
+          day: value * 36525,
+          week: value * 5217.86,
+          month: value * 1200,
+          year: value * 100,
+          decade: value * 10,
+          century: value,
+          julianYear: value * 100,
+          siderealYear: value * 99.9979,
+          planckTime: value / 3.8866e-23,
+          fortnight: value * 2608.9
+        },
+        julianYear: {
+          nanosecond: value * 3.15576e16,
+          microsecond: value * 3.15576e13,
+          millisecond: value * 3.15576e10,
+          second: value * 3.15576e7,
+          minute: value * 5873,
+          hour: value * 8766,
+          day: value * 365.25,
+          week: value * 52.1786,
+          month: value * 12,
+          year: value,
+          decade: value / 10,
+          century: value / 100,
+          julianYear: value,
+          siderealYear: value / 1.00002,
+          planckTime: value / 3.8866e-25,
+          fortnight: value * 26.089
+        },
+        siderealYear: {
+          nanosecond: value * 3.15581498e16,
+          microsecond: value * 3.15581498e13,
+          millisecond: value * 3.15581498e10,
+          second: value * 3.15581498e7,
+          minute: value * 525964.663,
+          hour: value * 8766.077,
+          day: value * 365.256363,
+          week: value * 52.179,
+          month: value * 12.002,
+          year: value * 1.00002,
+          decade: value / 10,
+          century: value / 100,
+          julianYear: value * 1.00002,
+          siderealYear: value,
+          planckTime: value / 3.8869e-25,
+          fortnight: value * 26.089
+        },
+        planckTime: {
+          nanosecond: value * 5.391e-44,
+          microsecond: value * 5.391e-41,
+          millisecond: value * 5.391e-38,
+          second: value * 5.391e-35,
+          minute: value * 8.985e-34,
+          hour: value * 1.4975e-32,
+          day: value * 3.59399e-31,
+          week: value * 2.51579e-30,
+          month: value * 8.2283e-30,
+          year: value * 1.7081e-29,
+          decade: value * 1.7081e-28,
+          century: value * 1.7081e-27,
+          julianYear: value * 1.7081e-29,
+          siderealYear: value * 1.7081e-29,
+          planckTime: value,
+          fortnight: value * 2.619e-29
+        },
+        fortnight: {
+          nanosecond: value * 1.2096e15,
+          microsecond: value * 1.2096e12,
+          millisecond: value * 1.2096e9,
+          second: value * 1.209e6,
+          minute: value * 20160,
+          hour: value * 336,
+          day: value * 14,
+          week: value * 2,
+          month: value * 0.458333,
+          year: value / 26.089,
+          decade: value / 260.89,
+          century: value / 2608.9,
+          julianYear: value / 26.089,
+          siderealYear: value / 26.089,
+          planckTime: value / 3.815e28,
+          fortnight: value
+        }
+      };
+      return conversions[name];
+    }
+
+    // Handle input changes
+    function handleChangeTimeUnits(event) {
+      const { name, value } = event.target;
+      const inputs = document.querySelectorAll(".inputFields");
+
+      // Allow empty string or just "-" while typing
+      if (value === "" || value === "-" || value === "-.") {
+        return;
+      }
+
+      const v = parseFloat(value);
+
+      if (!isNaN(v) && v >= 0 && v <= 1000000000) {
+        const newValues = convertValues(name, v);
+        inputs.forEach(input => {
+          input.value = newValues[input.name] ? parseFloat(newValues[input.name].toFixed(10)) : "";
+        });
+      } else if (!isNaN(v)) {
+        alert("Enter a valid value");
+        inputs.forEach(input => input.value = "");
+      }
+    }
+
+    // Clear all fields
+    function clearFields() {
+      const inputs = document.querySelectorAll(".inputFields");
+      inputs.forEach(input => input.value = "");
+    }
+
+    // Add event listeners to inputs
+    document.querySelectorAll(".inputFields").forEach(input => {
+      input.addEventListener("input", handleChangeTimeUnits);
+    });
+  </script>
 </body>
 </html>
