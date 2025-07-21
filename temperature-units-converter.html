@@ -1,58 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Einstein Calculators</title>
-  <link rel="icon" type="image/x-icon" href="./assets/icons/atom.svg" />
-  <link rel="stylesheet" href="./assets/css/index.css" />
-  <link rel="stylesheet" href="./assets/css/converters.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Temperature Units Converter</title>
+  <link rel="icon" type="image/x-icon" href="./assets/icons/atom.svg">
+  <link rel="stylesheet" href="./assets/css/index.css">
+  <link rel="stylesheet" href="./assets/css/converters.css">
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-  <!-- KaTeX CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous" />
-  <!-- KaTeX JS & Auto-render -->
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
-
-
-  <script defer src="./assets/js/mass-energy.js"></script>
 </head>
 <body>
   <div class="mainArea">
-    <!-- TOP AREA -->
-    <div class="topArea">  
-        <h2 onclick="location.href='./index.html'">Einstein Calculators</h2>
+    <div class="topArea">
+      <img src="./assets/icons/meter.svg" class="topIcon" alt="Temperature Converter">
+      &nbsp;&nbsp;&nbsp;
+      <h2 onclick="location.href='./index.html'">Unit Converters</h2>
     </div>
 
-    <!-- MAIN CONTENT -->
     <div class="contentArea">
-        <main>
-            <h1 class="formHeader">Convert Mass to Energy (E = mc²)</h1>
-            <form id="massEnergyForm" class="formInvestment">
-                <input class="inputFields" type="number" id="massInput" min="0.000001" step="any" required />
-                <label for="massInput">Mass in grams</label><br /><br />
+      <main>
+        <h1 class="formHeader">Temperature Units Converter</h1>
+        <form id="temperatureConverterForm" class="formInvestment">
+          
+          <input type="number" class="inputFields" id="celsius" name="celsius" min="-1000000" max="1000000" step="any">
+          <label>Celsius (°C)</label><br><br>
 
-                <button class="button101" type="submit">Convert</button>
-                <button class="button101" type="button" id="clearBtn">Clear</button>
-            </form>
+          <input type="number" class="inputFields" id="fahrenheit" name="fahrenheit" min="-1000000" max="1000000" step="any">
+          <label>Fahrenheit (°F)</label><br><br>
 
-            <div id="resultArea" class="resultAreaInvestment" aria-live="polite"></div>
-        </main>
+          <input type="number" class="inputFields" id="kelvin" name="kelvin" min="-1000000" max="1000000" step="any">
+          <label>Kelvin (K)</label><br><br>
+
+          <input type="number" class="inputFields" id="rankine" name="rankine" min="-1000000" max="1000000" step="any">
+          <label>Rankine (°R)</label><br><br>
+
+          <input type="number" class="inputFields" id="reaumur" name="reaumur" min="-1000000" max="1000000" step="any">
+          <label>Réaumur (°Re)</label><br><br>
+
+          <button class="button101" type="button" onclick="clearTemperatureFields()">Clear</button>
+        </form>
+      </main>
     </div>
 
-
-    <!-- FOOTER -->
     <div class="bottomArea">
       <footer class="footerArea">
-        <p>📢 Interested in advertising? We welcome partnerships and sponsors. Get in touch to discuss 
-          visibility and collaboration opportunities.</p>
+        <p>📢 Interested in advertising? We welcome partnerships and sponsors. Get in touch to discuss visibility and collaboration opportunities.</p>
         <p class="footerDetails">
-          <span>Contact: <a href="mailto:drysoftware1@gmail.com">drysoftware1@gmail.com</a></span>  
-          <span>SVG icon: <a href="https://www.svgrepo.com/svg/241057/european-union-europe">SVG Repo</a></span>
-          <span>Top Area Gradient: <a href="https://mycolor.space/">mycolor.space</a></span>
+          <span>Contact: <a href="mailto:drysoftware1@gmail.com">drysoftware1@gmail.com</a></span>
         </p>
       </footer>
     </div>
   </div>
+
+  <script>
+    const pageIdVisitorPage = "unit_temperature";
+    /*
+    document.addEventListener("DOMContentLoaded", function() {
+      axios.post(`/serversavevisitor/${pageIdVisitorPage}`, {})
+        .catch(error => console.error('Error logging visit:', error.message));
+    });
+    */
+
+    function convertTemperature(name, value) {
+      const v = parseFloat(value);
+      if (v < -1000000 || v > 1000000) {
+        alert("enter a valid value");
+        return;
+      }
+      const conversions = {
+        celsius: {
+          celsius: v,
+          fahrenheit: (v * 9/5) + 32,
+          kelvin: v + 273.15,
+          rankine: (v + 273.15) * 9/5,
+          reaumur: v * 4/5
+        },
+        fahrenheit: {
+          celsius: (v - 32) * 5/9,
+          fahrenheit: v,
+          kelvin: ((v - 32) * 5/9) + 273.15,
+          rankine: v + 459.67,
+          reaumur: (v - 32) * 4/9
+        },
+        kelvin: {
+          celsius: v - 273.15,
+          fahrenheit: (v - 273.15) * 9/5 + 32,
+          kelvin: v,
+          rankine: v * 9/5,
+          reaumur: (v - 273.15) * 4/5
+        },
+        rankine: {
+          celsius: (v - 491.67) * 5/9,
+          fahrenheit: v - 459.67,
+          kelvin: v * 5/9,
+          rankine: v,
+          reaumur: (v - 491.67) * 4/9
+        },
+        reaumur: {
+          celsius: v * 5/4,
+          fahrenheit: (v * 9/4) + 32,
+          kelvin: (v * 5/4) + 273.15,
+          rankine: (v * 9/4) + 491.67,
+          reaumur: v
+        }
+      };
+      return conversions[name];
+    }
+
+    function handleTemperatureInput(event) {
+      const { name, value } = event.target;
+      const inputs = document.querySelectorAll(".inputFields");
+
+      // Allow empty string or just "-" while typing
+      if (value === "" || value === "-" || value === "-.") {
+        return;
+      }
+
+      const v = parseFloat(value);
+
+      if (!isNaN(v) && v >= -1000000 && v <= 1000000) {
+        const results = convertTemperature(name, v);
+        inputs.forEach(input => {
+          input.value = parseFloat(results[input.name].toFixed(5));
+        });
+      }
+    }
+
+
+    function clearTemperatureFields() {
+      document.querySelectorAll(".inputFields").forEach(input => input.value = "");
+    }
+
+    document.querySelectorAll(".inputFields").forEach(input => {
+      input.addEventListener("input", handleTemperatureInput);
+    });
+  </script>
 </body>
 </html>
