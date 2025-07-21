@@ -50,6 +50,9 @@
         font-family: "Tourney", sans-serif;
         font-weight: bold;
     }
+    .topIcon {
+      width: 40px;
+    }
     .topArea {
         padding: 20px;
         color: black;
