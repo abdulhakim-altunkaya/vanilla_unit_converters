@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pressure Units Converter</title>
+  <link rel="icon" type="image/x-icon" href="./assets/icons/atom.svg">
+  <link rel="stylesheet" href="./assets/css/index.css">
+  <link rel="stylesheet" href="./assets/css/converters.css">
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+  <div class="mainArea">
+    <!-- TOP AREA -->
+    <div class="topArea">
+      <img src="./assets/icons/pressure.svg" class="topIcon" alt="Clickable Homepage Pressure Converter" 
+        onclick="location.href='./index.html'" />
+      <h2 onclick="location.href='./index.html'">Units Converter</h2>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="contentArea">
+      <main>
+        <h1 class="formHeader">Pressure Units Converter</h1>
+        <form id="pressureConverterForm" class="formInvestment">
+          <input type="number" class="inputFields" id="pascal" name="pascal" min="0" max="1000000000" step="any" />
+          <label>Pascal (Pa)</label><br><br>
+          <input type="number" class="inputFields" id="kilopascal" name="kilopascal" min="0" max="1000000000" step="any" />
+          <label>Kilopascal (kPa)</label><br><br>
+          <input type="number" class="inputFields" id="bar" name="bar" min="0" max="1000000000" step="any" />
+          <label>Bar</label><br><br>
+          <input type="number" class="inputFields" id="atmosphere" name="atmosphere" min="0" max="1000000000" step="any" />
+          <label>Atmosphere (atm)</label><br><br>
+          <input type="number" class="inputFields" id="millibar" name="millibar" min="0" max="1000000000" step="any" />
+          <label>Millibar (mbar)</label><br><br>
+          <input type="number" class="inputFields" id="psi" name="psi" min="0" max="1000000000" step="any" />
+          <label>Pounds per Square Inch (psi)</label><br><br>
+          <input type="number" class="inputFields" id="torr" name="torr" min="0" max="1000000000" step="any" />
+          <label>Torr (mmHg)</label><br><br>
+          <input type="number" class="inputFields" id="inchMercury" name="inchMercury" min="0" max="1000000000" step="any" />
+          <label>Inch of Mercury (inHg)</label><br><br>
+          <button class="button101" type="button" onclick="clearPressureFields()">Clear</button>
+        </form>
+      </main>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="bottomArea">
+      <footer class="footerArea">
+        <p>📢 Interested in advertising? We welcome partnerships and sponsors. Get in touch to discuss visibility and collaboration opportunities.</p>
+        <p class="footerDetails">
+          <span>Contact: <a href="mailto:drysoftware1@gmail.com">drysoftware1@gmail.com</a></span>
+        </p>
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    const pageIdVisitorPage = "unit_pressure";
+
+    /*
+    document.addEventListener("DOMContentLoaded", function() {
+      axios.post(`/serversavevisitor/${pageIdVisitorPage}`, {})
+        .catch(error => console.error('Error logging visit:', error.message));
+    });
+    */
+
+    // Conversion logic
+    function convertPressure(name, value) {
+      const conversions = {
+        pascal: {
+          pascal: value,
+          kilopascal: value / 1000,
+          bar: value / 100000,
+          atmosphere: value / 101325,
+          millibar: value / 100,
+          psi: value / 6894.75729,
+          torr: value / 133.322368,
+          inchMercury: value / 3386.38864
+        },
+        kilopascal: {
+          pascal: value * 1000,
+          kilopascal: value,
+          bar: value / 100,
+          atmosphere: value / 101.325,
+          millibar: value * 10,
+          psi: value / 6.89475729,
+          torr: value * 7.50061683,
+          inchMercury: value / 3.38638864
+        },
+        bar: {
+          pascal: value * 100000,
+          kilopascal: value * 100,
+          bar: value,
+          atmosphere: value / 1.01325,
+          millibar: value * 1000,
+          psi: value * 14.5037738,
+          torr: value * 750.061683,
+          inchMercury: value * 29.5299831
+        },
+        atmosphere: {
+          pascal: value * 101325,
+          kilopascal: value * 101.325,
+          bar: value * 1.01325,
+          atmosphere: value,
+          millibar: value * 1013.25,
+          psi: value * 14.6959488,
+          torr: value * 760,
+          inchMercury: value * 29.9212598
+        },
+        millibar: {
+          pascal: value * 100,
+          kilopascal: value / 10,
+          bar: value / 1000,
+          atmosphere: value / 1013.25,
+          millibar: value,
+          psi: value / 68.9475729,
+          torr: value * 0.750061683,
+          inchMercury: value / 33.8638864
+        },
+        psi: {
+          pascal: value * 6894.75729,
+          kilopascal: value * 6.89475729,
+          bar: value / 14.5037738,
+          atmosphere: value / 14.6959488,
+          millibar: value * 68.9475729,
+          psi: value,
+          torr: value * 51.7149326,
+          inchMercury: value * 2.03602102
+        },
+        torr: {
+          pascal: value * 133.322368,
+          kilopascal: value * 0.133322368,
+          bar: value / 750.061683,
+          atmosphere: value / 760,
+          millibar: value * 1.33322368,
+          psi: value / 51.7149326,
+          torr: value,
+          inchMercury: value / 25.4000665
+        },
+        inchMercury: {
+          pascal: value * 3386.38864,
+          kilopascal: value * 3.38638864,
+          bar: value / 29.5299831,
+          atmosphere: value / 29.9212598,
+          millibar: value * 33.8638864,
+          psi: value / 2.03602102,
+          torr: value * 25.4000665,
+          inchMercury: value
+        }
+      };
+      return conversions[name];
+    }
+
+    // Format numbers dynamically based on magnitude
+    function formatNumber(value) {
+      if (value === 0) return "0";
+      const absValue = Math.abs(value);
+      if (absValue < 1e-6 || absValue > 1e6) {
+        return value.toExponential(5);
+      } else if (absValue < 1) {
+        return parseFloat(value.toFixed(10));
+      } else {
+        return parseFloat(value.toFixed(5));
+      }
+    }
+
+    // Handle input changes
+    function handlePressureInput(event) {
+      const { name, value } = event.target;
+      const inputs = document.querySelectorAll(".inputFields");
+
+      // Allow empty string, "-", or "-." while typing
+      if (value === "" || value === "-" || value === "-.") {
+        inputs.forEach(input => input.value = "");
+        return;
+      }
+
+      const v = parseFloat(value);
+
+      if (!isNaN(v) && v >= 0 && v <= 1000000000) {
+        const results = convertPressure(name, v);
+        inputs.forEach(input => {
+          input.value = results[input.name] ? formatNumber(results[input.name]) : "";
+        });
+      } else if (!isNaN(v)) {
+        alert("Enter a valid value");
+        inputs.forEach(input => input.value = "");
+      }
+    }
+
+    // Clear all fields
+    function clearPressureFields() {
+      document.querySelectorAll(".inputFields").forEach(input => input.value = "");
+    }
+
+    // Add event listeners to inputs
+    document.querySelectorAll(".inputFields").forEach(input => {
+      input.addEventListener("input", handlePressureInput);
+    });
+  </script>
+</body>
+</html>
