@@ -7,20 +7,8 @@
   <link rel="icon" type="image/x-icon" href="./assets/icons/atom.svg">
   <link rel="stylesheet" href="./assets/css/index.css">
   <link rel="stylesheet" href="./assets/css/converters.css">
+    <link rel="stylesheet" href="./assets/css/radiation.css">
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-  <style>
-    .group {
-      margin-bottom: 20px;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-    .group h3 {
-      margin-top: 0;
-      font-size: 1.2em;
-      color: #333;
-    }
-  </style>
 </head>
 <body>
   <div class="mainArea">
@@ -28,7 +16,7 @@
     <div class="topArea">
       <img src="./assets/icons/meter.svg" class="topIcon" alt="Clickable Homepage unit converter" 
         onclick="location.href='./index.html'" />
-         
+      &nbsp;&nbsp;&nbsp;
       <h2 onclick="location.href='./index.html'">Units Converter</h2>
     </div>
 
@@ -39,63 +27,85 @@
         <form id="radiationConverterForm" class="formInvestment">
           <div class="group">
             <p class="radiationTitle">Gamma rays, X-rays, Beta particles, Electrons 
-                (electron beam therapy, radiotherapy, diagnostic radiology, CT scans)</p>
+                (electron beam therapy, radiotherapy, diagnostic radiology, CT scans, cross-country flights)</p>
             <input type="number" class="inputFields" id="grayGamma" name="grayGamma" min="0" max="1000000" step="any" />
-            <label>Gray</label><br><br>
+            <label>Gray (Gy)</label><br><br>
+            <input type="number" class="inputFields" id="milligrayGamma" name="milligrayGamma" min="0" max="1000000000" step="any" />
+            <label>Milligray (mGy)</label><br><br>
             <input type="number" class="inputFields" id="sievertGamma" name="sievertGamma" min="0" max="1000000" step="any" />
-            <label>Sievert</label><br><br>
-            <input type="number" class="inputFields" id="radGamma" name="radGamma" min="0" max="1000000" step="any" />
+            <label>Sievert (Sv)</label><br><br>
+            <input type="number" class="inputFields" id="millisievertGamma" name="millisievertGamma" min="0" max="1000000000" step="any" />
+            <label>Millisievert (mSv)</label><br><br>
+            <input type="number" class="inputFields" id="radGamma" name="radGamma" min="0" max="1000000000" step="any" />
             <label>Rad</label><br><br>
-            <input type="number" class="inputFields" id="remGamma" name="remGamma" min="0" max="1000000" step="any" />
+            <input type="number" class="inputFields" id="remGamma" name="remGamma" min="0" max="1000000000" step="any" />
             <label>Rem</label><br><br>
+            <input type="number" class="inputFields" id="cancerRiskGamma" name="cancerRiskGamma" min="0" max="100" step="any" readonly />
+            <label>Cancer Risk (% per Sv)</label><br><br>
+            <input type="number" class="inputFields" id="flightDurationGamma" name="flightDurationGamma" min="0" max="1000" step="any" />
+            <label>Cross-Country Flight Duration (Hours)</label><br><br>
+            <input type="number" class="inputFields" id="chestXraysGamma" name="chestXraysGamma" min="0" max="1000000" step="any" />
+            <label>Number of Chest X-rays</label><br><br>
           </div>
           <div class="group">
-            <p class="radiationTitle">Alpha Particles, Heavy Ions (Cosmic radiation, radon exposure)</p>
+            <p class="radiationTitle">Alpha Particles, Heavy Ions (International Space Station, Moon, Mars, cosmic radiation, radon exposure)</p>
             <input type="number" class="inputFields" id="grayAlpha" name="grayAlpha" min="0" max="1000000" step="any" />
-            <label>Gray</label><br><br>
+            <label>Gray (Gy)</label><br><br>
+            <input type="number" class="inputFields" id="milligrayAlpha" name="milligrayAlpha" min="0" max="1000000000" step="any" />
+            <label>Milligray (mGy)</label><br><br>
             <input type="number" class="inputFields" id="sievertAlpha" name="sievertAlpha" min="0" max="1000000" step="any" />
-            <label>Sievert</label><br><br>
-            <input type="number" class="inputFields" id="radAlpha" name="radAlpha" min="0" max="1000000" step="any" />
+            <label>Sievert (Sv)</label><br><br>
+            <input type="number" class="inputFields" id="millisievertAlpha" name="millisievertAlpha" min="0" max="1000000000" step="any" />
+            <label>Millisievert (mSv)</label><br><br>
+            <input type="number" class="inputFields" id="radAlpha" name="radAlpha" min="0" max="1000000000" step="any" />
             <label>Rad</label><br><br>
-            <input type="number" class="inputFields" id="remAlpha" name="remAlpha" min="0" max="1000000" step="any" />
+            <input type="number" class="inputFields" id="remAlpha" name="remAlpha" min="0" max="1000000000" step="any" />
             <label>Rem</label><br><br>
+            <input type="number" class="inputFields" id="cancerRiskAlpha" name="cancerRiskAlpha" min="0" max="100" step="any" readonly />
+            <label>Cancer Risk (% per Sv)</label><br><br>
+            <input type="number" class="inputFields" id="issDurationAlpha" name="issDurationAlpha" min="0" max="100000" step="any" />
+            <label>International Space Station Duration (Hours)</label><br><br>
+            <input type="number" class="inputFields" id="moonDurationAlpha" name="moonDurationAlpha" min="0" max="100000" step="any" />
+            <label>Staying on Moon (Hours)</label><br><br>
+            <input type="number" class="inputFields" id="marsDurationAlpha" name="marsDurationAlpha" min="0" max="100000" step="any" />
+            <label>Staying on Mars (Hours)</label><br><br>
           </div>
-          <input type="number" class="inputFields" id="cancerRisk" name="cancerRisk" min="0" max="100" step="any" readonly />
-          <label>Cancer Risk (% per Sv)</label><br><br>
           <button class="button101" type="button" onclick="clearRadiationFields()">Clear</button>
         </form>
 
-        <div style="margin-top: 30px; padding: 15px; border: 1px solid #ccc; border-radius: 5px; background: #f9f9f9;">
-            <h3>Gray to Sievert Conversion Explanation</h3>
-            <p>To convert gray (Gy) to sievert (Sv), you use a radiation weighting factor (w<sub>R</sub>):</p>
-            <p><strong>Sievert = Gray × w<sub>R</sub></strong></p>
-            <p><strong>⚠️ Radiation Weighting Factors (w<sub>R</sub>):</strong></p>
-            <table style="border-collapse: collapse; width: 100%;">
-                <thead>
-                <tr>
-                    <th style="border: 1px solid #ccc; padding: 8px;">Radiation Type</th>
-                    <th style="border: 1px solid #ccc; padding: 8px;">w<sub>R</sub></th>
-                    <th style="border: 1px solid #ccc; padding: 8px;">1 Gy equals how many Sv?</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td style="border: 1px solid #ccc; padding: 8px;">Gamma rays / X-rays / Beta particles</td>
-                    <td style="border: 1px solid #ccc; padding: 8px;">1</td>
-                    <td style="border: 1px solid #ccc; padding: 8px;">1 Gy = 1 Sv</td>
-                </tr>
-                <tr>
-                    <td style="border: 1px solid #ccc; padding: 8px;">Alpha particles</td>
-                    <td style="border: 1px solid #ccc; padding: 8px;">20</td>
-                    <td style="border: 1px solid #ccc; padding: 8px;">1 Gy = 20 Sv</td>
-                </tr>
-                </tbody>
-            </table>
-            <p>1 Sv: ~5% increased risk, a benchmark for high-dose exposure ()</p>
-            <p>Atomic and Hydrogen bomb explosions releases Alpha, Beta, Gamma and Neutron radiations.</p>
-            </div>
+        <div class="radiationNoteArea">
+          <h3>Radiation Conversion Explanation</h3>
+          <p>To convert Gray (Gy) to Sievert (Sv), use the radiation weighting factor (w<sub>R</sub>):</p>
+          <p><strong>Sievert = Gray × w<sub>R</sub></strong></p>
+          <p><strong>⚠️ Radiation Weighting Factors (w<sub>R</sub>):</strong></p>
+          <table style="border-collapse: collapse; width: 100%;">
+            <thead>
+              <tr>
+                <th class="radiationNotesCell">Radiation Type</th>
+                <th class="radiationNotesCell">w<sub>R</sub></th>
+                <th class="radiationNotesCell">1 Gy equals how many Sv?</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="radiationNotesCell">Gamma rays / X-rays / Beta particles</td>
+                <td class="radiationNotesCell">1</td>
+                <td class="radiationNotesCell">1 Gy = 1 Sv (1000 mGy = 1000 mSv)</td>
+              </tr>
+              <tr>
+                <td class="radiationNotesCell">Alpha particles / Heavy ions</td>
+                <td class="radiationNotesCell">20</td>
+                <td class="radiationNotesCell">1 Gy = 20 Sv (1000 mGy = 20,000 mSv)</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>1 Sv = 1000 mSv = 100 rem ≈ 5% increased lifetime fatal cancer risk.
 
-
+            <a href="https://www.imagewisely.org/Imaging-Modalities/Computed-Tomography/How-to-Understand-and-Communicate-Radiation-Risk" target="_blank">Image Wisely</a>
+            <a href="https://www.frontiersin.org/journals/physics/articles/10.3389/fphy.2020.00234/full" target="_blank">Frontiersin</a>
+            <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2996147/" target="_blank">NCBI</a>
+          </p>
+        </div>
       </main>
     </div>
 
@@ -118,38 +128,102 @@
       const conversions = {
         grayGamma: {
           grayGamma: value,
+          milligrayGamma: value * 1000,
           sievertGamma: value * 1, // W_R = 1 for gamma rays
+          millisievertGamma: value * 1000,
           radGamma: value * 100,
           remGamma: value * 100,
-          cancerRisk: value * 5 // Approx. 5% increased lifetime fatal cancer risk per Sv
+          cancerRiskGamma: value * 5, // Approx. 5% increased lifetime fatal cancer risk per Sv
+          flightDurationGamma: value / 0.000004, // 1 hour = 0.000004 Sv
+          chestXraysGamma: value / 0.0001 // 1 X-ray = 0.0001 Sv
+        },
+        milligrayGamma: {
+          grayGamma: value / 1000,
+          milligrayGamma: value,
+          sievertGamma: value / 1000,
+          millisievertGamma: value * 1,
+          radGamma: (value / 1000) * 100,
+          remGamma: (value / 1000) * 100,
+          cancerRiskGamma: (value / 1000) * 5,
+          flightDurationGamma: (value / 1000) / 0.000004,
+          chestXraysGamma: (value / 1000) / 0.0001
         },
         sievertGamma: {
           grayGamma: value * 1,
+          milligrayGamma: value * 1000,
           sievertGamma: value,
+          millisievertGamma: value * 1000,
           radGamma: value * 100,
           remGamma: value * 100,
-          cancerRisk: value * 5
+          cancerRiskGamma: value * 5,
+          flightDurationGamma: value / 0.000004,
+          chestXraysGamma: value / 0.0001
+        },
+        millisievertGamma: {
+          grayGamma: value / 1000,
+          milligrayGamma: value * 1,
+          sievertGamma: value / 1000,
+          millisievertGamma: value,
+          radGamma: (value / 1000) * 100,
+          remGamma: (value / 1000) * 100,
+          cancerRiskGamma: (value / 1000) * 5,
+          flightDurationGamma: (value / 1000) / 0.000004,
+          chestXraysGamma: (value / 1000) / 0.0001
         },
         radGamma: {
           grayGamma: value / 100,
+          milligrayGamma: (value / 100) * 1000,
           sievertGamma: value / 100,
+          millisievertGamma: (value / 100) * 1000,
           radGamma: value,
           remGamma: value * 1,
-          cancerRisk: (value / 100) * 5
+          cancerRiskGamma: (value / 100) * 5,
+          flightDurationGamma: (value / 100) / 0.000004,
+          chestXraysGamma: (value / 100) / 0.0001
         },
         remGamma: {
           grayGamma: value / 100,
+          milligrayGamma: (value / 100) * 1000,
           sievertGamma: value / 100,
+          millisievertGamma: (value / 100) * 1000,
           radGamma: value * 1,
           remGamma: value,
-          cancerRisk: (value / 100) * 5
+          cancerRiskGamma: (value / 100) * 5,
+          flightDurationGamma: (value / 100) / 0.000004,
+          chestXraysGamma: (value / 100) / 0.0001
         },
-        cancerRisk: {
+        cancerRiskGamma: {
           grayGamma: value / 5,
+          milligrayGamma: (value / 5) * 1000,
           sievertGamma: value / 5,
+          millisievertGamma: (value / 5) * 1000,
           radGamma: (value / 5) * 100,
           remGamma: (value / 5) * 100,
-          cancerRisk: value
+          cancerRiskGamma: value,
+          flightDurationGamma: (value / 5) / 0.000004,
+          chestXraysGamma: (value / 5) / 0.0001
+        },
+        flightDurationGamma: {
+          grayGamma: value * 0.000004,
+          milligrayGamma: (value * 0.000004) * 1000,
+          sievertGamma: value * 0.000004,
+          millisievertGamma: (value * 0.000004) * 1000,
+          radGamma: (value * 0.000004) * 100,
+          remGamma: (value * 0.000004) * 100,
+          cancerRiskGamma: (value * 0.000004) * 5,
+          flightDurationGamma: value,
+          chestXraysGamma: value * 0.000004 / 0.0001
+        },
+        chestXraysGamma: {
+          grayGamma: value * 0.0001,
+          milligrayGamma: (value * 0.0001) * 1000,
+          sievertGamma: value * 0.0001,
+          millisievertGamma: (value * 0.0001) * 1000,
+          radGamma: (value * 0.0001) * 100,
+          remGamma: (value * 0.0001) * 100,
+          cancerRiskGamma: (value * 0.0001) * 5,
+          flightDurationGamma: (value * 0.0001) / 0.000004,
+          chestXraysGamma: value
         }
       };
       return conversions[name];
@@ -160,38 +234,123 @@
       const conversions = {
         grayAlpha: {
           grayAlpha: value,
+          milligrayAlpha: value * 1000,
           sievertAlpha: value * 20, // W_R = 20 for alpha particles
+          millisievertAlpha: value * 20 * 1000,
           radAlpha: value * 100,
-          remAlpha: value * 100 * 20,
-          cancerRisk: value * 20 * 5 // Cancer risk tied to Sv
+          remAlpha: value * 20 * 100,
+          cancerRiskAlpha: value * 20 * 5,
+          issDurationAlpha: value / 0.0000015, // 0.00003 Sv/hour ÷ 20
+          moonDurationAlpha: value / 0.000003125, // 0.0000625 Sv/hour ÷ 20
+          marsDurationAlpha: value / 0.000001875 // 0.0000375 Sv/hour ÷ 20
+        },
+        milligrayAlpha: {
+          grayAlpha: value / 1000,
+          milligrayAlpha: value,
+          sievertAlpha: (value / 1000) * 20,
+          millisievertAlpha: value * 20,
+          radAlpha: (value / 1000) * 100,
+          remAlpha: (value / 1000) * 20 * 100,
+          cancerRiskAlpha: (value / 1000) * 20 * 5,
+          issDurationAlpha: (value / 1000) / 0.0000015,
+          moonDurationAlpha: (value / 1000) / 0.000003125,
+          marsDurationAlpha: (value / 1000) / 0.000001875
         },
         sievertAlpha: {
           grayAlpha: value / 20,
+          milligrayAlpha: (value / 20) * 1000,
           sievertAlpha: value,
+          millisievertAlpha: value * 1000,
           radAlpha: (value / 20) * 100,
           remAlpha: value * 100,
-          cancerRisk: value * 5
+          cancerRiskAlpha: value * 5,
+          issDurationAlpha: value / 0.00003,
+          moonDurationAlpha: value / 0.0000625,
+          marsDurationAlpha: value / 0.0000375
+        },
+        millisievertAlpha: {
+          grayAlpha: value / (20 * 1000),
+          milligrayAlpha: value / 20,
+          sievertAlpha: value / 1000,
+          millisievertAlpha: value,
+          radAlpha: (value / (20 * 1000)) * 100,
+          remAlpha: (value / 1000) * 100,
+          cancerRiskAlpha: (value / 1000) * 5,
+          issDurationAlpha: (value / 1000) / 0.00003,
+          moonDurationAlpha: (value / 1000) / 0.0000625,
+          marsDurationAlpha: (value / 1000) / 0.0000375
         },
         radAlpha: {
           grayAlpha: value / 100,
+          milligrayAlpha: (value / 100) * 1000,
           sievertAlpha: (value / 100) * 20,
+          millisievertAlpha: (value / 100) * 20 * 1000,
           radAlpha: value,
           remAlpha: value * 20,
-          cancerRisk: (value / 100) * 20 * 5
+          cancerRiskAlpha: (value / 100) * 20 * 5,
+          issDurationAlpha: (value / 100) / 0.0000015,
+          moonDurationAlpha: (value / 100) / 0.000003125,
+          marsDurationAlpha: (value / 100) / 0.000001875
         },
         remAlpha: {
-          grayAlpha: value / (100 * 20),
+          grayAlpha: value / (20 * 100),
+          milligrayAlpha: (value / (20 * 100)) * 1000,
           sievertAlpha: value / 100,
+          millisievertAlpha: (value / 100) * 1000,
           radAlpha: value / 20,
           remAlpha: value,
-          cancerRisk: (value / 100) * 5
+          cancerRiskAlpha: (value / 100) * 5,
+          issDurationAlpha: (value / 100) / 0.00003,
+          moonDurationAlpha: (value / 100) / 0.0000625,
+          marsDurationAlpha: (value / 100) / 0.0000375
         },
-        cancerRisk: {
-          grayAlpha: value / (5 * 20),
+        cancerRiskAlpha: {
+          grayAlpha: value / (20 * 5),
+          milligrayAlpha: (value / (20 * 5)) * 1000,
           sievertAlpha: value / 5,
-          radAlpha: (value / (5 * 20)) * 100,
+          millisievertAlpha: (value / 5) * 1000,
+          radAlpha: (value / (20 * 5)) * 100,
           remAlpha: (value / 5) * 100,
-          cancerRisk: value
+          cancerRiskAlpha: value,
+          issDurationAlpha: (value / 5) / 0.00003,
+          moonDurationAlpha: (value / 5) / 0.0000625,
+          marsDurationAlpha: (value / 5) / 0.0000375
+        },
+        issDurationAlpha: {
+          grayAlpha: value * 0.0000015, // 0.00003 Sv/hour ÷ 20
+          milligrayAlpha: (value * 0.0000015) * 1000,
+          sievertAlpha: value * 0.00003,
+          millisievertAlpha: (value * 0.00003) * 1000,
+          radAlpha: (value * 0.0000015) * 100,
+          remAlpha: (value * 0.00003) * 100,
+          cancerRiskAlpha: (value * 0.00003) * 5,
+          issDurationAlpha: value,
+          moonDurationAlpha: (value * 0.00003) / 0.0000625,
+          marsDurationAlpha: (value * 0.00003) / 0.0000375
+        },
+        moonDurationAlpha: {
+          grayAlpha: value * 0.000003125, // 0.0000625 Sv/hour ÷ 20
+          milligrayAlpha: (value * 0.000003125) * 1000,
+          sievertAlpha: value * 0.0000625,
+          millisievertAlpha: (value * 0.0000625) * 1000,
+          radAlpha: (value * 0.000003125) * 100,
+          remAlpha: (value * 0.0000625) * 100,
+          cancerRiskAlpha: (value * 0.0000625) * 5,
+          issDurationAlpha: (value * 0.0000625) / 0.00003,
+          moonDurationAlpha: value,
+          marsDurationAlpha: (value * 0.0000625) / 0.0000375
+        },
+        marsDurationAlpha: {
+          grayAlpha: value * 0.000001875, // 0.0000375 Sv/hour ÷ 20
+          milligrayAlpha: (value * 0.000001875) * 1000,
+          sievertAlpha: value * 0.0000375,
+          millisievertAlpha: (value * 0.0000375) * 1000,
+          radAlpha: (value * 0.000001875) * 100,
+          remAlpha: (value * 0.0000375) * 100,
+          cancerRiskAlpha: (value * 0.0000375) * 5,
+          issDurationAlpha: (value * 0.0000375) / 0.00003,
+          moonDurationAlpha: (value * 0.0000375) / 0.0000625,
+          marsDurationAlpha: value
         }
       };
       return conversions[name];
@@ -223,24 +382,18 @@
 
       const v = parseFloat(value);
 
-      if (!isNaN(v) && v >= 0 && v <= (name === "cancerRisk" ? 100 : 1000000)) {
+      if (!isNaN(v) && v >= 0 && v <= (name.includes("cancerRisk") ? 100 : name.includes("flightDuration") || name.includes("issDuration") || name.includes("moonDuration") || name.includes("marsDuration") ? 100000 : 1000000000)) {
         let results;
         if (name.includes("Gamma")) {
           results = convertGamma(name, v);
-          // Update only Gamma inputs and cancer risk
-          document.querySelectorAll(".inputFields[name*='Gamma'], .inputFields[name='cancerRisk']").forEach(input => {
+          // Update only Gamma inputs
+          document.querySelectorAll(".inputFields[name*='Gamma']").forEach(input => {
             input.value = results[input.name] ? formatNumber(results[input.name]) : "";
           });
         } else if (name.includes("Alpha")) {
           results = convertAlpha(name, v);
-          // Update only Alpha inputs and cancer risk
-          document.querySelectorAll(".inputFields[name*='Alpha'], .inputFields[name='cancerRisk']").forEach(input => {
-            input.value = results[input.name] ? formatNumber(results[input.name]) : "";
-          });
-        } else if (name === "cancerRisk") {
-          // Update either Gamma or Alpha group based on last modified group (default to Gamma for simplicity)
-          results = convertGamma(name, v); // Can be toggled to Alpha if preferred
-          document.querySelectorAll(".inputFields[name*='Gamma'], .inputFields[name='cancerRisk']").forEach(input => {
+          // Update only Alpha inputs
+          document.querySelectorAll(".inputFields[name*='Alpha']").forEach(input => {
             input.value = results[input.name] ? formatNumber(results[input.name]) : "";
           });
         }
@@ -257,7 +410,7 @@
 
     // Add event listeners to inputs
     document.querySelectorAll(".inputFields").forEach(input => {
-      if (input.name !== "cancerRisk") { // Cancer risk is read-only
+      if (!input.name.includes("cancerRisk")) { // Cancer risk is read-only
         input.addEventListener("input", handleRadiationInput);
       }
     });
