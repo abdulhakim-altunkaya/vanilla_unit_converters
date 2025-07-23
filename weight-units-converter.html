@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Units Converter</title>
-  <link rel="icon" type="image/x-icon" href="./assets/icons/atom.svg">
+  <link rel="icon" type="image/x-icon" href="./assets/icons/meter.svg">
   <link rel="stylesheet" href="./assets/css/index.css">
   <link rel="stylesheet" href="./assets/css/converters.css">
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
@@ -23,55 +23,62 @@
     <div class="contentArea">
       <main>
         <h1 class="formHeader">Weight Units Converter</h1>
-        <form id="weightConverterForm" class="formInvestment">
-          <input type="number" class="inputFields" id="milligram" name="milligram" value="" min="0" />
-          <label>Milligram</label><br><br>
-          <input type="number" class="inputFields" id="gram" name="gram" value="" min="0" />
-          <label>Gram</label><br><br>
-          <input type="number" class="inputFields" id="kilogram" name="kilogram" value="" min="0" />
-          <label>Kilogram</label><br><br>
-          <input type="number" class="inputFields" id="ton" name="ton" value="" min="0" />
-          <label>Ton</label><br><br>
-          <input type="number" class="inputFields" id="megaton" name="megaton" value="" min="0" />
-          <label>Megaton</label><br><br>
-          <input type="number" class="inputFields" id="gigaton" name="gigaton" value="" min="0" />
-          <label>Gigaton</label><br><br>
-          <input type="number" class="inputFields" id="uston" name="uston" value="" min="0" />
-          <label>U.S. ton</label><br><br>
-          <input type="number" class="inputFields" id="pound" name="pound" value="" min="0" />
-          <label>Pound-lb.</label><br><br>
-          <input type="number" class="inputFields" id="ounce" name="ounce" value="" min="0" />
-          <label>Ounce-oz.</label><br><br>
-          <input type="number" class="inputFields" id="carat" name="carat" value="" min="0" />
-          <label>Carat</label><br><br>
+        <form id="massConverterForm" class="formInvestment">
+          <input type="number" class="inputFields" id="milligram" name="milligram" value="" min="0" max="1000000000" 
+            step="any" />
+          <label>Milligram (mg)</label><br><br>
+          <input type="number" class="inputFields" id="gram" name="gram" value="" min="0" max="1000000000" 
+            step="any" />
+          <label>Gram (g)</label><br><br>
+          <input type="number" class="inputFields" id="kilogram" name="kilogram" value="" min="0" max="1000000000" 
+            step="any" />
+          <label>Kilogram (kg)</label><br><br>
+          <input type="number" class="inputFields" id="ton" name="ton" value="" min="0" max="1000000000" 
+            step="any" />
+          <label>Metric Ton (t)</label><br><br>
+          <input type="number" class="inputFields" id="megaton" name="megaton" value="" min="0" max="1000000000" 
+            step="any" />
+          <label>Megaton (Mt)</label><br><br>
+          <input type="number" class="inputFields" id="gigaton" name="gigaton" value="" min="0" max="1000000000" 
+            step="any" />
+          <label>Gigaton (Gt)</label><br><br>
+          <input type="number" class="inputFields" id="uston" name="uston" value="" min="0" max="1000000000" 
+            step="any" />
+          <label>US Ton (short ton)</label><br><br>
+          <input type="number" class="inputFields" id="pound" name="pound" value="" min="0" max="1000000000" 
+            step="any" />
+          <label>Pound (lb)</label><br><br>
+          <input type="number" class="inputFields" id="ounce" name="ounce" value="" min="0" max="1000000000" 
+            step="any" />
+          <label>Ounce (oz)</label><br><br>
+          <input type="number" class="inputFields" id="carat" name="carat" value="" min="0" max="1000000000" 
+            step="any" />
+          <label>Carat (ct)</label><br><br>
           <button class="button101" type="button" onclick="clearFields()">Clear</button>
         </form>
-        <div id="resultArea" class="resultAreaInvestment" aria-live="polite"></div>
       </main>
     </div>
 
     <!-- FOOTER -->
     <div class="bottomArea">
       <footer class="footerArea">
-        <p>📢 Interested in advertising? We welcome partnerships and sponsors. Get in touch to discuss 
-          visibility and collaboration opportunities.</p>
+        <p>📢 Interested in advertising? We welcome partnerships and sponsors. Get in touch to discuss visibility and collaboration opportunities.</p>
         <p class="footerDetails">
           <span>Contact: <a href="mailto:drysoftware1@gmail.com">drysoftware1@gmail.com</a></span>
-          <span>SVG icons: <a href="https://www.svgrepo.com/svg/241057/european-union-europe">SVG Repo</a></span>
         </p>
       </footer>
     </div>
   </div>
-
   <script>
-    const pageIdVisitorPage = "unit_weight";
+    const pageIdVisitorPage = "unit_mass";
+
     /*
-    // Log visitor data on page load
     document.addEventListener("DOMContentLoaded", function() {
       axios.post(`/serversavevisitor/${pageIdVisitorPage}`, {})
         .catch(error => console.error('Error logging visit:', error.message));
     });
     */
+
     // Conversion logic
     function convertValues(name, value) {
       const conversions = {
@@ -80,137 +87,157 @@
           gram: value / 1000,
           kilogram: value / 1e6,
           ton: value / 1e9,
-          megaton: value / 1e12,
-          gigaton: value / 1e15,
-          uston: value / 907184.74,
+          megaton: value / 1e15,
+          gigaton: value / 1e18,
+          uston: value / 9.072e8,
           pound: value / 453592.37,
-          ounce: value / 28349.5,
-          carat: value / 200,
+          ounce: value / 28349.5231,
+          carat: value / 200
         },
         gram: {
           milligram: value * 1000,
           gram: value,
           kilogram: value / 1000,
           ton: value / 1e6,
-          megaton: value / 1e9,
-          gigaton: value / 1e12,
+          megaton: value / 1e12,
+          gigaton: value / 1e15,
           uston: value / 907184.74,
           pound: value / 453.59237,
-          ounce: value / 28.3495,
-          carat: value * 5,
+          ounce: value / 28.3495231,
+          carat: value * 5
         },
         kilogram: {
           milligram: value * 1e6,
           gram: value * 1000,
           kilogram: value,
           ton: value / 1000,
-          megaton: value / 1e6,
-          gigaton: value / 1e9,
-          uston: value / 0.90718474,
-          pound: value * 2.20462,
-          ounce: value * 35.274,
-          carat: value * 5000,
+          megaton: value / 1e9,
+          gigaton: value / 1e12,
+          uston: value / 907.18474,
+          pound: value * 2.20462262,
+          ounce: value * 35.2739619,
+          carat: value * 5000
         },
         ton: {
           milligram: value * 1e9,
           gram: value * 1e6,
           kilogram: value * 1000,
           ton: value,
-          megaton: value / 1000,
-          gigaton: value / 1e6,
-          uston: value * 1.10231,
-          pound: value * 2204.62,
-          ounce: value * 35274,
-          carat: value * 5e6,
+          megaton: value / 1e6,
+          gigaton: value / 1e9,
+          uston: value * 1.10231131,
+          pound: value * 2204.62262,
+          ounce: value * 35273.9619,
+          carat: value * 5e6
         },
         megaton: {
-          milligram: value * 1e12,
-          gram: value * 1e9,
-          kilogram: value * 1e6,
-          ton: value * 1000,
-          megaton: value,
-          gigaton: value / 1000,
-          uston: value * 1.10231e3,
-          pound: value * 2.20462e6,
-          ounce: value * 3.5274e7,
-          carat: value * 5e9,
-        },
-        gigaton: {
           milligram: value * 1e15,
           gram: value * 1e12,
           kilogram: value * 1e9,
           ton: value * 1e6,
+          megaton: value,
+          gigaton: value / 1000,
+          uston: value * 1.10231131e6,
+          pound: value * 2.20462262e9,
+          ounce: value * 3.52739619e10,
+          carat: value * 5e12
+        },
+        gigaton: {
+          milligram: value * 1e18,
+          gram: value * 1e15,
+          kilogram: value * 1e12,
+          ton: value * 1e9,
           megaton: value * 1000,
           gigaton: value,
-          uston: value * 1.10231e6,
-          pound: value * 2.20462e9,
-          ounce: value * 3.5274e10,
-          carat: value * 5e12,
+          uston: value * 1.10231131e9,
+          pound: value * 2.20462262e12,
+          ounce: value * 3.52739619e13,
+          carat: value * 5e15
         },
         uston: {
-          milligram: value * 907184740,
+          milligram: value * 9.072e8,
           gram: value * 907184.74,
           kilogram: value * 907.18474,
-          ton: value * 0.90718474,
-          megaton: value * 0.00090718474,
-          gigaton: value * 9.0718474e-7,
+          ton: value / 1.10231131,
+          megaton: value / 1.10231131e6,
+          gigaton: value / 1.10231131e9,
           uston: value,
           pound: value * 2000,
           ounce: value * 32000,
-          carat: value * 4.53592e6,
+          carat: value * 4.536e6
         },
         pound: {
           milligram: value * 453592.37,
           gram: value * 453.59237,
-          kilogram: value / 2.20462,
-          ton: value / 2204.62,
-          megaton: value / 2.20462e6,
-          gigaton: value / 2.20462e9,
+          kilogram: value / 2.20462262,
+          ton: value / 2204.62262,
+          megaton: value / 2.20462262e9,
+          gigaton: value / 2.20462262e12,
           uston: value / 2000,
           pound: value,
           ounce: value * 16,
-          carat: value * 2267.96,
+          carat: value * 2267.96185
         },
         ounce: {
-          milligram: value * 28349.5,
-          gram: value * 28.3495,
-          kilogram: value / 35.274,
-          ton: value / 35274,
-          megaton: value / 3.5274e7,
-          gigaton: value / 3.5274e10,
+          milligram: value * 28349.5231,
+          gram: value * 28.3495231,
+          kilogram: value / 35.2739619,
+          ton: value / 35273.9619,
+          megaton: value / 3.52739619e10,
+          gigaton: value / 3.52739619e13,
           uston: value / 32000,
           pound: value / 16,
           ounce: value,
-          carat: value * 141.7475,
+          carat: value * 141.747616
         },
         carat: {
           milligram: value * 200,
           gram: value / 5,
           kilogram: value / 5000,
           ton: value / 5e6,
-          megaton: value / 5e9,
-          gigaton: value / 5e12,
-          uston: value / 4.53592e6,
-          pound: value / 2267.96,
-          ounce: value / 141.7475,
-          carat: value,
+          megaton: value / 5e12,
+          gigaton: value / 5e15,
+          uston: value / 4.536e6,
+          pound: value / 2267.96185,
+          ounce: value / 141.747616,
+          carat: value
         }
       };
       return conversions[name];
     }
 
+    // Format numbers dynamically based on magnitude
+    function formatNumber(value) {
+      if (value === 0) return "0";
+      const absValue = Math.abs(value);
+      if (absValue < 1e-6 || absValue > 1e6) {
+        return value.toExponential(5);
+      } else if (absValue < 1) {
+        return parseFloat(value.toFixed(10));
+      } else {
+        return parseFloat(value.toFixed(8));
+      }
+    }
+
     // Handle input changes
-    function handleChangeWeightUnits(event) {
+    function handleChangeMassUnits(event) {
       const { name, value } = event.target;
       const inputs = document.querySelectorAll(".inputFields");
 
-      if (!isNaN(value) && value !== "") {
-        const newValues = convertValues(name, parseFloat(value));
+      // Allow empty string, "-", or "-." while typing
+      if (value === "" || value === "-" || value === "-.") {
+        return;
+      }
+
+      const v = parseFloat(value);
+
+      if (!isNaN(v) && v >=0 && v <= 1000000000) {
+        const newValues = convertValues(name, v);
         inputs.forEach(input => {
-          const unit = input.name;
-          input.value = newValues[unit] ? parseFloat(newValues[unit].toString()) : "";
+          input.value = newValues[input.name] ? formatNumber(newValues[input.name]) : "";
         });
-      } else {
+      } else if (!isNaN(v)) {
+        alert("Enter a valid value");
         inputs.forEach(input => input.value = "");
       }
     }
@@ -223,7 +250,7 @@
 
     // Add event listeners to inputs
     document.querySelectorAll(".inputFields").forEach(input => {
-      input.addEventListener("input", handleChangeWeightUnits);
+      input.addEventListener("input", handleChangeMassUnits);
     });
   </script>
 </body>
