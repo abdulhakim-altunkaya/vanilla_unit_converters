@@ -23,8 +23,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Baumans&display=swap');/*Baumans*/
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');/*Audiowide*/
 @import url('https://fonts.googleapis.com/css2?family=Tourney:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pattaya&display=swap');
 /*Nunito Maven Pro Righteous Monda Concert One Courgette Fredoka One Lobster Nerko One Poppins Playwrite HU*/
-/*Agbalumo     Style Script     Bungee Tint     Paytone One     Nunito  DM Sans      Plus Jakarta    Manrope*/
+/*Agbalumo     Style Script     Bungee Tint     Paytone One     Nunito  DM Sans      Plus Jakarta    Manrope   Pattaya*/
 
 @media (min-width: 781px) {
     body {
@@ -94,6 +95,7 @@
         flex-direction: column;
         gap: 8px;
     }
+
 }
 @media (max-width: 780px) {
     body {

@@ -4,6 +4,20 @@
     .mainAreasMainComponents {
         padding-top: 40px;
     }
+    .separationContainer {
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .separationContainer h4 {
+        font-family: "Pattaya", sans-serif;
+        font-weight: 400;
+        font-size: 22px;
+    }
     .convertersMain{   
         margin: 12px;
     }    

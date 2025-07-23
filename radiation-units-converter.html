@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Radiation Dose Units Converter</title>
+  <link rel="icon" type="image/x-icon" href="./assets/icons/atom.svg">
+  <link rel="stylesheet" href="./assets/css/index.css">
+  <link rel="stylesheet" href="./assets/css/converters.css">
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <style>
+    .group {
+      margin-bottom: 20px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .group h3 {
+      margin-top: 0;
+      font-size: 1.2em;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="mainArea">
+    <!-- TOP AREA -->
+    <div class="topArea">
+      <img src="./assets/icons/meter.svg" class="topIcon" alt="Clickable Homepage unit converter" 
+        onclick="location.href='./index.html'" />
+         
+      <h2 onclick="location.href='./index.html'">Units Converter</h2>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="contentArea">
+      <main>
+        <h1 class="formHeader">Radiation Dose Units Converter</h1>
+        <form id="radiationConverterForm" class="formInvestment">
+          <div class="group">
+            <p class="radiationTitle">Gamma rays, X-rays, Beta particles, Electrons 
+                (electron beam therapy, radiotherapy, diagnostic radiology, CT scans)</p>
+            <input type="number" class="inputFields" id="grayGamma" name="grayGamma" min="0" max="1000000" step="any" />
+            <label>Gray</label><br><br>
+            <input type="number" class="inputFields" id="sievertGamma" name="sievertGamma" min="0" max="1000000" step="any" />
+            <label>Sievert</label><br><br>
+            <input type="number" class="inputFields" id="radGamma" name="radGamma" min="0" max="1000000" step="any" />
+            <label>Rad</label><br><br>
+            <input type="number" class="inputFields" id="remGamma" name="remGamma" min="0" max="1000000" step="any" />
+            <label>Rem</label><br><br>
+          </div>
+          <div class="group">
+            <p class="radiationTitle">Alpha Particles, Heavy Ions (Cosmic radiation, radon exposure)</p>
+            <input type="number" class="inputFields" id="grayAlpha" name="grayAlpha" min="0" max="1000000" step="any" />
+            <label>Gray</label><br><br>
+            <input type="number" class="inputFields" id="sievertAlpha" name="sievertAlpha" min="0" max="1000000" step="any" />
+            <label>Sievert</label><br><br>
+            <input type="number" class="inputFields" id="radAlpha" name="radAlpha" min="0" max="1000000" step="any" />
+            <label>Rad</label><br><br>
+            <input type="number" class="inputFields" id="remAlpha" name="remAlpha" min="0" max="1000000" step="any" />
+            <label>Rem</label><br><br>
+          </div>
+          <input type="number" class="inputFields" id="cancerRisk" name="cancerRisk" min="0" max="100" step="any" readonly />
+          <label>Cancer Risk (% per Sv)</label><br><br>
+          <button class="button101" type="button" onclick="clearRadiationFields()">Clear</button>
+        </form>
+
+        <div style="margin-top: 30px; padding: 15px; border: 1px solid #ccc; border-radius: 5px; background: #f9f9f9;">
+            <h3>Gray to Sievert Conversion Explanation</h3>
+            <p>To convert gray (Gy) to sievert (Sv), you use a radiation weighting factor (w<sub>R</sub>):</p>
+            <p><strong>Sievert = Gray × w<sub>R</sub></strong></p>
+            <p><strong>⚠️ Radiation Weighting Factors (w<sub>R</sub>):</strong></p>
+            <table style="border-collapse: collapse; width: 100%;">
+                <thead>
+                <tr>
+                    <th style="border: 1px solid #ccc; padding: 8px;">Radiation Type</th>
+                    <th style="border: 1px solid #ccc; padding: 8px;">w<sub>R</sub></th>
+                    <th style="border: 1px solid #ccc; padding: 8px;">1 Gy equals how many Sv?</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td style="border: 1px solid #ccc; padding: 8px;">Gamma rays / X-rays / Beta particles</td>
+                    <td style="border: 1px solid #ccc; padding: 8px;">1</td>
+                    <td style="border: 1px solid #ccc; padding: 8px;">1 Gy = 1 Sv</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #ccc; padding: 8px;">Alpha particles</td>
+                    <td style="border: 1px solid #ccc; padding: 8px;">20</td>
+                    <td style="border: 1px solid #ccc; padding: 8px;">1 Gy = 20 Sv</td>
+                </tr>
+                </tbody>
+            </table>
+            <p>1 Sv: ~5% increased risk, a benchmark for high-dose exposure ()</p>
+            <p>Atomic and Hydrogen bomb explosions releases Alpha, Beta, Gamma and Neutron radiations.</p>
+            </div>
+
+
+      </main>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="bottomArea">
+      <footer class="footerArea">
+        <p>📢 Interested in advertising? We welcome partnerships and sponsors. Get in touch to discuss visibility and collaboration opportunities.</p>
+        <p class="footerDetails">
+          <span>Contact: <a href="mailto:drysoftware1@gmail.com">drysoftware1@gmail.com</a></span>
+        </p>
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    const pageIdVisitorPage = "unit_radiation";
+
+    // Conversion logic for Gamma Rays
+    function convertGamma(name, value) {
+      const conversions = {
+        grayGamma: {
+          grayGamma: value,
+          sievertGamma: value * 1, // W_R = 1 for gamma rays
+          radGamma: value * 100,
+          remGamma: value * 100,
+          cancerRisk: value * 5 // Approx. 5% increased lifetime fatal cancer risk per Sv
+        },
+        sievertGamma: {
+          grayGamma: value * 1,
+          sievertGamma: value,
+          radGamma: value * 100,
+          remGamma: value * 100,
+          cancerRisk: value * 5
+        },
+        radGamma: {
+          grayGamma: value / 100,
+          sievertGamma: value / 100,
+          radGamma: value,
+          remGamma: value * 1,
+          cancerRisk: (value / 100) * 5
+        },
+        remGamma: {
+          grayGamma: value / 100,
+          sievertGamma: value / 100,
+          radGamma: value * 1,
+          remGamma: value,
+          cancerRisk: (value / 100) * 5
+        },
+        cancerRisk: {
+          grayGamma: value / 5,
+          sievertGamma: value / 5,
+          radGamma: (value / 5) * 100,
+          remGamma: (value / 5) * 100,
+          cancerRisk: value
+        }
+      };
+      return conversions[name];
+    }
+
+    // Conversion logic for Alpha Particles
+    function convertAlpha(name, value) {
+      const conversions = {
+        grayAlpha: {
+          grayAlpha: value,
+          sievertAlpha: value * 20, // W_R = 20 for alpha particles
+          radAlpha: value * 100,
+          remAlpha: value * 100 * 20,
+          cancerRisk: value * 20 * 5 // Cancer risk tied to Sv
+        },
+        sievertAlpha: {
+          grayAlpha: value / 20,
+          sievertAlpha: value,
+          radAlpha: (value / 20) * 100,
+          remAlpha: value * 100,
+          cancerRisk: value * 5
+        },
+        radAlpha: {
+          grayAlpha: value / 100,
+          sievertAlpha: (value / 100) * 20,
+          radAlpha: value,
+          remAlpha: value * 20,
+          cancerRisk: (value / 100) * 20 * 5
+        },
+        remAlpha: {
+          grayAlpha: value / (100 * 20),
+          sievertAlpha: value / 100,
+          radAlpha: value / 20,
+          remAlpha: value,
+          cancerRisk: (value / 100) * 5
+        },
+        cancerRisk: {
+          grayAlpha: value / (5 * 20),
+          sievertAlpha: value / 5,
+          radAlpha: (value / (5 * 20)) * 100,
+          remAlpha: (value / 5) * 100,
+          cancerRisk: value
+        }
+      };
+      return conversions[name];
+    }
+
+    // Format numbers dynamically based on magnitude
+    function formatNumber(value) {
+      if (value === 0) return "0";
+      const absValue = Math.abs(value);
+      if (absValue < 1e-6 || absValue > 1e6) {
+        return value.toExponential(5);
+      } else if (absValue < 1) {
+        return parseFloat(value.toFixed(10));
+      } else {
+        return parseFloat(value.toFixed(8));
+      }
+    }
+
+    // Handle input changes
+    function handleRadiationInput(event) {
+      const { name, value } = event.target;
+      const inputs = document.querySelectorAll(".inputFields");
+
+      // Allow empty string, "-", or "-." while typing
+      if (value === "" || value === "-" || value === "-.") {
+        inputs.forEach(input => input.value = "");
+        return;
+      }
+
+      const v = parseFloat(value);
+
+      if (!isNaN(v) && v >= 0 && v <= (name === "cancerRisk" ? 100 : 1000000)) {
+        let results;
+        if (name.includes("Gamma")) {
+          results = convertGamma(name, v);
+          // Update only Gamma inputs and cancer risk
+          document.querySelectorAll(".inputFields[name*='Gamma'], .inputFields[name='cancerRisk']").forEach(input => {
+            input.value = results[input.name] ? formatNumber(results[input.name]) : "";
+          });
+        } else if (name.includes("Alpha")) {
+          results = convertAlpha(name, v);
+          // Update only Alpha inputs and cancer risk
+          document.querySelectorAll(".inputFields[name*='Alpha'], .inputFields[name='cancerRisk']").forEach(input => {
+            input.value = results[input.name] ? formatNumber(results[input.name]) : "";
+          });
+        } else if (name === "cancerRisk") {
+          // Update either Gamma or Alpha group based on last modified group (default to Gamma for simplicity)
+          results = convertGamma(name, v); // Can be toggled to Alpha if preferred
+          document.querySelectorAll(".inputFields[name*='Gamma'], .inputFields[name='cancerRisk']").forEach(input => {
+            input.value = results[input.name] ? formatNumber(results[input.name]) : "";
+          });
+        }
+      } else if (!isNaN(v)) {
+        alert("Enter a valid value");
+        inputs.forEach(input => input.value = "");
+      }
+    }
+
+    // Clear all fields
+    function clearRadiationFields() {
+      document.querySelectorAll(".inputFields").forEach(input => input.value = "");
+    }
+
+    // Add event listeners to inputs
+    document.querySelectorAll(".inputFields").forEach(input => {
+      if (input.name !== "cancerRisk") { // Cancer risk is read-only
+        input.addEventListener("input", handleRadiationInput);
+      }
+    });
+  </script>
+</body>
+</html>
