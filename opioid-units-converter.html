@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Opioid Units Converter</title>
+  <link rel="icon" type="image/x-icon" href="./assets/icons/atom.svg" />
+  <link rel="stylesheet" href="./assets/css/index.css" />
+  <link rel="stylesheet" href="./assets/css/converters.css" />
+</head>
+<body>
+  <div class="mainArea">
+    <div class="topArea">
+      <img src="./assets/icons/meter.svg" class="topIcon" alt="Home" onclick="location.href='./index.html'" />
+      &nbsp;&nbsp;&nbsp;
+      <h2 onclick="location.href='./index.html'">Units Converter</h2>
+    </div>
+
+    <div class="contentArea">
+      <main>
+        <h1 class="formHeader">Opioid Units Converter</h1>
+        <form id="opioidConverterForm" class="formInvestment">
+          <input type="text" class="inputFields" id="morphine" name="morphine" />
+          <label>Morphine (mg)</label><br><br>
+
+          <input type="text" class="inputFields" id="oxycodone" name="oxycodone" />
+          <label>Oxycodone (mg)</label><br><br>
+
+          <input type="text" class="inputFields" id="hydrocodone" name="hydrocodone" />
+          <label>Hydrocodone (mg)</label><br><br>
+
+          <input type="text" class="inputFields" id="tramadol" name="tramadol" />
+          <label>Tramadol (mg)</label><br><br>
+
+          <input type="text" class="inputFields" id="codeine" name="codeine" />
+          <label>Codeine (mg)</label><br><br>
+
+          <input type="text" class="inputFields" id="hydromorphone" name="hydromorphone" />
+          <label>Hydromorphone (mg)</label><br><br>
+
+          <input type="text" class="inputFields" id="fentanyl" name="fentanyl" />
+          <label>Fentanyl (mcg/hr patch)</label><br><br>
+
+          <button class="button101" type="button" onclick="clearOpioidFields()">Clear</button>
+        </form>
+      </main>
+    </div>
+
+    <div class="bottomArea">
+      <footer class="footerArea">
+        <p>📢 Interested in advertising? We welcome partnerships and sponsors. Get in touch to discuss visibility and collaboration opportunities.</p>
+        <p class="footerDetails">
+          <span>Contact: <a href="mailto:drysoftware1@gmail.com">drysoftware1@gmail.com</a></span>
+        </p>
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    const conversionFactors = {
+      morphine: 5,
+      oxycodone: 3.3,
+      hydrocodone: 5,
+      tramadol: 50,
+      codeine: 33.33,
+      hydromorphone: 1.25,
+      fentanyl: 2
+    };
+
+    function convertOpioids(name, rawValue) {
+      const clean = rawValue.replace(",", ".").trim();
+      const value = parseFloat(clean);
+      if (isNaN(value) || value < 0) return null;
+
+      const spuValue = value / conversionFactors[name];
+      const result = {};
+      for (const key in conversionFactors) {
+        result[key] = parseFloat((spuValue * conversionFactors[key]).toFixed(4));
+      }
+
+      return result;
+    }
+
+    function handleOpioidInput(e) {
+      const { name, value } = e.target;
+      const results = convertOpioids(name, value);
+      if (!results) return;
+
+      document.querySelectorAll(".inputFields").forEach(input => {
+        input.value = results[input.name] ?? "";
+      });
+    }
+
+    function clearOpioidFields() {
+      document.querySelectorAll(".inputFields").forEach(input => input.value = "");
+    }
+
+    document.querySelectorAll(".inputFields").forEach(input =>
+      input.addEventListener("input", handleOpioidInput)
+    );
+  </script>
+</body>
+</html>
