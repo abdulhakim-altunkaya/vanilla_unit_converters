@@ -1,28 +1,5 @@
 Comment section
 seo tags
-
-
-
-
-Angle Units Converter
-Why Add It? Angle conversions are useful in mathematics, navigation, astronomy, and engineering, complementing your length and area converters for geometric applications.
-Units to Include:
-Degree (°)
-Radian (rad)
-Gradian (grad)
-Arcminute (')
-Arcsecond (")
-Turn (full circle)
-Use Case: Useful for navigators, astronomers, or students converting between radians and degrees in trigonometry.
-Implementation Notes: Simple conversions (e.g., 1 rad ≈ 57.2957795°, 1 turn = 360°). Ensure precision for small units like arcseconds.
-Frequency Units Converter
-Why Add It? Frequency is key in physics, audio engineering, and electronics, pairing with your time converter (e.g., for period calculations).
-Units to Include:
-Hertz (Hz)
-Kilohertz (kHz)
-Megahertz (MHz)
-Gigahertz (GHz)
-Revolutions per minute (RPM)
-Cycles per second (cps, equivalent to Hz)
-Use Case: Useful for engineers working with radio frequencies, musicians analyzing sound, or mechanics calculating RPM.
-Implementation Notes: Straightforward conversions (e.g., 1 Hz = 60 RPM, 1 MHz = 10⁶ Hz). Handle high frequencies with appropriate formatting.
+check decimals: 0.5 and 1.5 
+make sure decimals can have 4 numbers after comma 
+l

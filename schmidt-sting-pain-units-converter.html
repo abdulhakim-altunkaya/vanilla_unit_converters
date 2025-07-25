@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Schmidt Sting Pain Index Converter</title>
+  <link rel="icon" type="image/x-icon" href="./assets/icons/pain.svg">
+  <link rel="stylesheet" href="./assets/css/index.css">
+  <link rel="stylesheet" href="./assets/css/converters.css">
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+  <div class="mainArea">
+    <!-- TOP AREA -->
+    <div class="topArea">
+      <img src="./assets/icons/meter.svg" class="topIcon" alt="Clickable Homepage unit converter" 
+        onclick="location.href='./index.html'" />
+      &nbsp;&nbsp;&nbsp;
+      <h2 onclick="location.href='./index.html'">Units Converter</h2>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="contentArea">
+      <main>
+        <h1 class="formHeader">Schmidt Sting Pain Index Converter</h1>
+        <form id="schmidtConverterForm" class="formInvestment">
+          <input type="number" class="inputFields" id="schmidt" name="schmidt" min="0" max="4" step="any" />
+          <label>Schmidt Pain Index (0–4)</label><br><br>
+          <input type="number" class="inputFields" id="sweatBee" name="sweatBee" min="0" max="1000" step="any" />
+          <label>Bee Stings</label><br><br>
+          <input type="number" class="inputFields" id="fireAnt" name="fireAnt" min="0" max="1000" step="any" />
+          <label>Fire Ant Stings</label><br><br>
+          <input type="number" class="inputFields" id="europeanHornet" name="europeanHornet" min="0" max="1000" step="any" />
+          <label>European Hornet Stings</label><br><br>
+          <input type="number" class="inputFields" id="paperWasp" name="paperWasp" min="0" max="1000" step="any" />
+          <label>Paper Wasp Stings</label><br><br>
+          <input type="number" class="inputFields" id="harvesterAnt" name="harvesterAnt" min="0" max="1000" step="any" />
+          <label>Red Harvester Ant Stings</label><br><br>
+          <input type="number" class="inputFields" id="tarantulaHawk" name="tarantulaHawk" min="0" max="1000" step="any" />
+          <label>Tarantula Hawk Stings</label><br><br>
+          <input type="number" class="inputFields" id="bulletAnt" name="bulletAnt" min="0" max="1000" step="any" />
+          <label>Bullet Ant Stings</label><br><br>
+          <input type="number" class="inputFields" id="executionerWasp" name="executionerWasp" min="0" max="1000" step="any" />
+          <label>Executioner Wasp Stings</label><br><br>
+          <input type="number" class="inputFields" id="scorpionSting" name="scorpionSting" min="0" max="1000" step="any" />
+          <label>Scorpion Sting (Arizona Bark)</label><br><br>
+          <input type="number" class="inputFields" id="electricShock" name="electricShock" min="0" max="1000" step="any" />
+          <label>Electric Shock (Low-Voltage Taser)</label><br><br>
+          <input type="number" class="inputFields" id="bulletWound" name="bulletWound" min="0" max="1000" step="any" />
+          <label>Bullet Wound (Non-Fatal Limb Shot)</label><br><br>
+          <button class="button101" type="button" onclick="clearSchmidtFields()">Clear</button>
+        </form>
+
+        <div style="margin-top: 30px; padding: 15px; border: 1px solid #ccc; border-radius: 5px; background: #f9f9f9;">
+            <h3>Schmidt Sting Pain Index Conversion Explanation</h3>
+            <p>Pain is measured on the Schmidt Sting Pain Index (0–4), with conversions to equivalent stings/shocks/wounds.</p>
+            <p>The Schmidt Sting Pain Index, developed by entomologist Justin O. Schmidt, 
+                rates the pain of insect stings on a scale from 0 (no pain) to 4 (intense pain), 
+                based on personal experience with hymenopteran insects like bees, wasps, and ants. 
+                This converter includes additional units—scorpion sting, electric shock, 
+                and bullet wound—for comparative purposes, though not part of Schmidt’s original 
+                index. Each unit has an approximate Schmidt rating: Sweat Bee and Fire Ant (~1), 
+                European Hornet (~2), Paper Wasp and Red Harvester Ant (~3), Tarantula Hawk, 
+                Bullet Ant, Executioner Wasp, Electric Shock, and Bullet Wound (~4), 
+                and Scorpion Sting (~3.5). Pain perception is subjective, varying by individual, 
+                sting location, and context.</p>
+
+            <p>The converter translates pain levels between the Schmidt Pain 
+                Index (0–4) and equivalent numbers of stings, shocks, or wounds. For example, 
+                entering 1 Bullet Wound equates to a Schmidt rating of 4, which converts to 4 Sweat 
+                Bee stings, 2 European Hornet stings, or 1 Bullet Ant sting. Input in any field 
+                updates all others, with the Schmidt value capped at 4 and unit inputs limited 
+                to 1000 to ensure practical conversions. The system supports decimal inputs 
+                (e.g., 0.5 Bullet Ant = 2 Schmidt) to allow precise comparisons of pain intensity.</p>
+
+          <p><strong>Note:</strong> Pain is subjective and varies by individual, location, and context. Scorpion Sting, Electric Shock, and Bullet Wound are not part of Schmidt’s original index but included for comparison.</p>
+        </div>
+      </main>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="bottomArea">
+      <footer class="footerArea">
+        <p>📢 Interested in advertising? We welcome partnerships and sponsors. Get in touch to discuss visibility and collaboration opportunities.</p>
+        <p class="footerDetails">
+          <span>Contact: <a href="mailto:drysoftware1@gmail.com">drysoftware1@gmail.com</a></span>
+        </p>
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    const pageIdVisitorPage = "unit_schmidt_pain";
+
+    // Conversion logic
+    function convertSchmidt(name, value) {
+      const ratings = {
+        sweatBee: 1,
+        fireAnt: 1,
+        europeanHornet: 2,
+        paperWasp: 3,
+        harvesterAnt: 3,
+        tarantulaHawk: 4,
+        bulletAnt: 4,
+        executionerWasp: 4,
+        scorpionSting: 3.5,
+        electricShock: 4,
+        bulletWound: 4
+      };
+
+      let schmidtValue = name === "schmidt" ? value : value * ratings[name];
+      schmidtValue = Math.min(schmidtValue, 4); // Cap at 4
+
+      const conversions = {
+        schmidt: schmidtValue,
+        sweatBee: schmidtValue / 1,
+        fireAnt: schmidtValue / 1,
+        europeanHornet: schmidtValue / 2,
+        paperWasp: schmidtValue / 3,
+        harvesterAnt: schmidtValue / 3,
+        tarantulaHawk: schmidtValue / 4,
+        bulletAnt: schmidtValue / 4,
+        executionerWasp: schmidtValue / 4,
+        scorpionSting: schmidtValue / 3.5,
+        electricShock: schmidtValue / 4,
+        bulletWound: schmidtValue / 4
+      };
+
+      return conversions;
+    }
+
+    // Format numbers dynamically based on magnitude
+    function formatNumber(value) {
+        if (value === 0) return "0";
+        const absValue = Math.abs(value);
+        if (absValue < 1e-6 || absValue > 1e6) {
+            return value.toExponential(2);
+        } else {
+            return parseFloat(value.toFixed(4));
+        }
+    }
+
+    // Handle input changes
+    function handleSchmidtInput(event) {
+        const { name, value } = event.target;
+        const inputs = document.querySelectorAll(".inputFields");
+
+        const v = parseFloat(value);
+
+        if (!isNaN(v) && v >= 0 && v <= (name === "schmidt" ? 4 : 1000)) {
+            const results = convertSchmidt(name, v);
+            inputs.forEach(input => {
+                input.value = results[input.name] ? formatNumber(results[input.name]) : "";
+            });
+        }
+    }
+
+
+    // Clear all fields
+    function clearSchmidtFields() {
+      document.querySelectorAll(".inputFields").forEach(input => input.value = "");
+    }
+
+    // Add event listeners to inputs
+    document.querySelectorAll(".inputFields").forEach(input => {
+      input.addEventListener("input", handleSchmidtInput);
+    });
+  </script>
+</body>
+</html>
