@@ -1,5 +1,9 @@
-Comment section
+Netlify purchase
+Namecheap purchase
+Netlify-Namecheap connection
+Visitor log system
 seo tags
-check decimals: 0.5 and 1.5 
-make sure decimals can have 4 numbers after comma 
-l
+Add one more technical converter
+Add two more medical converter
+sitemap and robots create
+Move js to their respective files
