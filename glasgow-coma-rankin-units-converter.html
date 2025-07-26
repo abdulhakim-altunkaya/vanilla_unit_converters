@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Glasgow Coma Scale to Modified Rankin Scale Converter</title>
+  <link rel="icon" type="image/x-icon" href="./assets/icons/medical.svg">
+  <link rel="stylesheet" href="./assets/css/index.css">
+  <link rel="stylesheet" href="./assets/css/converters.css">
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+  <div class="mainArea">
+    <!-- TOP AREA -->
+    <div class="topArea">
+      <img src="./assets/icons/meter.svg" class="topIcon" alt="Clickable Homepage unit converter" 
+        onclick="location.href='./index.html'" />
+      &nbsp;&nbsp;&nbsp;
+      <h2 onclick="location.href='./index.html'">Units Converter</h2>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="contentArea">
+      <main>
+        <h1 class="formHeader">Glasgow Coma Scale to Modified Rankin Scale Converter</h1>
+<form id="gcsMrsConverterForm" class="formInvestment">
+
+  <input type="number" class="inputFields" id="eye" name="eye" min="1" max="4" step="1" />
+  <label for="eye">Eye Response (1–4)</label>
+  <br><br>
+
+  <input type="number" class="inputFields" id="verbal" name="verbal" min="1" max="5" step="1" />
+  <label for="verbal">Verbal Response (1–5)</label>
+  <br><br>
+  
+  <input type="number" class="inputFields" id="motor" name="motor" min="1" max="6" step="1" />
+  <label for="motor">Motor Response (1–6)</label>
+  <br><br>
+
+  <input type="number" class="inputFields" id="gcs" name="gcs" readonly />
+  <label for="gcs">Total GCS (3–15)</label>
+  <br><br>
+
+  <input type="text" class="inputFields" id="gcsCategory" name="gcsCategory" readonly />
+  <label for="gcsCategory">GCS Category</label>
+  <br><br>
+
+  <input type="text" class="inputFields" id="mrs" name="mrs" readonly />
+  <label for="mrs">Modified Rankin Scale (0–6)</label>
+  <br><br>
+
+  <button class="button101" type="button" onclick="clearGcsMrsFields()">Clear</button>
+</form>
+
+
+        <div style="margin-top: 30px; padding: 15px; border: 1px solid #ccc; border-radius: 5px; background: #f9f9f9;">
+          <h3>Glasgow Coma Scale to Modified Rankin Scale Conversion Explanation</h3>
+          <p>The Glasgow Coma Scale (GCS) assesses a patient’s level of consciousness on a scale 
+            from 3 (deep coma) to 15 (fully alert), based on three components: Eye Response (1–4), 
+            Verbal Response (1–5), and Motor Response (1–6). It is widely used in acute settings 
+            like traumatic brain injury or stroke. The Modified Rankin Scale (mRS) measures 
+            functional disability from 0 (no symptoms) to 6 (death), focusing on long-term outcomes. 
+            This converter correlates GCS scores with approximate mRS scores to estimate functional 
+            impact, though outcomes vary by individual and condition.</p>
+          <p>The converter calculates the total GCS score by summing Eye, Verbal, and Motor responses 
+            or accepting a direct GCS input (3–15, decimals allowed for partial scores). GCS is categorized 
+            as Severe (3–8), Moderate (9–12), or Mild (13–15). Based on clinical correlations, GCS 
+            scores map to mRS: GCS 15 ≈ mRS 0–1 (no/minimal disability), 13–14 ≈ mRS 1–2, 
+            9–12 ≈ mRS 3–4, 6–8 ≈ mRS 4–5, and 3–5 ≈ mRS 5–6. Input in any editable field 
+            updates all others, with integer inputs for components and a read-only mRS output
+             including a description (e.g., “3: Moderate disability”).</p>
+        </div>
+      </main>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="bottomArea">
+      <footer class="footerArea">
+        <p>📢 Interested in advertising? We welcome partnerships and sponsors. Get in touch to discuss visibility and collaboration opportunities.</p>
+        <p class="footerDetails">
+          <span>Contact: <a href="mailto:drysoftware1@gmail.com">drysoftware1@gmail.com</a></span>
+        </p>
+      </footer>
+    </div>
+  </div>
+
+<script>
+function calculateGCS() {
+  const eye = parseInt(document.getElementById("eye").value) || 0;
+  const verbal = parseInt(document.getElementById("verbal").value) || 0;
+  const motor = parseInt(document.getElementById("motor").value) || 0;
+
+  const total = eye + verbal + motor;
+
+  if (eye && verbal && motor) return total;
+  return null;
+}
+
+function categorizeGCS(gcs) {
+  if (gcs <= 8) return "Severe (3–8)";
+  if (gcs <= 12) return "Moderate (9–12)";
+  return "Mild (13–15)";
+}
+
+function mapGcsToMrs(gcs) {
+  if (gcs >= 15) return "0: No symptoms";
+  if (gcs >= 13) return "1: No significant disability";
+  if (gcs >= 11) return "2: Slight disability";
+  if (gcs >= 9) return "3: Moderate disability; needs some help";
+  if (gcs >= 6) return "4: Moderately severe; assistance needed";
+  if (gcs >= 4) return "5: Severe; bedridden, needs constant care";
+  return "6: Dead";
+}
+
+function handleGcsMrsInput() {
+  const gcs = calculateGCS();
+
+  if (gcs !== null && gcs >= 3 && gcs <= 15) {
+    document.getElementById("gcs").value = gcs;
+    document.getElementById("gcsCategory").value = categorizeGCS(gcs);
+    document.getElementById("mrs").value = mapGcsToMrs(gcs);
+  } else {
+    document.getElementById("gcs").value = "";
+    document.getElementById("gcsCategory").value = "";
+    document.getElementById("mrs").value = "";
+  }
+}
+
+function clearGcsMrsFields() {
+  document.querySelectorAll(".inputFields").forEach(input => {
+    input.value = "";
+  });
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".inputFields:not([readonly])").forEach(input => {
+    input.addEventListener("input", handleGcsMrsInput);
+  });
+});
+</script>
+
+</body>
+</html>
