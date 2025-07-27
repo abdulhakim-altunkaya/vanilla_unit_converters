@@ -3,10 +3,12 @@ DEPLOYMENT: Namecheap purchase
 DEPLOYMENT: Netlify-Namecheap connection
 
 SEO: Add JSON-LD
-SEO: Add description and keywords tags
 SEO: Create sitemap and robots
 
 Visitor log system
 Add one more technical converter
 Add two more medical converter
 Move js to their respective files
+
+DONE:
+Add description and keywords tags
