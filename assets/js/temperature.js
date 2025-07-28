@@ -1,11 +1,13 @@
 
-    const pageIdVisitorPage = "unit_temperature";
-    /*
-    document.addEventListener("DOMContentLoaded", function() {
-      axios.post(`/serversavevisitor/${pageIdVisitorPage}`, {})
-        .catch(error => console.error('Error logging visit:', error.message));
-    });
-    */
+    const pageIdVisitorPage = "temperature";
+    document.addEventListener("DOMContentLoaded", async function() {
+      try {
+          await axios.post(`/api/save-visitor/units?sectionName=${pageIdVisitorPage}`, {});
+          
+      } catch (error) {
+          console.error('Error logging visit:', error.message);
+      }
+  });
 
     function convertTemperature(name, value) {
       const v = parseFloat(value);

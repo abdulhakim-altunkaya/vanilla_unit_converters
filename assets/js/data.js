@@ -1,12 +1,15 @@
 
-    const pageIdVisitorPage = "unit_data_storage";
+    const pageIdVisitorPage = "data";
 
-    /*
-    document.addEventListener("DOMContentLoaded", function() {
-      axios.post(`/serversavevisitor/${pageIdVisitorPage}`, {})
-        .catch(error => console.error('Error logging visit:', error.message));
-    });
-    */
+    
+  document.addEventListener("DOMContentLoaded", async function() {
+      try {
+          await axios.post(`/api/save-visitor/units?sectionName=${pageIdVisitorPage}`, {});
+          
+      } catch (error) {
+          console.error('Error logging visit:', error.message);
+      }
+  });
 
     // Conversion logic
     function convertDataStorage(name, value) {

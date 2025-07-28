@@ -1,6 +1,14 @@
 
-    const pageIdVisitorPage = "unit_schmidt_pain";
+    const pageIdVisitorPage = "sting";
 
+    document.addEventListener("DOMContentLoaded", async function() {
+      try {
+          await axios.post(`/api/save-visitor/units?sectionName=${pageIdVisitorPage}`, {});
+          
+      } catch (error) {
+          console.error('Error logging visit:', error.message);
+      }
+  });
     // Conversion logic
     function convertSchmidt(name, value) {
       const ratings = {

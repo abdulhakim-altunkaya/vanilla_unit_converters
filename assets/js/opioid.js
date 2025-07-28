@@ -1,5 +1,16 @@
 
-    const conversionFactors = {
+const pageIdVisitorPage = "opioid";
+
+  document.addEventListener("DOMContentLoaded", async function() {
+      try {
+          await axios.post(`/api/save-visitor/units?sectionName=${pageIdVisitorPage}`, {});
+          
+      } catch (error) {
+          console.error('Error logging visit:', error.message);
+      }
+  });
+
+   const conversionFactors = {
       morphine: 5,
       oxycodone: 3.3,
       hydrocodone: 5,

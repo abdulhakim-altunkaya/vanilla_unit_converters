@@ -1,13 +1,17 @@
 
-    const pageIdVisitorPage = "unit_frequency";
 
-    /*
-    document.addEventListener("DOMContentLoaded", function() {
-      axios.post(`/serversavevisitor/${pageIdVisitorPage}`, {})
-        .catch(error => console.error('Error logging visit:', error.message));
-    });
-    */
+    const pageIdVisitorPage = "frequency";
 
+    
+  document.addEventListener("DOMContentLoaded", async function() {
+      try {
+          await axios.post(`/api/save-visitor/units?sectionName=${pageIdVisitorPage}`, {});
+          
+      } catch (error) {
+          console.error('Error logging visit:', error.message);
+      }
+  });
+    
     // Conversion logic
     function convertFrequency(name, value) {
       const conversions = {

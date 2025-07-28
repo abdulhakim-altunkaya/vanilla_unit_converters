@@ -1,12 +1,14 @@
 
-    const pageIdVisitorPage = "unit_power";
+    const pageIdVisitorPage = "power";
 
-    /*
-    document.addEventListener("DOMContentLoaded", function() {
-      axios.post(`/serversavevisitor/${pageIdVisitorPage}`, {})
-        .catch(error => console.error('Error logging visit:', error.message));
-    });
-    */
+    document.addEventListener("DOMContentLoaded", async function() {
+      try {
+          await axios.post(`/api/save-visitor/units?sectionName=${pageIdVisitorPage}`, {});
+          
+      } catch (error) {
+          console.error('Error logging visit:', error.message);
+      }
+  });
 
     // Conversion logic
     function convertPower(name, value) {

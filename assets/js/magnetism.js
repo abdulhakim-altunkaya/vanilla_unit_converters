@@ -1,4 +1,14 @@
-    const pageIdVisitorPage = "unit_magnetic";
+    const pageIdVisitorPage = "magnetism";
+
+    
+  document.addEventListener("DOMContentLoaded", async function() {
+      try {
+          await axios.post(`/api/save-visitor/units?sectionName=${pageIdVisitorPage}`, {});
+          
+      } catch (error) {
+          console.error('Error logging visit:', error.message);
+      }
+  });
 
     // Reference values in Tesla
     const REFERENCE_VALUES = {

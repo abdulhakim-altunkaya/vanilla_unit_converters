@@ -6,9 +6,10 @@ SEO: Add JSON-LD
 SEO: Create sitemap and robots
 
 Visitor log system
-Add one more technical converter
-Add two more medical converter
-Move js to their respective files
+
 
 DONE:
 Add description and keywords tags
+Add one more technical converter
+Add two more medical converter
+Move js to their respective files

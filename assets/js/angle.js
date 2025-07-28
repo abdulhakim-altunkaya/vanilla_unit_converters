@@ -1,12 +1,15 @@
 
-    const pageIdVisitorPage = "unit_angle";
+    const pageIdVisitorPage = "angle";
 
-    /*
-    document.addEventListener("DOMContentLoaded", function() {
-      axios.post(`/serversavevisitor/${pageIdVisitorPage}`, {})
-        .catch(error => console.error('Error logging visit:', error.message));
-    });
-    */
+    
+  document.addEventListener("DOMContentLoaded", async function() {
+      try {
+          await axios.post(`/api/save-visitor/units?sectionName=${pageIdVisitorPage}`, {});
+          
+      } catch (error) {
+          console.error('Error logging visit:', error.message);
+      }
+  });
 
     // Conversion logic
     function convertAngle(name, value) {

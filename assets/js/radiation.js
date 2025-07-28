@@ -1,5 +1,14 @@
 
-    const pageIdVisitorPage = "unit_radiation";
+    const pageIdVisitorPage = "radiation";
+  
+  document.addEventListener("DOMContentLoaded", async function() {
+      try {
+          await axios.post(`/api/save-visitor/units?sectionName=${pageIdVisitorPage}`, {});
+          
+      } catch (error) {
+          console.error('Error logging visit:', error.message);
+      }
+  });
 
     // Conversion logic for Gamma Rays
     function convertGamma(name, value) {
