@@ -48,16 +48,21 @@
         padding: 0;
         font-size: 34px;
         margin-top: 0; /* Remove default h2 margin */
-        font-family: "Tourney", sans-serif;
+        font-family: "Tourney", "Baumans", sans-serif;
         font-weight: bold;
         cursor: pointer;
     }
+    .subHeader {
+        font-family: "Ubuntu", sans-serif;
+        font-size: 23px;
+        font-style: italic;
+    }
     .topIcon {
-        width: 40px;
+        width: 90px;
         cursor: pointer;
     }
     .topArea {
-        padding: 20px;
+        padding: 10px;
         color: black;
         text-align: center;
         background-image: linear-gradient(to right top, #c5f1f4, #aae1f5);
@@ -115,7 +120,7 @@
 
     .topArea {
         padding: 10px;
-        background-color: #4172e6;
+        background-image: linear-gradient(to right top, #c5f1f4, #aae1f5);
         color: white;
         display: flex;
         justify-content: center;
@@ -132,8 +137,14 @@
         padding: 0;
         font-size: 25px;
         margin-top: 0; /* Remove default h2 margin */
-        color: white;
-        font-family:"Baumans" ;
+        color: black;
+        font-family: "Tourney", "Baumans", sans-serif;
+    }
+    .subHeader {
+        font-family: "Ubuntu", sans-serif;
+        font-size: 18px;
+        color: rgb(15, 66, 4);
+        font-style: italic;
     }
     .contentArea {
         padding: 15px;

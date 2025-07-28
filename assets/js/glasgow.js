@@ -1,3 +1,52 @@
+// Validate Eye Input (1-4)
+function validateEye() {
+  const eyeInput = document.getElementById("eye");
+  let value = parseInt(eyeInput.value);
+  
+  if (isNaN(value)) {
+    alert("Enter 1-4 for eye response");
+    document.getElementById("eye").value ="";
+  } 
+  if (value < 1 || value > 4) {
+    alert("Enter 1-4 for eye response");
+    document.getElementById("eye").value ="";
+  } 
+}
+
+// Validate Verbal Input (1-5)
+function validateVerbal() {
+  const verbalInput = document.getElementById("verbal");
+  let value = parseInt(verbalInput.value);
+  
+  if (isNaN(value)) {
+    alert("Enter 1-5 for verbal response");
+    document.getElementById("verbal").value ="";
+  } 
+  if (value < 1 || value > 5) {
+    alert("Enter 1-5 for verbal response");
+    document.getElementById("verbal").value ="";
+  } 
+}
+
+// Validate Motor Input (1-6)
+function validateMotor() {
+  const motorInput = document.getElementById("motor");
+  let value = parseInt(motorInput.value);
+  
+  if (isNaN(value)) {
+    alert("Enter 1-6 for motor response");
+    document.getElementById("motor").value ="";
+  } 
+  if (value < 1 || value > 6) {
+    alert("Enter 1-6 for motor response");
+    document.getElementById("motor").value ="";
+  } 
+}
+
+// Add event listeners
+document.getElementById("eye").addEventListener("input", validateEye);
+document.getElementById("verbal").addEventListener("input", validateVerbal);
+document.getElementById("motor").addEventListener("input", validateMotor);
 
 function calculateGCS() {
   const eye = parseInt(document.getElementById("eye").value) || 0;
@@ -7,23 +56,23 @@ function calculateGCS() {
   const total = eye + verbal + motor;
 
   if (eye && verbal && motor) return total;
-  return null;
-}
+    return null;
+  }
 
-function categorizeGCS(gcs) {
-  if (gcs <= 8) return "Severe (3–8)";
-  if (gcs <= 12) return "Moderate (9–12)";
-  return "Mild (13–15)";
-}
+  function categorizeGCS(gcs) {
+    if (gcs <= 8) return "Severe (3–8)";
+    if (gcs <= 12) return "Moderate (9–12)";
+    return "Mild (13–15)";
+  }
 
 function mapGcsToMrs(gcs) {
-  if (gcs >= 15) return "0: No symptoms";
-  if (gcs >= 13) return "1: No significant disability";
-  if (gcs >= 11) return "2: Slight disability";
-  if (gcs >= 9) return "3: Moderate disability; needs some help";
-  if (gcs >= 6) return "4: Moderately severe; assistance needed";
-  if (gcs >= 4) return "5: Severe; bedridden, needs constant care";
-  return "6: Dead";
+  if (gcs >= 15) return "No symptoms (0)";
+  if (gcs >= 13) return "No significant disability (1)";
+  if (gcs >= 11) return "Slight disability (2)";
+  if (gcs >= 9) return "Moderate disability; needs some help (3)";
+  if (gcs >= 6) return "Moderately severe; assistance needed (4)";
+  if (gcs >= 4) return "Severe; bedridden, needs constant care (5)";
+  return "Dead (6)";
 }
 
 function handleGcsMrsInput() {
@@ -31,12 +80,12 @@ function handleGcsMrsInput() {
 
   if (gcs !== null && gcs >= 3 && gcs <= 15) {
     document.getElementById("gcs").value = gcs;
-    document.getElementById("gcsCategory").value = categorizeGCS(gcs);
-    document.getElementById("mrs").value = mapGcsToMrs(gcs);
+    document.getElementById("gcsCategory").innerHTML = categorizeGCS(gcs);
+    document.getElementById("mrs").innerHTML = mapGcsToMrs(gcs);
   } else {
     document.getElementById("gcs").value = "";
-    document.getElementById("gcsCategory").value = "";
-    document.getElementById("mrs").value = "";
+    document.getElementById("gcsCategory").innerHTML = "";
+    document.getElementById("mrs").innerHTML = "";
   }
 }
 
