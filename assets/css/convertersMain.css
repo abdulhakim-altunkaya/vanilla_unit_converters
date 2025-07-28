@@ -18,6 +18,9 @@
         font-weight: 400;
         font-size: 22px;
     }
+    .separationContainerSmallScreen {
+        display: none;
+    }
     .convertersMain{   
         margin: 12px;
     }    
@@ -79,7 +82,23 @@
         justify-content: center;
         align-items: center;
     }
-    
+    .separationContainer {
+        display: none;
+    }
+    .separationContainerSmallScreen {
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .separationContainerSmallScreen h4 {
+        font-family: "Pattaya", sans-serif;
+        font-weight: 400;
+        font-size: 22px;
+    }
     .convertersIconsMainArea {
         display: flex;
         flex-direction: column;

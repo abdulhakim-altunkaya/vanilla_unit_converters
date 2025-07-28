@@ -1,6 +1,6 @@
 
 @media (min-width: 781px) {
-        .group {
+    .group {
       margin-bottom: 20px;
       padding: 10px;
       border: 1px solid #ccc;
@@ -44,5 +44,47 @@
     }
 }
 @media (max-width: 780px) {
-
+    .group {
+      margin-bottom: 20px;
+      padding: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .group h3 {
+      margin-top: 0;
+      font-size: 20px;
+      color: #333;
+    }
+    .magneticTitle {
+      font-size: 18px;
+      color: #555;
+      margin-bottom: 10px;
+    }
+    .example-item {
+      margin: 5px 0;
+      padding: 8px;
+      background: #f0f0f0;
+      border-radius: 4px;
+    }
+    .radiationTitle {
+        font-size: 1px;
+        color: #555;
+        margin-bottom: 8px;
+    }
+    .radiationNoteArea {
+        margin-top: 20px; 
+        padding: 8px; 
+        border: 1px solid #ccc; 
+        border-radius: 5px; 
+        background: #f9f9f9;
+    }
+    .radiationTable {
+        border-collapse: collapse; 
+        width: 100%;
+    }
+    .radiationNotesCell {
+        border: 1px solid #ccc; 
+        padding: 20px;
+        font-size: 14px;
+    }
 }

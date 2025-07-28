@@ -123,6 +123,10 @@
         text-align: center;
         box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
     }
+    .topIcon {
+        width: 40px;
+        cursor: pointer;
+    }
     .topArea h2 {
         margin: 0;
         padding: 0;

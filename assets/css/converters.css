@@ -6,17 +6,13 @@
     .formInvestment button {
         margin-left: 12px;
     }
-    .resultAreaInvestment {
-        margin-top: 20px;
-        margin-left: 12px;
-    }
+
     .button101{
         width: 120px;
         height: 40px;
         font-size: 20px;
         background-color: red;
         color: white;
-        font-size: 20px;
         font-family: "Fredoka One", sans-serif;
         border-radius: 7px;
         padding: 5px;
@@ -70,12 +66,7 @@
     .formInvestment button {
         margin-left: 12px;
     }
-    .resultAreaInvestment {
-        margin-top: 20px;
-        padding-left: 12px;
-        padding-right: 12px;
-        font-size: 18px;
-    }
+
     /*<button class="button1">COPY ME</button>*/
     @import url('https://fonts.googleapis.com/css2?family=Days+One&display=swap');
     .button101{
@@ -84,7 +75,6 @@
         font-size: 18px;
         background-color: red;
         color: white;
-        font-size: 22px;
         font-family: "Fredoka One", sans-serif;
         border-radius: 7px;
         padding: 5px;
@@ -102,7 +92,8 @@
         width: 130px;
         margin-left: 12px;
         border-radius: 5px;
-        font-size: 20px;
+        padding: 2px;
+        font-size: 16px;
     }
     .inputFields:focus {
         background-color: lightsalmon;
