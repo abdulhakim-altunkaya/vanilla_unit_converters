@@ -1,33 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset 
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
-    <loc>https://einsteincalculators.com/</loc>
-    <priority>1.00</priority>
+    <loc>https://unitzap.space/index.html</loc>
+    <priority>1.0</priority>
   </url>
 
-  <url>
-    <loc>https://einsteincalculators.com/length-contraction.html</loc>
-  </url>
-
-  <url>
-    <loc>https://einsteincalculators.com/mass-energy-converter.html</loc>
-  </url>
-
-  <url>
-    <loc>https://einsteincalculators.com/relativistic-kinetic-energy.html</loc>
-  </url>
-
-  <url>
-    <loc>https://einsteincalculators.com/relativistic-mass-calculator.html</loc>
-  </url>
-
-  <url>
-    <loc>https://einsteincalculators.com/time-dilation.html</loc>
-  </url>
-
-  <url>
-    <loc>https://einsteincalculators.com/gravitational-time-dilation.html</loc>
-  </url>
+  <url><loc>https://unitzap.space/weight-units-converter.html</loc></url>
+  <url><loc>https://unitzap.space/length-units-converter.html</loc></url>
+  <url><loc>https://unitzap.space/temperature-units-converter.html</loc></url>
+  <url><loc>https://unitzap.space/area-units-converter.html</loc></url>
+  <url><loc>https://unitzap.space/volume-units-converter.html</loc></url>
+  <url><loc>https://unitzap.space/time-units-converter.html</loc></url>
+  <url><loc>https://unitzap.space/energy-units-converter.html</loc></url>
+  <url><loc>https://unitzap.space/power-units-converter.html</loc></url>
+  <url><loc>https://unitzap.space/pressure-units-converter.html</loc></url>
+  <url><loc>https://unitzap.space/data-storage-units-converter.html</loc></url>
+  <url><loc>https://unitzap.space/angle-units-converter.html</loc></url>
+  <url><loc>https://unitzap.space/frequency-units-converter.html</loc></url>
+  <url><loc>https://unitzap.space/radiation-units-converter.html</loc></url>
+  <url><loc>https://unitzap.space/magnetic-units-converter.html</loc></url>
+  <url><loc>https://unitzap.space/opioid-units-converter.html</loc></url>
+  <url><loc>https://unitzap.space/painkiller-units-converter.html</loc></url>
+  <url><loc>https://unitzap.space/schmidt-sting-pain-units-converter.html</loc></url>
+  <url><loc>https://unitzap.space/glasgow-coma-rankin-units-converter.html</loc></url>
 
 </urlset>
