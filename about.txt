@@ -1,6 +1,4 @@
 SEO: Add JSON-LD
-Visitor log system
-
 
 DONE:
 Add description and keywords tags
@@ -9,6 +7,7 @@ DEPLOYMENT: Netlify purchase
 DEPLOYMENT: Namecheap purchase
 DEPLOYMENT: Netlify-Namecheap connection
 SEO: Create sitemap and robots
+Visitor log system
 
 DEFERRED:
 Add one more technical converter
