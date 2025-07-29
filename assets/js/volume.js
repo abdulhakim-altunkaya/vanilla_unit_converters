@@ -4,7 +4,7 @@
 
     document.addEventListener("DOMContentLoaded", async function() {
       try {
-          await axios.post(`/api/save-visitor/units?sectionName=${pageIdVisitorPage}`, {});
+          await axios.post(`https://www.eumaps.org/api/save-visitor/units?sectionName=${pageIdVisitorPage}`, {});
           
       } catch (error) {
           console.error('Error logging visit:', error.message);
