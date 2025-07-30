@@ -1,0 +1,52 @@
+
+{
+  "@context": "https://schema.org",
+  "@type": ["WebApplication", "MedicalTool"],
+  "name": "Glasgow Coma Scale to Modified Rankin Scale Converter",
+  "url": "https://unitzap.space/glasgow-coma-rankin-units-converter.html",
+  "description": "Convert GCS scores to Modified Rankin Scale for neurological assessment. Essential tool for neurologists and emergency medicine professionals.",
+  "applicationCategory": ["MedicalApplication", "ClinicalTool"],
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "creator": {
+    "@type": "Organization",
+    "name": "UnitZap",
+    "url": "https://unitzap.space"
+  },
+  "healthCondition": {
+    "@type": "MedicalCondition",
+    "name": "Neurological disorders"
+  },
+  "medicalSpecialty": {
+    "@type": "MedicalSpecialty",
+    "name": "Neurology"
+  },
+  "converts": {
+    "@type": "MedicalCode",
+    "codingSystem": "Glasgow Coma Scale",
+    "codeValue": "3-15"
+  },
+  "targetPopulation": "Patients with neurological injuries",
+  "featureList": [
+    "GCS Eye/Verbal/Motor scoring",
+    "Modified Rankin Scale prediction",
+    "Neurological outcome estimation",
+    "Stroke assessment tool",
+    "Brain injury prognosis"
+  ],
+  "audience": {
+    "@type": "Audience",
+    "audienceType": [
+      "Neurologists",
+      "Emergency physicians",
+      "Neurosurgeons",
+      "ICU staff",
+      "Clinical researchers"
+    ]
+  },
+  "keywords": "GCS to mRS converter, neurological assessment tool, stroke outcome calculator, brain injury prognosis, clinical neurology tools"
+}

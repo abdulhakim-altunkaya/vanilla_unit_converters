@@ -1,0 +1,77 @@
+
+{
+  "@context": "https://schema.org",
+  "@type": ["WebApplication", "Converter"],
+  "name": "Temperature Units Converter | °C, °F, K, °R, °Re",
+  "url": "https://unitzap.space/temperature-units-converter.html",
+  "description": "Convert between all major temperature scales - Celsius, Fahrenheit, Kelvin, Rankine, and Réaumur. Perfect for scientists, chefs, and engineers.",
+  "applicationCategory": ["ScienceApplication", "CookingTool"],
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "creator": {
+    "@type": "Organization",
+    "name": "UnitZap",
+    "url": "https://unitzap.space"
+  },
+  "potentialAction": {
+    "@type": "ConvertAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://unitzap.space/temperature-units-converter.html?from={from_unit}&to={to_unit}&value={value}"
+    },
+    "query-input": "required name=from_unit required name=to_unit required name=value"
+  },
+  "measurementTechnique": "Temperature conversion",
+  "converts": {
+    "@type": "UnitConversion",
+    "conversionFactors": [
+      {
+        "@type": "ConversionFactor",
+        "sourceUnit": "Celsius (°C)",
+        "targetUnit": "Fahrenheit (°F)",
+        "conversionFormula": "(°C × 9/5) + 32"
+      },
+      {
+        "@type": "ConversionFactor",
+        "sourceUnit": "Kelvin (K)",
+        "targetUnit": "Celsius (°C)",
+        "conversionFormula": "K - 273.15"
+      },
+      {
+        "@type": "ConversionFactor",
+        "sourceUnit": "Rankine (°R)",
+        "targetUnit": "Fahrenheit (°F)",
+        "conversionFormula": "°R - 459.67"
+      }
+    ]
+  },
+  "applicationSubCategory": "Thermodynamic Conversion",
+  "featureList": [
+    "Celsius ↔ Fahrenheit conversion",
+    "Kelvin scale calculations",
+    "Absolute zero reference",
+    "Cooking temperature tools",
+    "Scientific temperature standards",
+    "Industrial applications"
+  ],
+  "educationalAlignment": {
+    "@type": "AlignmentObject",
+    "alignmentType": "educationalSubject",
+    "targetName": "Physics/Thermodynamics"
+  },
+  "audience": {
+    "@type": "Audience",
+    "audienceType": [
+      "Scientists",
+      "Chefs",
+      "Engineers",
+      "Students",
+      "Meteorologists"
+    ]
+  },
+  "keywords": "temperature converter, celsius to fahrenheit, kelvin calculator, cooking temperature conversion, scientific temperature tool"
+}

@@ -1,0 +1,78 @@
+
+{
+  "@context": "https://schema.org",
+  "@type": ["WebApplication", "Converter"],
+  "name": "Pressure Units Converter | Pa, psi, bar, atm, mmHg",
+  "url": "https://unitzap.space/pressure-units-converter.html",
+  "description": "Convert between 10+ pressure units including pascals (Pa), bar, psi, atm, and mmHg. Essential tool for engineers, meteorologists, and scientists.",
+  "applicationCategory": ["EngineeringTool", "ScienceApplication"],
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "creator": {
+    "@type": "Organization",
+    "name": "UnitZap",
+    "url": "https://unitzap.space"
+  },
+  "potentialAction": {
+    "@type": "ConvertAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://unitzap.space/pressure-units-converter.html?from={from_unit}&to={to_unit}&value={value}"
+    },
+    "query-input": "required name=from_unit required name=to_unit required name=value"
+  },
+  "measurementTechnique": "Pressure unit conversion",
+  "converts": {
+    "@type": "UnitConversion",
+    "conversionFactors": [
+      {
+        "@type": "ConversionFactor",
+        "sourceUnit": "Pascal (Pa)",
+        "targetUnit": "Pounds per Square Inch (psi)",
+        "conversionFactor": 0.000145038
+      },
+      {
+        "@type": "ConversionFactor",
+        "sourceUnit": "Bar",
+        "targetUnit": "Atmosphere (atm)",
+        "conversionFactor": 0.986923
+      },
+      {
+        "@type": "ConversionFactor",
+        "sourceUnit": "Torr (mmHg)",
+        "targetUnit": "Inch of Mercury (inHg)",
+        "conversionFactor": 0.0393701
+      }
+    ]
+  },
+  "applicationSubCategory": "Fluid Mechanics Conversion",
+  "featureList": [
+    "Metric ↔ Imperial pressure units",
+    "Weather pressure measurements",
+    "HVAC system calculations",
+    "Scientific pressure standards",
+    "Vacuum pressure conversion",
+    "Tire pressure tools",
+    "Hydraulic system measurements"
+  ],
+  "educationalAlignment": {
+    "@type": "AlignmentObject",
+    "alignmentType": "educationalSubject",
+    "targetName": "Physics/Fluid Mechanics"
+  },
+  "audience": {
+    "@type": "Audience",
+    "audienceType": [
+      "Mechanical engineers",
+      "Meteorologists",
+      "HVAC technicians",
+      "Physicists",
+      "Industrial engineers"
+    ]
+  },
+  "keywords": "pressure converter, psi to bar, kPa to atm, mmHg to torr, pascal conversion, engineering pressure tools"
+}

@@ -1,0 +1,73 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["WebApplication", "MedicalTool"],
+  "name": "Radiation Dose Units Converter | Gray ↔ Sievert with Cancer Risk Estimation",
+  "url": "https://unitzap.space/radiation-units-converter.html",
+  "description": "Convert radiation dose units (Gray↔Sievert) with weighting factors for different radiation types. Includes cancer risk estimation and real-world equivalents for medical and aerospace applications.",
+  "applicationCategory": ["MedicalApplication", "ScienceTool"],
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "creator": {
+    "@type": "Organization",
+    "name": "UnitZap",
+    "url": "https://unitzap.space"
+  },
+  "healthCondition": {
+    "@type": "MedicalCondition",
+    "name": "Radiation exposure"
+  },
+  "medicalSpecialty": {
+    "@type": "MedicalSpecialty",
+    "name": "Radiology"
+  },
+  "converts": {
+    "@type": "UnitConversion",
+    "conversionFactors": [
+      {
+        "@type": "ConversionFactor",
+        "sourceUnit": "Gray (Gy)",
+        "targetUnit": "Sievert (Sv)",
+        "conversionFactor": 1,
+        "forRadiationType": "Gamma/X-rays/Beta"
+      },
+      {
+        "@type": "ConversionFactor",
+        "sourceUnit": "Gray (Gy)",
+        "targetUnit": "Sievert (Sv)",
+        "conversionFactor": 20,
+        "forRadiationType": "Alpha particles/Heavy ions"
+      }
+    ]
+  },
+  "featureList": [
+    "Radiation type-specific conversions",
+    "Cancer risk estimation",
+    "Medical imaging equivalents",
+    "Space radiation calculations",
+    "Weighting factor adjustments",
+    "Real-world scenario modeling",
+    "Radiation protection standards"
+  ],
+  "educationalAlignment": {
+    "@type": "AlignmentObject",
+    "alignmentType": "educationalSubject",
+    "targetName": "Medical Physics"
+  },
+  "audience": {
+    "@type": "Audience",
+    "audienceType": [
+      "Radiologists",
+      "Radiation safety officers",
+      "Aerospace professionals",
+      "Medical physicists",
+      "Nuclear engineers"
+    ]
+  },
+  "keywords": "radiation dose converter, gray to sievert, cancer risk calculator, medical radiation conversion, space radiation exposure, radiology unit converter"
+}
+</script>

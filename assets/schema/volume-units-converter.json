@@ -1,0 +1,78 @@
+
+{
+  "@context": "https://schema.org",
+  "@type": ["WebApplication", "Converter"],
+  "name": "Volume Units Converter | Liters, Gallons, Cubic Meters & More",
+  "url": "https://unitzap.space/volume-units-converter.html",
+  "description": "Convert between 20+ volume units from microscopic (mm³) to massive (km³), including US/Imperial gallons, liters, and cooking measures. Essential for chefs, chemists, and engineers.",
+  "applicationCategory": ["CookingTool", "ScienceApplication"],
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "creator": {
+    "@type": "Organization",
+    "name": "UnitZap",
+    "url": "https://unitzap.space"
+  },
+  "potentialAction": {
+    "@type": "ConvertAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://unitzap.space/volume-units-converter.html?from={from_unit}&to={to_unit}&value={value}"
+    },
+    "query-input": "required name=from_unit required name=to_unit required name=value"
+  },
+  "measurementTechnique": "Volume unit conversion",
+  "converts": {
+    "@type": "UnitConversion",
+    "conversionFactors": [
+      {
+        "@type": "ConversionFactor",
+        "sourceUnit": "Liter (L)",
+        "targetUnit": "Gallon (US)",
+        "conversionFactor": 0.264172
+      },
+      {
+        "@type": "ConversionFactor",
+        "sourceUnit": "Cubic Meter (m³)",
+        "targetUnit": "Cubic Feet (ft³)",
+        "conversionFactor": 35.3147
+      },
+      {
+        "@type": "ConversionFactor",
+        "sourceUnit": "Milliliter (mL)",
+        "targetUnit": "Fluid Ounce (US)",
+        "conversionFactor": 0.033814
+      }
+    ]
+  },
+  "applicationSubCategory": "Capacity Measurement",
+  "featureList": [
+    "Metric ↔ Imperial conversions",
+    "Cooking measurement tools",
+    "Scientific volume calculations",
+    "Industrial volume standards",
+    "Liquid ↔ dry volume",
+    "Microscopic to massive scales",
+    "Oil industry measurements"
+  ],
+  "educationalAlignment": {
+    "@type": "AlignmentObject",
+    "alignmentType": "educationalSubject",
+    "targetName": "Chemistry/Measurement"
+  },
+  "audience": {
+    "@type": "Audience",
+    "audienceType": [
+      "Chefs",
+      "Chemists",
+      "Engineers",
+      "Construction professionals",
+      "Home brewers"
+    ]
+  },
+  "keywords": "volume converter, liters to gallons, ml to oz, cooking measurement converter, chemistry volume calculator, barrel to liters"
+}
