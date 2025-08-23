@@ -1,0 +1,61 @@
+/* Media query for big screens */
+@media (min-width: 781px) {
+    .aboutArea a {
+        text-decoration: none;
+    }
+    .portfolio a {
+        text-decoration: none;
+        color: black;
+    }
+    .portfolio ul {
+      list-style: none; /* Removes bullets */
+    }
+    .portfolio li {
+      padding: 10px;
+      cursor: pointer;
+    }
+    .portfolio li:hover {
+        margin-left: 10px;
+        background-color: lightyellow;
+    }
+    .livorentList {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    .flagIcon {
+        width: 30px;
+    }
+}
+
+/* Media query for mobile screens */
+@media (max-width: 780px) {
+    .aboutArea {
+        text-align: justify;
+    }
+    .aboutArea p, .aboutArea li {
+        font-size: 13px;
+    }
+    .portfolio a {
+        text-decoration: none;
+        color: black;
+    }
+    .portfolio ul {
+        padding: 0px;
+        margin: 0px;
+        list-style: none; /* Removes bullets */
+    }
+    .portfolio li {
+      padding-top: 10px;
+      cursor: pointer;
+      text-align: justify;
+    }
+    .livorentList {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    .flagIcon {
+        display: none;
+    }
+}
