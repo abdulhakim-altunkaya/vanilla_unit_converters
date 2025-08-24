@@ -36,11 +36,11 @@
 
     <!-- MAIN CONTENT -->
     <section class="contentArea">
-      <main>
         <h1 class="formHeader">Magnetic Field Converter</h1>
         <form id="magneticConverterForm" class="formInvestment">
           <div class="group">
-            <p class="magneticTitle">Magnetic Fields (everyday magnets, geomagnetic field, medical imaging, astrophysical phenomena)</p>
+            <p class="magneticTitle">Magnetic Fields (everyday magnets, geomagnetic field, medical imaging, 
+              astrophysical phenomena)</p>
             <input type="number" class="inputFields" id="tesla" name="tesla" min="0" max="1000000000" step="any" />
             <label>Tesla (T)</label><br><br>
             <input type="number" class="inputFields" id="millitesla" name="millitesla" min="0" max="1000000000" step="any" />
@@ -65,7 +65,7 @@
           <button class="button101" type="button" onclick="clearMagneticFields()">Clear</button>
         </form>
 
-        <div class="radiationNoteArea">
+        <section class="radiationNoteArea">
           <h3>Magnetic Flux Density Conversion Explanation</h3>
           <p>Magnetic flux density is measured in Tesla (T), with conversions to other units and equivalents as follows:</p>
           
@@ -97,8 +97,7 @@
             </tbody>
           </table>
           
-        </div>
-      </main>
+        </section>
     </section>
 
     <!-- FOOTER -->
