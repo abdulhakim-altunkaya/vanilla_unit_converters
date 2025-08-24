@@ -18,7 +18,6 @@
     <link rel="stylesheet" href="./assets/css/radiation.css">
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script defer src="./assets/js/magnetism.js"></script>
-  <script type="application/ld+json" src="./assets/schema/magnetic-units-converter.json"></script>
 
 </head>
 <body>
@@ -111,6 +110,74 @@
         <a href="./about.html"><strong>Click</strong></a> for about us and partnerships.</p>
     </footer>
   </main>
-
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["WebApplication", "Converter"],
+  "name": "Magnetic Field Converter | Tesla/Gauss to Real-World Equivalents",
+  "url": "https://unitzap.space/magnetic-units-converter.html",
+  "description": "Convert between Tesla, Gauss, mT, µT and real-world equivalents from fridge magnets (5mT) to neutron stars (10⁸ T). Essential tool for physicists, engineers, and astronomy enthusiasts.",
+  "applicationCategory": ["PhysicsApplication", "EngineeringTool"],
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "creator": {
+    "@type": "Organization",
+    "name": "UnitZap",
+    "url": "https://unitzap.space"
+  },
+  "potentialAction": {
+    "@type": "ConvertAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://unitzap.space/magnetic-units-converter.html?from={from_unit}&to={to_unit}&value={value}"
+    },
+    "query-input": "required name=from_unit required name=to_unit required name=value"
+  },
+  "measurementTechnique": "Magnetic flux density conversion",
+  "converts": {
+    "@type": "UnitConversion",
+    "conversionFactors": [
+      {
+        "@type": "ConversionFactor",
+        "sourceUnit": "Tesla (T)",
+        "targetUnit": "Gauss (G)",
+        "conversionFactor": 10000
+      },
+      {
+        "@type": "ConversionFactor",
+        "sourceUnit": "Tesla (T)",
+        "targetUnit": "Millitesla (mT)",
+        "conversionFactor": 1000
+      },
+      {
+        "@type": "ConversionFactor",
+        "sourceUnit": "Tesla (T)",
+        "targetUnit": "Microtesla (µT)",
+        "conversionFactor": 1000000
+      }
+    ]
+  },
+  "applicationSubCategory": "Electromagnetic Unit Conversion",
+  "featureList": [
+    "Tesla ↔ Gauss ↔ mT ↔ µT conversion",
+    "Real-world magnetic field equivalents",
+    "Medical MRI scanner comparisons",
+    "Astrophysical phenomena (neutron stars)",
+    "Everyday objects (fridge magnets, phones)",
+    "Earth's geomagnetic field reference",
+    "Solar sunspot magnetic strength"
+  ],
+  "educationalAlignment": {
+    "@type": "AlignmentObject",
+    "alignmentType": "educationalSubject",
+    "targetName": "Physics/Electromagnetism"
+  },
+  "keywords": "magnetic field converter, tesla to gauss, MRI field strength, neutron star magnetism, physics calculator, flux density conversion"
+}
+</script>
 </body>
 </html>

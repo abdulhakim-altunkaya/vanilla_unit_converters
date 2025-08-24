@@ -20,7 +20,6 @@
   <link rel="stylesheet" href="./assets/css/converters.css">
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script defer src="./assets/js/data.js"></script>
-  <script type="application/ld+json" src="./assets/schema/data-storage-units-converter.json"></script>
 </head>
 <body>
   <main class="mainArea">
@@ -75,6 +74,103 @@
         <a href="./about.html"><strong>Click</strong></a> for about us and partnerships.</p>
     </footer>
   </main>
-
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["WebApplication", "Converter"],
+  "name": "Data Storage Units Converter | Bits to Yottabytes",
+  "url": "https://unitzap.space/data-storage-units-converter.html",
+  "description": "Convert between all digital data storage units from bits to yottabytes, including binary and decimal units. Essential tool for IT professionals, developers, and data scientists.",
+  "applicationCategory": ["ComputerApplication", "ITTool"],
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "creator": {
+    "@type": "Organization",
+    "name": "UnitZap",
+    "url": "https://unitzap.space"
+  },
+  "potentialAction": {
+    "@type": "ConvertAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://unitzap.space/data-storage-units-converter.html?from={from_unit}&to={to_unit}&value={value}"
+    },
+    "query-input": "required name=from_unit required name=to_unit required name=value"
+  },
+  "measurementTechnique": "Digital data storage conversion",
+  "converts": {
+    "@type": "UnitConversion",
+    "conversionFactors": [
+      {
+        "@type": "ConversionFactor",
+        "sourceUnit": "Bit",
+        "targetUnit": "Byte",
+        "conversionFactor": 0.125
+      },
+      {
+        "@type": "ConversionFactor",
+        "sourceUnit": "Byte",
+        "targetUnit": "Kilobyte (KB)",
+        "conversionFactor": 0.001
+      },
+      {
+        "@type": "ConversionFactor",
+        "sourceUnit": "Kilobyte (KB)",
+        "targetUnit": "Megabyte (MB)",
+        "conversionFactor": 0.001
+      },
+      {
+        "@type": "ConversionFactor",
+        "sourceUnit": "Megabyte (MB)",
+        "targetUnit": "Gigabyte (GB)",
+        "conversionFactor": 0.001
+      },
+      {
+        "@type": "ConversionFactor",
+        "sourceUnit": "Gigabyte (GB)",
+        "targetUnit": "Terabyte (TB)",
+        "conversionFactor": 0.001
+      },
+      {
+        "@type": "ConversionFactor",
+        "sourceUnit": "Byte",
+        "targetUnit": "Kibibyte (KiB)",
+        "conversionFactor": 0.0009765625
+      }
+    ]
+  },
+  "applicationSubCategory": "Digital Storage Conversion",
+  "featureList": [
+    "Bits ↔ Bytes conversion",
+    "Decimal units (KB, MB, GB, TB, PB, EB, ZB, YB)",
+    "Binary units (KiB, MiB, GiB, TiB)",
+    "Full range from bits to yottabytes",
+    "IT professional precision",
+    "Cloud storage calculations",
+    "Hard drive capacity conversions"
+  ],
+  "educationalAlignment": {
+    "@type": "AlignmentObject",
+    "alignmentType": "educationalSubject",
+    "targetName": "Computer Science/Data Storage"
+  },
+  "audience": {
+    "@type": "Audience",
+    "audienceType": [
+      "IT professionals",
+      "Software developers",
+      "Data scientists",
+      "Cloud engineers",
+      "Computer science students",
+      "Hardware technicians"
+    ]
+  },
+  "keywords": "data storage converter, bit to byte, KB to MB, GB to TB, binary data units, IT unit converter, memory size calculator, hard drive capacity, SSD storage, cloud storage conversion, digital storage units"
+}
+</script>
 </body>
 </html>

@@ -17,7 +17,6 @@
   <link rel="stylesheet" href="./assets/css/converters.css">
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script defer src="./assets/js/weight.js"></script>
-  <script type="application/ld+json" src="./assets/schema/weight-units-converter.json"></script>
 </head>
 <body>
   <main class="mainArea">
@@ -82,6 +81,84 @@
         <a href="./about.html"><strong>Click</strong></a> for about us and partnerships.</p>
     </footer>
   </main>
-
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["WebApplication", "Converter"],
+  "name": "Weight Units Converter | kg to lbs, mg to oz, Metric to Imperial",
+  "url": "https://unitzap.space/weight-units-converter.html",
+  "description": "Convert between all weight units from milligrams to gigatons, including pounds, kilograms, and carats. Essential for cooking, shipping, and scientific applications.",
+  "applicationCategory": ["CookingTool", "ScienceApplication"],
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "creator": {
+    "@type": "Organization",
+    "name": "UnitZap",
+    "url": "https://unitzap.space"
+  },
+  "potentialAction": {
+    "@type": "ConvertAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://unitzap.space/weight-units-converter.html?from={from_unit}&to={to_unit}&value={value}"
+    },
+    "query-input": "required name=from_unit required name=to_unit required name=value"
+  },
+  "measurementTechnique": "Weight/Mass conversion",
+  "converts": {
+    "@type": "UnitConversion",
+    "conversionFactors": [
+      {
+        "@type": "ConversionFactor",
+        "sourceUnit": "Kilogram (kg)",
+        "targetUnit": "Pound (lb)",
+        "conversionFactor": 2.20462
+      },
+      {
+        "@type": "ConversionFactor",
+        "sourceUnit": "Gram (g)",
+        "targetUnit": "Ounce (oz)",
+        "conversionFactor": 0.035274
+      },
+      {
+        "@type": "ConversionFactor",
+        "sourceUnit": "Metric Ton (t)",
+        "targetUnit": "US Ton (short ton)",
+        "conversionFactor": 1.10231
+      }
+    ]
+  },
+  "applicationSubCategory": "Mass Measurement",
+  "featureList": [
+    "Metric ↔ Imperial conversions",
+    "Cooking weight measurements",
+    "Industrial weight standards",
+    "Jewelry weight calculations",
+    "Shipping weight tools",
+    "Scientific mass precision",
+    "Micro to macro weight scales"
+  ],
+  "educationalAlignment": {
+    "@type": "AlignmentObject",
+    "alignmentType": "educationalSubject",
+    "targetName": "Physics/Mass Measurement"
+  },
+  "audience": {
+    "@type": "Audience",
+    "audienceType": [
+      "Chefs",
+      "Scientists",
+      "Jewelers",
+      "Shipping professionals",
+      "Pharmacists"
+    ]
+  },
+  "keywords": "weight converter, kg to lbs, grams to ounces, cooking weight conversion, shipping weight calculator, metric imperial converter"
+}
+</script>
 </body>
 </html>

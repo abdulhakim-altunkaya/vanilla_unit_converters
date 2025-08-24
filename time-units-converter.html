@@ -17,7 +17,6 @@
   <link rel="stylesheet" href="./assets/css/converters.css">
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script defer src="./assets/js/time.js"></script>
-  <script type="application/ld+json" src="./assets/schema/time-units-converter.json"></script>
 </head>
 <body>
   <main class="mainArea">
@@ -100,6 +99,84 @@
         <a href="./about.html"><strong>Click</strong></a> for about us and partnerships.</p>
     </footer>
   </main>
-
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["WebApplication", "Converter"],
+  "name": "Time Units Converter | Planck Time to Centuries",
+  "url": "https://unitzap.space/time-units-converter.html",
+  "description": "Convert time units across 15+ scales from Planck Time to centuries. Includes nanoseconds, Julian years, sidereal years, and fortnights for physicists, programmers, and historians.",
+  "applicationCategory": ["ScienceApplication", "ProgrammingTool"],
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "creator": {
+    "@type": "Organization",
+    "name": "UnitZap",
+    "url": "https://unitzap.space"
+  },
+  "potentialAction": {
+    "@type": "ConvertAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://unitzap.space/time-units-converter.html?from={from_unit}&to={to_unit}&value={value}"
+    },
+    "query-input": "required name=from_unit required name=to_unit required name=value"
+  },
+  "measurementTechnique": "Time unit conversion",
+  "converts": {
+    "@type": "UnitConversion",
+    "conversionFactors": [
+      {
+        "@type": "ConversionFactor",
+        "sourceUnit": "Nanosecond (ns)",
+        "targetUnit": "Second (s)",
+        "conversionFactor": 0.000000001
+      },
+      {
+        "@type": "ConversionFactor",
+        "sourceUnit": "Julian Year",
+        "targetUnit": "Days",
+        "conversionFactor": 365.25
+      },
+      {
+        "@type": "ConversionFactor",
+        "sourceUnit": "Planck Time",
+        "targetUnit": "Second (s)",
+        "conversionFactor": 5.39e-44
+      }
+    ]
+  },
+  "applicationSubCategory": "Temporal Measurement",
+  "featureList": [
+    "Planck Time calculations",
+    "Astronomical time units",
+    "Programming time conversions",
+    "Historical time periods",
+    "Quantum physics scales",
+    "Calendar system conversions",
+    "CPU clock cycle reference"
+  ],
+  "educationalAlignment": {
+    "@type": "AlignmentObject",
+    "alignmentType": "educationalSubject",
+    "targetName": "Physics/Time Measurement"
+  },
+  "audience": {
+    "@type": "Audience",
+    "audienceType": [
+      "Physicists",
+      "Programmers",
+      "Astronomers",
+      "Historians",
+      "Engineers"
+    ]
+  },
+  "keywords": "time unit converter, nanoseconds to seconds, Julian year calculator, Planck Time measurement, programming time conversion, physics time units"
+}
+</script>
 </body>
 </html>

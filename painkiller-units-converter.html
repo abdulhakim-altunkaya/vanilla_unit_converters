@@ -17,7 +17,6 @@
     <link rel="stylesheet" href="./assets/css/converters.css" />
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script defer src="./assets/js/painkiller.js"></script>
-    <script type="application/ld+json" src="./assets/schema/painkiller-units-converter.json"></script>
 </head>
 <body>
   <main class="mainArea">
@@ -109,6 +108,58 @@
         <a href="./about.html"><strong>Click</strong></a> for about us and partnerships.</p>
     </footer>
   </main>
-
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["WebApplication", "MedicalTool"],
+  "name": "SPU-Based Pain Relief Comparison Tool",
+  "url": "https://unitzap.space/painkiller-units-converter.html",
+  "description": "Compare pain relief methods using Standard Pain Units (SPU) - from clinical analgesics to lifestyle approaches. Contextualize pain management options for healthcare professionals.",
+  "applicationCategory": ["MedicalApplication", "HealthTool"],
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "creator": {
+    "@type": "Organization",
+    "name": "UnitZap",
+    "url": "https://unitzap.space"
+  },
+  "healthCondition": {
+    "@type": "MedicalCondition",
+    "name": "Pain management"
+  },
+  "medicalSpecialty": {
+    "@type": "MedicalSpecialty",
+    "name": "Pain medicine"
+  },
+  "converts": {
+    "@type": "MedicalCode",
+    "codingSystem": "Standard Pain Units (SPU)",
+    "codeValue": "1-100"
+  },
+  "featureList": [
+    "Clinical analgesics comparison",
+    "Lifestyle pain interventions",
+    "SPU-based equivalencies",
+    "Opioid to non-opioid conversions",
+    "Non-pharmacological alternatives",
+    "Holistic pain management"
+  ],
+  "audience": {
+    "@type": "Audience",
+    "audienceType": [
+      "Pain specialists",
+      "Primary care physicians",
+      "Physical therapists",
+      "Addiction specialists",
+      "Rehabilitation professionals"
+    ]
+  },
+  "keywords": "SPU pain calculator, pain relief comparison, Standard Pain Unit, non-drug pain management, analgesic comparison tool"
+}
+</script>
 </body>
 </html>
