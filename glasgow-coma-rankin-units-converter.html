@@ -37,37 +37,30 @@
     </header>
 
     <!-- MAIN CONTENT -->
-    <div class="contentArea">
+    <section class="contentArea">
       <main>
         <h1 class="formHeader">Glasgow Coma Scale to Modified Rankin Scale Converter</h1>
-<form id="gcsMrsConverterForm" class="formInvestment">
-
-  <input type="number" class="inputFields" id="eye" name="eye" min="1" max="4" step="1" />
-  <label for="eye">Eye Response (1–4)</label>
-  <br><br>
-
-  <input type="number" class="inputFields" id="verbal" name="verbal" min="1" max="5" step="1" />
-  <label for="verbal">Verbal Response (1–5)</label>
-  <br><br>
-  
-  <input type="number" class="inputFields" id="motor" name="motor" min="1" max="6" step="1" />
-  <label for="motor">Motor Response (1–6)</label>
-  <br><br>
-
-  <input type="number" class="inputFields" id="gcs" name="gcs" readonly />
-  <label for="gcs">Total GCS (3–15)</label>
-  <br><br>
-  
-  <span class="inputFields" id="gcsCategory-label">GCS Category:
-    <strong><span id="gcsCategory" aria-labelledby="gcsCategory-label"></span></strong> </span>
-  <br><br>
-
-  <span class="inputFields" id="mrs-label">Modified Rankin Scale (0–6):
-    <strong><span id="mrs" aria-labelledby="mrs-label"></span></strong> </span>
-  <br><br>
-
-  <button class="button101" type="button" onclick="clearGcsMrsFields()">Clear</button>
-</form>
+        <form id="gcsMrsConverterForm" class="formInvestment">
+          <input type="number" class="inputFields" id="eye" name="eye" min="1" max="4" step="1" />
+          <label for="eye">Eye Response (1–4)</label>
+          <br><br>
+          <input type="number" class="inputFields" id="verbal" name="verbal" min="1" max="5" step="1" />
+          <label for="verbal">Verbal Response (1–5)</label>
+          <br><br>
+          <input type="number" class="inputFields" id="motor" name="motor" min="1" max="6" step="1" />
+          <label for="motor">Motor Response (1–6)</label>
+          <br><br>
+          <input type="number" class="inputFields" id="gcs" name="gcs" readonly />
+          <label for="gcs">Total GCS (3–15)</label>
+          <br><br>
+          <span class="inputFields" id="gcsCategory-label">GCS Category:
+            <strong><span id="gcsCategory" aria-labelledby="gcsCategory-label"></span></strong> </span>
+          <br><br>
+          <span class="inputFields" id="mrs-label">Modified Rankin Scale (0–6):
+            <strong><span id="mrs" aria-labelledby="mrs-label"></span></strong> </span>
+          <br><br>
+          <button class="button101" type="button" onclick="clearGcsMrsFields()">Clear</button>
+        </form>
 
 
         <div style="margin-top: 30px; padding: 15px; border: 1px solid #ccc; border-radius: 5px; background: #f9f9f9;">
@@ -88,7 +81,7 @@
              including a description (e.g., “3: Moderate disability”).</p>
         </div>
       </main>
-    </div>
+    </section>
 
     <!-- FOOTER -->
     <footer class="footerArea">
