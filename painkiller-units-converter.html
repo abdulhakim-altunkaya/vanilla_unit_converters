@@ -8,10 +8,19 @@
     Units (SPU) - from clinical analgesics (morphine, ibuprofen) to lifestyle approaches 
     (sleep, cold showers). Designed for healthcare professionals to contextualize pain 
     management options, including pharmacological equivalents and non-drug alternatives.">
-    <meta name="keywords" content="SPU pain calculator, Standard Pain Unit comparison, 
-    morphine equivalent pain relief, opioid to ibuprofen conversion, non-drug pain 
-    management, alcohol vs analgesics, sleep for pain relief, cold shower pain 
-    reduction, medical marijuana pain equivalent.">
+    <meta name="keywords" content="SPU pain calculator, morphine to ibuprofen, non-drug pain relief, 
+    opioid comparison, pain management tool">
+    <meta property="og:title" content="SPU Pain Relief Comparison Tool">
+    <meta property="og:description" content="Compare pain relief methods (analgesics, lifestyle) using 
+    Standard Pain Units (SPU). Free tool for healthcare professionals.">
+    <meta property="og:url" content="https://unitzap.space/painkiller-units-converter.html">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://unitzap.space/assets/images/painkiller-converter-og-image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SPU Pain Relief Comparison Tool">
+    <meta name="twitter:description" content="Compare pain relief methods (analgesics, lifestyle) using 
+    Standard Pain Units (SPU). Free tool for healthcare professionals.">
+    <meta name="twitter:image" content="https://unitzap.space/assets/images/painkiller-converter-og-image.jpg">
     <link rel="icon" type="image/x-icon" href="./assets/icons/meter.svg" />
     <link rel="stylesheet" href="./assets/css/index.css" />
     <link rel="stylesheet" href="./assets/css/converters.css" />
@@ -110,11 +119,11 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": ["WebApplication", "MedicalTool"],
-  "name": "SPU-Based Pain Relief Comparison Tool",
+  "@type": "WebApplication",
+  "name": "SPU Pain Relief Comparison Tool",
   "url": "https://unitzap.space/painkiller-units-converter.html",
-  "description": "Compare pain relief methods using Standard Pain Units (SPU) - from clinical analgesics to lifestyle approaches. Contextualize pain management options for healthcare professionals.",
-  "applicationCategory": ["MedicalApplication", "HealthTool"],
+  "description": "Compare pain relief methods (analgesics like morphine, lifestyle approaches like sleep) using Standard Pain Units (SPU). Free tool for healthcare professionals.",
+  "applicationCategory": "MedicalApplication",
   "operatingSystem": "Any",
   "offers": {
     "@type": "Offer",
@@ -126,6 +135,19 @@
     "name": "UnitZap",
     "url": "https://unitzap.space"
   },
+  "potentialAction": {
+    "@type": "ConvertAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://unitzap.space/painkiller-units-converter.html?from={from_method}&to={to_method}&value={value}"
+    },
+    "query-input": "required name=from_method required name=to_method required name=value"
+  },
+  "additionalProperty": {
+    "@type": "PropertyValue",
+    "name": "Comparison Details",
+    "value": "Compares pain relief methods to Standard Pain Units (SPU), e.g., 1 SPU ≈ 10 mg morphine, 400 mg ibuprofen, or 60-minute nap, based on relative pain relief efficacy"
+  },
   "healthCondition": {
     "@type": "MedicalCondition",
     "name": "Pain management"
@@ -134,30 +156,21 @@
     "@type": "MedicalSpecialty",
     "name": "Pain medicine"
   },
-  "converts": {
-    "@type": "MedicalCode",
-    "codingSystem": "Standard Pain Units (SPU)",
-    "codeValue": "1-100"
-  },
   "featureList": [
-    "Clinical analgesics comparison",
-    "Lifestyle pain interventions",
-    "SPU-based equivalencies",
-    "Opioid to non-opioid conversions",
-    "Non-pharmacological alternatives",
-    "Holistic pain management"
+    "SPU-based pain relief comparison",
+    "Analgesic to non-drug conversions",
+    "Opioid and NSAID equivalents",
+    "Lifestyle intervention comparisons"
   ],
   "audience": {
     "@type": "Audience",
     "audienceType": [
       "Pain specialists",
-      "Primary care physicians",
-      "Physical therapists",
-      "Addiction specialists",
-      "Rehabilitation professionals"
+      "Physicians",
+      "Pharmacists",
+      "Physical therapists"
     ]
-  },
-  "keywords": "SPU pain calculator, pain relief comparison, Standard Pain Unit, non-drug pain management, analgesic comparison tool"
+  }
 }
 </script>
 </body>

@@ -8,10 +8,19 @@
   Fahrenheit (°F), Kelvin (K), Rankine (°R), and Réaumur (°Re). Perfect for scientists, chefs, 
   engineers, and students. Get instant, accurate conversions for weather, cooking, lab work, 
   and industrial applications.">
-  <meta name="keywords" content="temperature converter, celsius to fahrenheit, fahrenheit 
-  to kelvin, kelvin to rankine, reaumur scale converter, cooking temperature conversion, 
-  scientific temperature calculator, weather unit converter, lab temperature tool, 
-  engineering temperature conversion, absolute zero calculator, oven temperature">
+  <meta name="keywords" content="temperature converter, celsius to fahrenheit, kelvin to rankine, 
+  cooking temperature, scientific calculator">
+  <meta property="og:title" content="Temperature Converter: °C, °F, K, °R">
+  <meta property="og:description" content="Convert temperature scales like Celsius, Fahrenheit, 
+  Kelvin, and more. Free tool for scientists, chefs, and engineers.">
+  <meta property="og:url" content="https://unitzap.space/temperature-units-converter.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://unitzap.space/assets/images/temperature-converter-og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Temperature Converter: °C, °F, K, °R">
+  <meta name="twitter:description" content="Convert temperature scales like Celsius, Fahrenheit, Kelvin, 
+  and more. Free tool for scientists, chefs, and engineers.">
+  <meta name="twitter:image" content="https://unitzap.space/assets/images/temperature-converter-og-image.jpg">
   <link rel="icon" type="image/x-icon" href="./assets/icons/meter.svg">
   <link rel="stylesheet" href="./assets/css/index.css">
   <link rel="stylesheet" href="./assets/css/converters.css">
@@ -67,11 +76,11 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": ["WebApplication", "Converter"],
-  "name": "Temperature Units Converter | °C, °F, K, °R, °Re",
+  "@type": "WebApplication",
+  "name": "Temperature Converter: °C, °F, K, °R",
   "url": "https://unitzap.space/temperature-units-converter.html",
-  "description": "Convert between all major temperature scales - Celsius, Fahrenheit, Kelvin, Rankine, and Réaumur. Perfect for scientists, chefs, and engineers.",
-  "applicationCategory": ["ScienceApplication", "CookingTool"],
+  "description": "Convert temperature scales including Celsius, Fahrenheit, Kelvin, Rankine, and Réaumur. Free tool for scientists, chefs, and engineers.",
+  "applicationCategory": "ScienceApplication",
   "operatingSystem": "Any",
   "offers": {
     "@type": "Offer",
@@ -91,55 +100,30 @@
     },
     "query-input": "required name=from_unit required name=to_unit required name=value"
   },
-  "measurementTechnique": "Temperature conversion",
-  "converts": {
-    "@type": "UnitConversion",
-    "conversionFactors": [
-      {
-        "@type": "ConversionFactor",
-        "sourceUnit": "Celsius (°C)",
-        "targetUnit": "Fahrenheit (°F)",
-        "conversionFormula": "(°C × 9/5) + 32"
-      },
-      {
-        "@type": "ConversionFactor",
-        "sourceUnit": "Kelvin (K)",
-        "targetUnit": "Celsius (°C)",
-        "conversionFormula": "K - 273.15"
-      },
-      {
-        "@type": "ConversionFactor",
-        "sourceUnit": "Rankine (°R)",
-        "targetUnit": "Fahrenheit (°F)",
-        "conversionFormula": "°R - 459.67"
-      }
+  "additionalProperty": {
+    "@type": "PropertyValue",
+    "name": "Conversion Details",
+    "value": [
+      {"sourceUnit": "Celsius (°C)", "targetUnit": "Fahrenheit (°F)", "formula": "(°C × 9/5) + 32"},
+      {"sourceUnit": "Kelvin (K)", "targetUnit": "Celsius (°C)", "formula": "K - 273.15"},
+      {"sourceUnit": "Rankine (°R)", "targetUnit": "Fahrenheit (°F)", "formula": "°R - 459.67"}
     ]
   },
-  "applicationSubCategory": "Thermodynamic Conversion",
   "featureList": [
-    "Celsius ↔ Fahrenheit conversion",
-    "Kelvin scale calculations",
-    "Absolute zero reference",
-    "Cooking temperature tools",
-    "Scientific temperature standards",
-    "Industrial applications"
+    "Celsius to Fahrenheit conversion",
+    "Kelvin and Rankine calculations",
+    "Cooking and scientific applications",
+    "Absolute zero reference"
   ],
-  "educationalAlignment": {
-    "@type": "AlignmentObject",
-    "alignmentType": "educationalSubject",
-    "targetName": "Physics/Thermodynamics"
-  },
   "audience": {
     "@type": "Audience",
     "audienceType": [
       "Scientists",
       "Chefs",
       "Engineers",
-      "Students",
-      "Meteorologists"
+      "Students"
     ]
-  },
-  "keywords": "temperature converter, celsius to fahrenheit, kelvin calculator, cooking temperature conversion, scientific temperature tool"
+  }
 }
 </script>
 </body>

@@ -10,14 +10,17 @@
   engineers, and everyday users. Enter a value in 
   any field and get all other units converted in real time. Built for precision, 
   mobile-first use, and speed.">
-
-  <meta name="keywords" content="angle units converter, convert degrees to radians, 
-  radian to degree, arcminute converter, arcsecond conversion, 
-  online angle conversion, gradian to degree, turn to radian, 
-  tool, degree radian converter,
-  trig converter, navigation angle converter,
-  converter, trigonometry calculator, math tools">
-
+  <meta name="keywords" content="angle converter, degrees to radians, radian to degree, gradian converter, 
+  trigonometry calculator">
+  <meta property="og:title" content="Angle Units Converter: Degrees, Radians, Gradians">
+  <meta property="og:description" content="Convert angle units like degrees, radians, gradians, and more. Free tool for students, engineers, and professionals.">
+  <meta property="og:url" content="https://unitzap.space/angle-units-converter.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://unitzap.space/assets/images/angle-converter-og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Angle Units Converter: Degrees, Radians, Gradians">
+  <meta name="twitter:description" content="Convert angle units like degrees, radians, gradians, and more. Free tool for students, engineers, and professionals.">
+  <meta name="twitter:image" content="https://unitzap.space/assets/images/angle-converter-og-image.jpg">
   <link rel="icon" type="image/x-icon" href="./assets/icons/meter.svg">
   <link rel="stylesheet" href="./assets/css/index.css">
   <link rel="stylesheet" href="./assets/css/converters.css">
@@ -69,13 +72,13 @@
     </footer>
   </main>
 <script type="application/ld+json">
-{
+  {
   "@context": "https://schema.org",
-  "@type": ["WebApplication", "Converter"],
-  "name": "Angle Units Converter | Degrees, Radians, Gradians & More",
+  "@type": "WebApplication",
+  "name": "Angle Units Converter: Degrees, Radians, Gradians",
   "url": "https://unitzap.space/angle-units-converter.html",
-  "description": "Instantly convert between all major angle units: degrees, radians, gradians, arcminutes, arcseconds, and turns. Essential tool for students, engineers, and professionals.",
-  "applicationCategory": ["MathematicsApplication", "EngineeringTool"],
+  "description": "Convert angle units including degrees, radians, gradians, arcminutes, arcseconds, and turns. Free tool for students, engineers, and professionals.",
+  "applicationCategory": "MathematicsApplication",
   "operatingSystem": "Any",
   "offers": {
     "@type": "Offer",
@@ -95,58 +98,32 @@
     },
     "query-input": "required name=from_unit required name=to_unit required name=value"
   },
-  "measurementTechnique": "Angular unit conversion",
-  "converts": {
-    "@type": "UnitConversion",
-    "conversionFactors": [
-      {
-        "@type": "ConversionFactor",
-        "sourceUnit": "Degree (°)",
-        "targetUnit": "Radian (rad)",
-        "conversionFactor": 0.0174533
-      },
-      {
-        "@type": "ConversionFactor",
-        "sourceUnit": "Degree (°)",
-        "targetUnit": "Gradian (grad)",
-        "conversionFactor": 1.11111
-      },
-      {
-        "@type": "ConversionFactor",
-        "sourceUnit": "Degree (°)",
-        "targetUnit": "Arcminute (')",
-        "conversionFactor": 60
-      },
-      {
-        "@type": "ConversionFactor",
-        "sourceUnit": "Degree (°)",
-        "targetUnit": "Arcsecond (\")",
-        "conversionFactor": 3600
-      },
-      {
-        "@type": "ConversionFactor",
-        "sourceUnit": "Degree (°)",
-        "targetUnit": "Turn",
-        "conversionFactor": 0.00277778
-      }
+  "additionalProperty": {
+    "@type": "PropertyValue",
+    "name": "Conversion Factors",
+    "value": [
+      {"sourceUnit": "Degree (°)", "targetUnit": "Radian (rad)", "conversionFactor": 0.0174533},
+      {"sourceUnit": "Degree (°)", "targetUnit": "Gradian (grad)", "conversionFactor": 1.11111},
+      {"sourceUnit": "Degree (°)", "targetUnit": "Arcminute (')", "conversionFactor": 60},
+      {"sourceUnit": "Degree (°)", "targetUnit": "Arcsecond (\")", "conversionFactor": 3600},
+      {"sourceUnit": "Degree (°)", "targetUnit": "Turn", "conversionFactor": 0.00277778}
     ]
   },
-  "applicationSubCategory": "Trigonometry Unit Conversion",
   "featureList": [
-    "Degree ↔ Radian ↔ Gradian conversion",
-    "Arcminute and arcsecond precision",
-    "Full circle turn calculations",
-    "Negative angle support",
-    "Real-time conversion",
-    "Mobile-optimized interface",
-    "No login required"
+    "Degree to radian conversion",
+    "Gradian and arcminute support",
+    "Real-time angle calculations",
+    "Mobile-optimized interface"
   ],
-  "educationalAlignment": {
-    "@type": "AlignmentObject",
-    "alignmentType": "educationalSubject",
-    "targetName": "Mathematics/Trigonometry"
-  },
-  "keywords": "angle converter, degrees to radians, radian calculator, gradian conversion, arcminute tool, trigonometry calculator, math converter, navigation angles, surveying tools"
+  "audience": {
+    "@type": "Audience",
+    "audienceType": [
+      "Math students",
+      "Engineers",
+      "Surveyors",
+      "Navigators"
+    ]
+  }
 }
 </script>
 </body>

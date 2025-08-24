@@ -7,10 +7,17 @@
   <meta name="description" content="Convert between 50+ length units - from subatomic (attometers) to 
   cosmic (light-years)! Includes nanometers, inches, feet, meters, miles, astronomical units (AU), 
   and more. Perfect for scientists, engineers, students, and DIY projects.">
-  <meta name="keywords" content="length converter, unit conversion, metric to imperial, 
-  nanometers to inches, meters to feet, cm to mm, miles to kilometers, AU to light-years, 
-  attometer converter, engineering measurement tool, physics length calculator, 
-  scientific unit conversion, construction measurement converter.">
+  <meta name="keywords" content="length converter, metric to imperial, meters to feet, AU to light-years, 
+  nanometer converter">
+  <meta property="og:title" content="Length Converter: Attometers to Light-Years">
+  <meta property="og:description" content="Convert 50+ length units from attometers to light-years. Free tool for scientists, engineers, and students.">
+  <meta property="og:url" content="https://unitzap.space/length-units-converter.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://unitzap.space/assets/images/length-converter-og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Length Converter: Attometers to Light-Years">
+  <meta name="twitter:description" content="Convert 50+ length units from attometers to light-years. Free tool for scientists, engineers, and students.">
+  <meta name="twitter:image" content="https://unitzap.space/assets/images/length-converter-og-image.jpg">
   <link rel="icon" type="image/x-icon" href="./assets/icons/meter.svg">
   <link rel="stylesheet" href="./assets/css/index.css">
   <link rel="stylesheet" href="./assets/css/converters.css">
@@ -101,13 +108,12 @@
     </footer>
   </main>
 <script type="application/ld+json">
-  
-{
+  {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Ultimate Length Converter | Attometers to Light-Years",
-  "url": "https://unitzap.space",
-  "description": "Convert between 50+ length units from subatomic (attometers) to cosmic (light-years). Includes metric and imperial systems for scientists, engineers, students, and DIY projects.",
+  "name": "Length Converter: Attometers to Light-Years",
+  "url": "https://unitzap.space/length-units-converter.html",
+  "description": "Convert 50+ length units from attometers to light-years, including metric and imperial systems. Free tool for scientists, engineers, and students.",
   "applicationCategory": "UtilityApplication",
   "operatingSystem": "Any",
   "offers": {
@@ -121,37 +127,39 @@
     "url": "https://unitzap.space"
   },
   "potentialAction": {
-    "@type": "SearchAction",
+    "@type": "ConvertAction",
     "target": {
       "@type": "EntryPoint",
-      "urlTemplate": "https://unitzap.space/?q={search_term_string}"
+      "urlTemplate": "https://unitzap.space/length-units-converter.html?from={from_unit}&to={to_unit}&value={value}"
     },
-    "query-input": "required name=search_term_string"
+    "query-input": "required name=from_unit required name=to_unit required name=value"
   },
-  "interactionStatistic": {
-    "@type": "InteractionCounter",
-    "interactionType": "https://schema.org/UseAction",
-    "userInteractionCount": "1000"
+  "additionalProperty": {
+    "@type": "PropertyValue",
+    "name": "Conversion Factors",
+    "value": [
+      {"sourceUnit": "Meter (m)", "targetUnit": "Foot (ft)", "conversionFactor": 3.28084},
+      {"sourceUnit": "Kilometer (km)", "targetUnit": "Mile (Land)", "conversionFactor": 0.621371},
+      {"sourceUnit": "Nanometer (nm)", "targetUnit": "Inch (in)", "conversionFactor": 3.93701e-8},
+      {"sourceUnit": "Astronomical Unit (AU)", "targetUnit": "Light-year (ly)", "conversionFactor": 1.58125e-5},
+      {"sourceUnit": "Attometer (am)", "targetUnit": "Meter (m)", "conversionFactor": 1e-18}
+    ]
   },
   "featureList": [
-    "Attometer to light-year conversion",
     "Metric to imperial conversion",
-    "Scientific unit conversion",
-    "Engineering measurement tool",
-    "Astronomy distance calculator",
-    "Microscopic length conversion"
+    "Subatomic to cosmic lengths",
+    "Astronomy and engineering units",
+    "Real-time conversion"
   ],
-  "screenshot": {
-    "@type": "ImageObject",
-    "url": "https://unitzap.space/assets/icons/meter.svg",
-    "width": "512",
-    "height": "512"
-  },
-  "softwareHelp": {
-    "@type": "CreativeWork",
-    "text": "Simply enter a value in any field to automatically convert between all length units."
-  },
-  "keywords": "length converter, unit conversion, metric to imperial, nanometers to inches, meters to feet, cm to mm, miles to kilometers, AU to light-years, attometer converter"
+  "audience": {
+    "@type": "Audience",
+    "audienceType": [
+      "Scientists",
+      "Engineers",
+      "Students",
+      "DIY enthusiasts"
+    ]
+  }
 }
 </script>
 </body>

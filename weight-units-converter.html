@@ -8,10 +8,23 @@
   to gigatons, pounds to kilograms, and carats to ounces. Essential for cooking, 
   shipping, science, and industry. Instantly switch between metric and imperial 
   systems with precise calculations.">
-  <meta name="keywords" content="weight converter, kg to lbs, grams to ounces, 
-  pounds to kilograms, metric ton to US ton, carat to gram, cooking weight 
-  conversion, shipping weight calculator, scientific mass measurement, 
-  industrial weight tool, jewelry weight converter, postal weight calculator">
+  <meta name="keywords" content="weight converter, kg to lbs, kilograms to pounds, grams to ounces, 
+  pounds to kilograms, metric to imperial weight conversion, carat to gram, cooking weight 
+  calculator, shipping weight tool, jewelry mass converter, scientific mass measurement, 
+  industrial weight calculator, postal weight tool">
+  <!-- Open Graph (Facebook, LinkedIn) -->
+  <meta property="og:title" content="Weight Units Converter | Metric & Imperial">
+  <meta property="og:description" content="Convert weight units easily: kg to lbs, grams to ounces, tons, carats, and more. Ideal for cooking, shipping, and science.">
+  <meta property="og:url" content="https://unitzap.space/weight-units-converter.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://unitzap.space/assets/images/weight-converter-preview.png">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Weight Units Converter | Metric & Imperial">
+  <meta name="twitter:description" content="Free online weight converter for cooking, shipping, science & industry. Convert kg ↔ lbs, grams ↔ ounces, carats, tons, and more.">
+  <meta name="twitter:image" content="https://unitzap.space/assets/images/weight-converter-preview.png">
+  <meta name="twitter:site" content="@UnitZap">
+
   <link rel="icon" type="image/x-icon" href="./assets/icons/meter.svg">
   <link rel="stylesheet" href="./assets/css/index.css">
   <link rel="stylesheet" href="./assets/css/converters.css">
@@ -83,12 +96,12 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": ["WebApplication", "Converter"],
-  "name": "Weight Units Converter | kg to lbs, mg to oz, Metric to Imperial",
+  "@type": "WebApplication",
+  "name": "Weight Units Converter - Metric & Imperial",
   "url": "https://unitzap.space/weight-units-converter.html",
-  "description": "Convert between all weight units from milligrams to gigatons, including pounds, kilograms, and carats. Essential for cooking, shipping, and scientific applications.",
-  "applicationCategory": ["CookingTool", "ScienceApplication"],
-  "operatingSystem": "Any",
+  "description": "Free online weight converter for kilograms, pounds, grams, ounces, tons, and carats. Ideal for cooking, shipping, jewelry, science, and industry.",
+  "applicationCategory": ["Calculator", "ScienceApplication"],
+  "operatingSystem": "All",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -107,57 +120,36 @@
     },
     "query-input": "required name=from_unit required name=to_unit required name=value"
   },
-  "measurementTechnique": "Weight/Mass conversion",
-  "converts": {
-    "@type": "UnitConversion",
-    "conversionFactors": [
-      {
-        "@type": "ConversionFactor",
-        "sourceUnit": "Kilogram (kg)",
-        "targetUnit": "Pound (lb)",
-        "conversionFactor": 2.20462
-      },
-      {
-        "@type": "ConversionFactor",
-        "sourceUnit": "Gram (g)",
-        "targetUnit": "Ounce (oz)",
-        "conversionFactor": 0.035274
-      },
-      {
-        "@type": "ConversionFactor",
-        "sourceUnit": "Metric Ton (t)",
-        "targetUnit": "US Ton (short ton)",
-        "conversionFactor": 1.10231
-      }
-    ]
-  },
-  "applicationSubCategory": "Mass Measurement",
+  "additionalProperty": [
+    {
+      "@type": "PropertyValue",
+      "name": "Kilogram to Pound",
+      "value": "1 kg = 2.20462 lbs"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Gram to Ounce",
+      "value": "1 g = 0.035274 oz"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Metric Ton to US Ton",
+      "value": "1 t = 1.10231 US tons"
+    }
+  ],
   "featureList": [
     "Metric ↔ Imperial conversions",
-    "Cooking weight measurements",
-    "Industrial weight standards",
-    "Jewelry weight calculations",
-    "Shipping weight tools",
-    "Scientific mass precision",
-    "Micro to macro weight scales"
+    "Cooking & recipe measurements",
+    "Industrial & shipping conversions",
+    "Jewelry & carat conversions",
+    "Scientific mass precision"
   ],
-  "educationalAlignment": {
-    "@type": "AlignmentObject",
-    "alignmentType": "educationalSubject",
-    "targetName": "Physics/Mass Measurement"
-  },
   "audience": {
     "@type": "Audience",
-    "audienceType": [
-      "Chefs",
-      "Scientists",
-      "Jewelers",
-      "Shipping professionals",
-      "Pharmacists"
-    ]
-  },
-  "keywords": "weight converter, kg to lbs, grams to ounces, cooking weight conversion, shipping weight calculator, metric imperial converter"
+    "audienceType": ["Chefs", "Scientists", "Jewelers", "Shipping professionals", "Pharmacists"]
+  }
 }
 </script>
+
 </body>
 </html>

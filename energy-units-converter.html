@@ -8,11 +8,16 @@
   kilojoules (kJ), calories (cal), kilocalories (kcal), watt-hours (Wh), 
   kilowatt-hours (kWh), and electronvolts (eV). Ideal for physics, engineering, nutrition, 
   and renewable energy calculations.">
-  <meta name="keywords" content="energy unit converter, joules to calories, kJ to kcal, 
-  watt-hours to kilowatt-hours, Wh to kWh, electronvolt converter, 
-  engineering energy calculator, nutrition calorie converter,
-  convert eV to joules, thermal energy conversion, food 
-  energy converter, ">  
+  <meta name="keywords" content="energy converter, joules to calories, kWh to Wh, eV to joules, calorie calculator">  
+  <meta property="og:title" content="Energy Units Converter: Joules, kWh, Calories">
+  <meta property="og:description" content="Convert energy units like joules, calories, watt-hours, and electronvolts. Free tool for physics, nutrition, and engineering.">
+  <meta property="og:url" content="https://unitzap.space/energy-units-converter.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://unitzap.space/assets/images/energy-converter-og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Energy Units Converter: Joules, kWh, Calories">
+  <meta name="twitter:description" content="Convert energy units like joules, calories, watt-hours, and electronvolts. Free tool for physics, nutrition, and engineering.">
+  <meta name="twitter:image" content="https://unitzap.space/assets/images/energy-converter-og-image.jpg">
   <link rel="icon" type="image/x-icon" href="./assets/icons/meter.svg">
   <link rel="stylesheet" href="./assets/css/index.css">
   <link rel="stylesheet" href="./assets/css/converters.css">
@@ -67,13 +72,13 @@
     </footer>
   </main>
 <script type="application/ld+json">
-{
+  {
   "@context": "https://schema.org",
-  "@type": ["WebApplication", "Converter"],
-  "name": "Energy Unit Converter | Joules, kWh, Calories, eV",
+  "@type": "WebApplication",
+  "name": "Energy Units Converter: Joules, kWh, Calories",
   "url": "https://unitzap.space/energy-units-converter.html",
-  "description": "Convert between all major energy units: joules, calories, watt-hours, and electronvolts. Essential for physics, nutrition, and energy calculations.",
-  "applicationCategory": ["PhysicsApplication", "EngineeringTool", "NutritionApplication"],
+  "description": "Convert energy units including joules, calories, watt-hours, and electronvolts. Free tool for physics, nutrition, and engineering.",
+  "applicationCategory": "PhysicsApplication",
   "operatingSystem": "Any",
   "offers": {
     "@type": "Offer",
@@ -93,63 +98,31 @@
     },
     "query-input": "required name=from_unit required name=to_unit required name=value"
   },
-  "measurementTechnique": "Energy unit conversion",
-  "converts": {
-    "@type": "UnitConversion",
-    "conversionFactors": [
-      {
-        "@type": "ConversionFactor",
-        "sourceUnit": "Joule (J)",
-        "targetUnit": "Calorie (cal)",
-        "conversionFactor": 0.239006
-      },
-      {
-        "@type": "ConversionFactor",
-        "sourceUnit": "Kilojoule (kJ)",
-        "targetUnit": "Kilocalorie (kcal)",
-        "conversionFactor": 0.239006
-      },
-      {
-        "@type": "ConversionFactor",
-        "sourceUnit": "Watt-hour (Wh)",
-        "targetUnit": "Joule (J)",
-        "conversionFactor": 3600
-      },
-      {
-        "@type": "ConversionFactor",
-        "sourceUnit": "Electronvolt (eV)",
-        "targetUnit": "Joule (J)",
-        "conversionFactor": 1.60218e-19
-      }
+  "additionalProperty": {
+    "@type": "PropertyValue",
+    "name": "Conversion Factors",
+    "value": [
+      {"sourceUnit": "Joule (J)", "targetUnit": "Calorie (cal)", "conversionFactor": 0.239006},
+      {"sourceUnit": "Kilojoule (kJ)", "targetUnit": "Kilocalorie (kcal)", "conversionFactor": 0.239006},
+      {"sourceUnit": "Watt-hour (Wh)", "targetUnit": "Joule (J)", "conversionFactor": 3600},
+      {"sourceUnit": "Electronvolt (eV)", "targetUnit": "Joule (J)", "conversionFactor": 1.60218e-19}
     ]
   },
-  "applicationSubCategory": "Energy Measurement Conversion",
   "featureList": [
-    "Joules ↔ Calories conversion",
-    "Food energy (kcal) calculations",
+    "Joules to calories conversion",
     "Electricity units (Wh, kWh)",
-    "Physics units (eV)",
-    "Nutritional energy values",
-    "Renewable energy calculations",
-    "Scientific precision"
+    "Nutrition calculations (kcal)",
+    "Physics units (eV)"
   ],
-  "educationalAlignment": {
-    "@type": "AlignmentObject",
-    "alignmentType": "educationalSubject",
-    "targetName": "Physics/Energy"
-  },
   "audience": {
     "@type": "Audience",
     "audienceType": [
       "Physicists",
       "Engineers",
       "Nutritionists",
-      "Electricians",
-      "Renewable energy specialists",
       "Students"
     ]
-  },
-  "keywords": "energy converter, joules to calories, kWh calculator, eV converter, physics energy units, nutrition calorie converter, electricity cost calculator, food energy conversion"
+  }
 }
 </script>
 </body>

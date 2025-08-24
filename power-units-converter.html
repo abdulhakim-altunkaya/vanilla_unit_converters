@@ -9,10 +9,19 @@
   foot-pounds per second. Essential tool for engineers, electricians, automotive 
   professionals, and physics students. Includes both mechanical and thermal power 
   units with instant calculations.">
-  <meta name="keywords" content="power unit converter, watts to horsepower, kW to PS, 
-  metric hp to imperial hp, foot-pound conversion, energy rate calculator, mechanical 
-  power converter, electrical power measurement, automotive power units, engineering 
-  calculator, pferdestärke converter, erg per second calculator">
+  <meta name="keywords" content="power converter, watts to horsepower, kW to PS, engineering 
+  calculator, foot-pound converter">
+  <meta property="og:title" content="Power Converter: Watts to Horsepower">
+  <meta property="og:description" content="Convert power units like watts, kilowatts, horsepower, 
+  and more. Free tool for engineers and physicists.">
+  <meta property="og:url" content="https://unitzap.space/power-units-converter.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://unitzap.space/assets/images/power-converter-og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Power Converter: Watts to Horsepower">
+  <meta name="twitter:description" content="Convert power units like watts, kilowatts, horsepower, 
+  and more. Free tool for engineers and physicists.">
+  <meta name="twitter:image" content="https://unitzap.space/assets/images/power-converter-og-image.jpg">
   <link rel="icon" type="image/x-icon" href="./assets/icons/meter.svg">
   <link rel="stylesheet" href="./assets/css/index.css">
   <link rel="stylesheet" href="./assets/css/converters.css">
@@ -76,11 +85,11 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": ["WebApplication", "Converter"],
-  "name": "Power Unit Converter | Watts ⇄ Horsepower (hp/PS)",
+  "@type": "WebApplication",
+  "name": "Power Converter: Watts to Horsepower",
   "url": "https://unitzap.space/power-units-converter.html",
-  "description": "Convert between 12+ power measurement units including watts, kilowatts, horsepower (hp/PS), and foot-pounds per second. Essential engineering tool for electrical and mechanical applications.",
-  "applicationCategory": ["EngineeringTool", "PhysicsApplication"],
+  "description": "Convert power units including watts, kilowatts, horsepower (hp/PS), and foot-pounds per second. Free tool for engineers, electricians, and physicists.",
+  "applicationCategory": "EngineeringTool",
   "operatingSystem": "Any",
   "offers": {
     "@type": "Offer",
@@ -100,56 +109,30 @@
     },
     "query-input": "required name=from_unit required name=to_unit required name=value"
   },
-  "measurementTechnique": "Power unit conversion",
-  "converts": {
-    "@type": "UnitConversion",
-    "conversionFactors": [
-      {
-        "@type": "ConversionFactor",
-        "sourceUnit": "Watt (W)",
-        "targetUnit": "Horsepower (hp)",
-        "conversionFactor": 0.00134102
-      },
-      {
-        "@type": "ConversionFactor",
-        "sourceUnit": "Kilowatt (kW)",
-        "targetUnit": "Pferdestärke (PS)",
-        "conversionFactor": 1.35962
-      },
-      {
-        "@type": "ConversionFactor",
-        "sourceUnit": "Horsepower (hp)",
-        "targetUnit": "Foot-pound/Second (ft-lb/s)",
-        "conversionFactor": 550
-      }
+  "additionalProperty": {
+    "@type": "PropertyValue",
+    "name": "Conversion Factors",
+    "value": [
+      {"sourceUnit": "Watt (W)", "targetUnit": "Horsepower (hp)", "conversionFactor": 0.00134102},
+      {"sourceUnit": "Kilowatt (kW)", "targetUnit": "Pferdestärke (PS)", "conversionFactor": 1.35962},
+      {"sourceUnit": "Horsepower (hp)", "targetUnit": "Foot-pound/Second (ft-lb/s)", "conversionFactor": 550}
     ]
   },
-  "applicationSubCategory": "Energy Rate Conversion",
   "featureList": [
-    "Watt ↔ Horsepower conversion",
-    "Mechanical ↔ Electrical power",
-    "Metric ↔ Imperial units",
+    "Watts to horsepower conversion",
+    "Metric to imperial units",
     "Automotive power units (PS)",
-    "Thermal power calculations",
-    "Engineering precision",
-    "Scientific applications"
+    "Thermal power calculations"
   ],
-  "educationalAlignment": {
-    "@type": "AlignmentObject",
-    "alignmentType": "educationalSubject",
-    "targetName": "Physics/Power"
-  },
   "audience": {
     "@type": "Audience",
     "audienceType": [
       "Electrical engineers",
       "Mechanical engineers",
       "Automotive technicians",
-      "Physics students",
-      "Industrial designers"
+      "Physics students"
     ]
-  },
-  "keywords": "power converter, watts to horsepower, kW to PS, metric hp converter, engineering calculator, physics power tools"
+  }
 }
 </script>
 </body>

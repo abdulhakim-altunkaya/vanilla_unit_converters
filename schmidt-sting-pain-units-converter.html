@@ -9,10 +9,17 @@
   electric shocks. Developed by entomologist Justin O. Schmidt, this tool helps 
   researchers, medical professionals, and curious minds compare relative pain 
   levels of insect stings and traumatic events.">
-  <meta name="keywords" content="Schmidt Sting Pain Index, pain scale converter, 
-  bullet ant sting equivalent, insect sting comparison, entomology pain calculator, 
-  Justin O. Schmidt tool, hymenopteran sting pain, scorpion sting rating, electric 
-  shock pain equivalent, comparative entomology tool, medical pain assessment">
+  <meta name="keywords" content="Schmidt Sting Pain Index, insect sting converter, bullet ant pain, 
+  pain scale comparison, entomology tool">
+  <meta property="og:title" content="Schmidt Sting Pain Index Converter">
+  <meta property="og:description" content="Convert Schmidt Sting Pain Index (0-4) to insect stings and equivalents like bullet ants or electric shocks. Free tool for entomologists.">
+  <meta property="og:url" content="https://unitzap.space/schmidt-sting-pain-units-converter.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://unitzap.space/assets/images/schmidt-sting-converter-og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Schmidt Sting Pain Index Converter">
+  <meta name="twitter:description" content="Convert Schmidt Sting Pain Index (0-4) to insect stings and equivalents like bullet ants or electric shocks. Free tool for entomologists.">
+  <meta name="twitter:image" content="https://unitzap.space/assets/images/schmidt-sting-converter-og-image.jpg">
   <link rel="icon" type="image/x-icon" href="./assets/icons/meter.svg">
   <link rel="stylesheet" href="./assets/css/index.css">
   <link rel="stylesheet" href="./assets/css/converters.css">
@@ -107,11 +114,11 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": ["WebApplication", "MedicalTool"],
-  "name": "Schmidt Sting Pain Index Converter | Insect Sting Pain Comparison",
+  "@type": "WebApplication",
+  "name": "Schmidt Sting Pain Index Converter",
   "url": "https://unitzap.space/schmidt-sting-pain-units-converter.html",
-  "description": "Convert between Schmidt Sting Pain Index (0-4) and real-world equivalents from sweat bees to bullet ants, scorpion stings, and electric shocks.",
-  "applicationCategory": ["MedicalApplication", "BiologyTool"],
+  "description": "Convert Schmidt Sting Pain Index (0-4) to equivalents like sweat bee, bullet ant, scorpion stings, or electric shocks. Free tool for entomologists and medical professionals.",
+  "applicationCategory": "MedicalApplication",
   "operatingSystem": "Any",
   "offers": {
     "@type": "Offer",
@@ -123,6 +130,19 @@
     "name": "UnitZap",
     "url": "https://unitzap.space"
   },
+  "potentialAction": {
+    "@type": "ConvertAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://unitzap.space/schmidt-sting-pain-units-converter.html?from={from_unit}&to={to_unit}&value={value}"
+    },
+    "query-input": "required name=from_unit required name=to_unit required name=value"
+  },
+  "additionalProperty": {
+    "@type": "PropertyValue",
+    "name": "Conversion Details",
+    "value": "Converts Schmidt Sting Pain Index (0-4) to equivalent stings or events: Sweat Bee (~1), European Hornet (~2), Paper Wasp (~3), Bullet Ant (~4), Scorpion Sting (~3.5), Electric Shock (~4)"
+  },
   "healthCondition": {
     "@type": "MedicalCondition",
     "name": "Insect stings and bites"
@@ -131,42 +151,21 @@
     "@type": "MedicalSpecialty",
     "name": "Emergency medicine"
   },
-  "converts": {
-    "@type": "PainScaleConversion",
-    "sourceScale": "Schmidt Sting Pain Index",
-    "scaleRange": "0-4",
-    "convertsTo": [
-      "Bee stings",
-      "Fire ant stings",
-      "Bullet ant stings",
-      "Scorpion stings",
-      "Electric shocks"
-    ]
-  },
   "featureList": [
     "Schmidt Pain Index conversion",
     "Insect sting comparisons",
     "Pain level equivalencies",
-    "Emergency medicine reference",
-    "Entomology research tool",
-    "Comparative pain assessment"
+    "Entomology research tool"
   ],
-  "educationalAlignment": {
-    "@type": "AlignmentObject",
-    "alignmentType": "educationalSubject",
-    "targetName": "Entomology/Pain Research"
-  },
   "audience": {
     "@type": "Audience",
     "audienceType": [
       "Entomologists",
       "Emergency physicians",
       "Biologists",
-      "Wilderness medics",
-      "Nature educators"
+      "Wilderness medics"
     ]
-  },
-  "keywords": "Schmidt Sting Pain Index, pain scale converter, insect sting comparison, entomology pain calculator, medical pain assessment"
+  }
 }
 </script>
 </body>

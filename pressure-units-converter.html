@@ -8,10 +8,19 @@
   pascals (Pa), bar, psi, atm, and mmHg. Essential tool for engineers, meteorologists, 
   HVAC technicians, and scientists. Instantly convert between metric and imperial 
   pressure measurements with precision.">
-  <meta name="keywords" content="pressure unit converter, psi to bar, kPa to atm, 
-  mmHg to torr, pascal conversion, millibar to inches of mercury, vacuum pressure 
-  calculator, weather pressure units, tire pressure conversion, engineering 
-  pressure tools, HVAC pressure calculator, scientific pressure measurement">
+  <meta name="keywords" content="pressure converter, psi to bar, kPa to atm, mmHg 
+  to torr, engineering pressure tool">
+  <meta property="og:title" content="Pressure Converter: Pa, psi, bar, atm">
+  <meta property="og:description" content="Convert pressure units like pascals, bar, psi, and mmHg. 
+  Free tool for engineers, meteorologists, and scientists.">
+  <meta property="og:url" content="https://unitzap.space/pressure-units-converter.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://unitzap.space/assets/images/pressure-converter-og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Pressure Converter: Pa, psi, bar, atm">
+  <meta name="twitter:description" content="Convert pressure units like pascals, bar, psi, and mmHg. 
+  Free tool for engineers, meteorologists, and scientists.">
+  <meta name="twitter:image" content="https://unitzap.space/assets/images/pressure-converter-og-image.jpg">
   <link rel="icon" type="image/x-icon" href="./assets/icons/meter.svg">
   <link rel="stylesheet" href="./assets/css/index.css">
   <link rel="stylesheet" href="./assets/css/converters.css">
@@ -70,11 +79,11 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": ["WebApplication", "Converter"],
-  "name": "Pressure Units Converter | Pa, psi, bar, atm, mmHg",
+  "@type": "WebApplication",
+  "name": "Pressure Converter: Pa, psi, bar, atm",
   "url": "https://unitzap.space/pressure-units-converter.html",
-  "description": "Convert between 10+ pressure units including pascals (Pa), bar, psi, atm, and mmHg. Essential tool for engineers, meteorologists, and scientists.",
-  "applicationCategory": ["EngineeringTool", "ScienceApplication"],
+  "description": "Convert pressure units including pascals, bar, psi, atm, and mmHg. Free tool for engineers, meteorologists, and scientists.",
+  "applicationCategory": "EngineeringTool",
   "operatingSystem": "Any",
   "offers": {
     "@type": "Offer",
@@ -94,56 +103,30 @@
     },
     "query-input": "required name=from_unit required name=to_unit required name=value"
   },
-  "measurementTechnique": "Pressure unit conversion",
-  "converts": {
-    "@type": "UnitConversion",
-    "conversionFactors": [
-      {
-        "@type": "ConversionFactor",
-        "sourceUnit": "Pascal (Pa)",
-        "targetUnit": "Pounds per Square Inch (psi)",
-        "conversionFactor": 0.000145038
-      },
-      {
-        "@type": "ConversionFactor",
-        "sourceUnit": "Bar",
-        "targetUnit": "Atmosphere (atm)",
-        "conversionFactor": 0.986923
-      },
-      {
-        "@type": "ConversionFactor",
-        "sourceUnit": "Torr (mmHg)",
-        "targetUnit": "Inch of Mercury (inHg)",
-        "conversionFactor": 0.0393701
-      }
+  "additionalProperty": {
+    "@type": "PropertyValue",
+    "name": "Conversion Factors",
+    "value": [
+      {"sourceUnit": "Pascal (Pa)", "targetUnit": "Pounds per Square Inch (psi)", "conversionFactor": 0.000145038},
+      {"sourceUnit": "Bar", "targetUnit": "Atmosphere (atm)", "conversionFactor": 0.986923},
+      {"sourceUnit": "Torr (mmHg)", "targetUnit": "Inch of Mercury (inHg)", "conversionFactor": 0.0393701}
     ]
   },
-  "applicationSubCategory": "Fluid Mechanics Conversion",
   "featureList": [
-    "Metric ↔ Imperial pressure units",
-    "Weather pressure measurements",
-    "HVAC system calculations",
-    "Scientific pressure standards",
-    "Vacuum pressure conversion",
-    "Tire pressure tools",
-    "Hydraulic system measurements"
+    "Metric to imperial pressure conversion",
+    "Weather and HVAC calculations",
+    "Vacuum and tire pressure tools",
+    "Scientific precision"
   ],
-  "educationalAlignment": {
-    "@type": "AlignmentObject",
-    "alignmentType": "educationalSubject",
-    "targetName": "Physics/Fluid Mechanics"
-  },
   "audience": {
     "@type": "Audience",
     "audienceType": [
       "Mechanical engineers",
       "Meteorologists",
       "HVAC technicians",
-      "Physicists",
-      "Industrial engineers"
+      "Physicists"
     ]
-  },
-  "keywords": "pressure converter, psi to bar, kPa to atm, mmHg to torr, pascal conversion, engineering pressure tools"
+  }
 }
 </script>
 </body>

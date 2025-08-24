@@ -8,11 +8,20 @@
   weighting factors for different radiation types (gamma, alpha). Includes cancer 
   risk estimation and real-world equivalents (CT scans, space travel). Essential 
   tool for radiologists, radiation safety officers, and aerospace professionals.">
-  <meta name="keywords" content="radiation dose converter, gray to sievert, mSv to 
-  rem, radiation weighting factors, alpha particle dose calculator, medical radiation 
-  conversion, space radiation exposure, CT scan dose equivalent, cancer risk from 
-  radiation, radiology unit converter, cosmic radiation">
+  <meta name="keywords" content="radiation dose converter, gray to sievert, cancer 
+  risk calculator, medical radiation, space radiation">
   <link rel="icon" type="image/x-icon" href="./assets/icons/meter.svg">
+  <meta property="og:title" content="Radiation Dose Converter: Gray to Sievert">
+  <meta property="og:description" content="Convert radiation dose units (Gray to Sievert) with cancer 
+  risk estimation. Free tool for radiologists and aerospace professionals.">
+  <meta property="og:url" content="https://unitzap.space/radiation-units-converter.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://unitzap.space/assets/images/radiation-converter-og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Radiation Dose Converter: Gray to Sievert">
+  <meta name="twitter:description" content="Convert radiation dose units (Gray to Sievert) with cancer risk 
+  estimation. Free tool for radiologists and aerospace professionals.">
+  <meta name="twitter:image" content="https://unitzap.space/assets/images/radiation-converter-og-image.jpg">
   <link rel="stylesheet" href="./assets/css/index.css">
   <link rel="stylesheet" href="./assets/css/converters.css">
   <link rel="stylesheet" href="./assets/css/radiation.css">
@@ -134,11 +143,11 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": ["WebApplication", "MedicalTool"],
-  "name": "Radiation Dose Units Converter | Gray ↔ Sievert with Cancer Risk Estimation",
+  "@type": "WebApplication",
+  "name": "Radiation Dose Converter: Gray to Sievert",
   "url": "https://unitzap.space/radiation-units-converter.html",
-  "description": "Convert radiation dose units (Gray↔Sievert) with weighting factors for different radiation types. Includes cancer risk estimation and real-world equivalents for medical and aerospace applications.",
-  "applicationCategory": ["MedicalApplication", "ScienceTool"],
+  "description": "Convert radiation dose units (Gray to Sievert) with weighting factors for gamma, alpha, and more. Includes cancer risk estimation and real-world equivalents for medical and aerospace use.",
+  "applicationCategory": "MedicalApplication",
   "operatingSystem": "Any",
   "offers": {
     "@type": "Offer",
@@ -150,6 +159,22 @@
     "name": "UnitZap",
     "url": "https://unitzap.space"
   },
+  "potentialAction": {
+    "@type": "ConvertAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://unitzap.space/radiation-units-converter.html?from={from_unit}&to={to_unit}&value={value}"
+    },
+    "query-input": "required name=from_unit required name=to_unit required name=value"
+  },
+  "additionalProperty": {
+    "@type": "PropertyValue",
+    "name": "Conversion Details",
+    "value": [
+      {"sourceUnit": "Gray (Gy)", "targetUnit": "Sievert (Sv)", "conversionFactor": 1, "radiationType": "Gamma/X-rays/Beta"},
+      {"sourceUnit": "Gray (Gy)", "targetUnit": "Sievert (Sv)", "conversionFactor": 20, "radiationType": "Alpha particles/Heavy ions"}
+    ]
+  },
   "healthCondition": {
     "@type": "MedicalCondition",
     "name": "Radiation exposure"
@@ -158,50 +183,21 @@
     "@type": "MedicalSpecialty",
     "name": "Radiology"
   },
-  "converts": {
-    "@type": "UnitConversion",
-    "conversionFactors": [
-      {
-        "@type": "ConversionFactor",
-        "sourceUnit": "Gray (Gy)",
-        "targetUnit": "Sievert (Sv)",
-        "conversionFactor": 1,
-        "forRadiationType": "Gamma/X-rays/Beta"
-      },
-      {
-        "@type": "ConversionFactor",
-        "sourceUnit": "Gray (Gy)",
-        "targetUnit": "Sievert (Sv)",
-        "conversionFactor": 20,
-        "forRadiationType": "Alpha particles/Heavy ions"
-      }
-    ]
-  },
   "featureList": [
-    "Radiation type-specific conversions",
+    "Gray to Sievert conversion",
     "Cancer risk estimation",
     "Medical imaging equivalents",
-    "Space radiation calculations",
-    "Weighting factor adjustments",
-    "Real-world scenario modeling",
-    "Radiation protection standards"
+    "Space radiation calculations"
   ],
-  "educationalAlignment": {
-    "@type": "AlignmentObject",
-    "alignmentType": "educationalSubject",
-    "targetName": "Medical Physics"
-  },
   "audience": {
     "@type": "Audience",
     "audienceType": [
       "Radiologists",
       "Radiation safety officers",
       "Aerospace professionals",
-      "Medical physicists",
-      "Nuclear engineers"
+      "Medical physicists"
     ]
-  },
-  "keywords": "radiation dose converter, gray to sievert, cancer risk calculator, medical radiation conversion, space radiation exposure, radiology unit converter"
+  }
 }
 </script>
 </script>

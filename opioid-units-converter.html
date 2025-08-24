@@ -8,10 +8,19 @@
     oxycodone, fentanyl, hydrocodone) using standardized equianalgesic dosing. Essential 
     tool for healthcare providers to calculate equivalent pain medication doses safely. 
     Includes conversions for tramadol, codeine, and hydromorphone with mcg-to-mg calculations.">
-    <meta name="keywords" content="opioid converter, morphine equivalent calculator, 
-    oxycodone to morphine conversion, fentanyl patch mcg to mg, equianalgesic dosing 
-    tool, pain medication converter, hydrocodone to hydromorphone, tramadol dose 
-    equivalent, codeine conversion calculator, opioid rotation tool">
+    <meta name="keywords" content="opioid converter, morphine equivalent, equianalgesic dosing, fentanyl to 
+    morphine, pain medication calculator">
+    <meta property="og:title" content="Opioid Converter: Morphine Equivalents">
+    <meta property="og:description" content="Convert opioid medications like morphine, fentanyl, 
+    and oxycodone using equianalgesic dosing. Free tool for healthcare providers.">
+    <meta property="og:url" content="https://unitzap.space/opioid-units-converter.html">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://unitzap.space/assets/images/opioid-converter-og-image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Opioid Converter: Morphine Equivalents">
+    <meta name="twitter:description" content="Convert opioid medications like morphine, fentanyl, and oxycodone 
+    using equianalgesic dosing. Free tool for healthcare providers.">
+    <meta name="twitter:image" content="https://unitzap.space/assets/images/opioid-converter-og-image.jpg">
     <link rel="icon" type="image/x-icon" href="./assets/icons/meter.svg" />
     <link rel="stylesheet" href="./assets/css/index.css" />
     <link rel="stylesheet" href="./assets/css/converters.css" />
@@ -70,13 +79,13 @@
     </footer>
   </main>
 <script type="application/ld+json">
-{
+  {
   "@context": "https://schema.org",
-  "@type": ["WebApplication", "MedicalTool"],
-  "name": "Opioid Units Converter | Morphine Equivalents Calculator",
+  "@type": "WebApplication",
+  "name": "Opioid Converter: Morphine Equivalents",
   "url": "https://unitzap.space/opioid-units-converter.html",
-  "description": "Convert between opioid medications using standardized equianalgesic dosing. Essential tool for healthcare providers to calculate equivalent pain medication doses safely.",
-  "applicationCategory": ["MedicalApplication", "PharmacologyTool"],
+  "description": "Convert opioid medications (morphine, oxycodone, fentanyl, etc.) using equianalgesic dosing. Free tool for healthcare providers in pain management.",
+  "applicationCategory": "MedicalApplication",
   "operatingSystem": "Any",
   "offers": {
     "@type": "Offer",
@@ -88,6 +97,19 @@
     "name": "UnitZap",
     "url": "https://unitzap.space"
   },
+  "potentialAction": {
+    "@type": "ConvertAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://unitzap.space/opioid-units-converter.html?from={from_drug}&to={to_drug}&value={value}"
+    },
+    "query-input": "required name=from_drug required name=to_drug required name=value"
+  },
+  "additionalProperty": {
+    "@type": "PropertyValue",
+    "name": "Conversion Details",
+    "value": "Converts opioid doses to Morphine Milligram Equivalents (MME) using standardized equianalgesic ratios, e.g., 1 mg morphine = 0.67 mg oxycodone, 1 mg morphine = 0.1 mcg/hr fentanyl patch"
+  },
   "healthCondition": {
     "@type": "MedicalCondition",
     "name": "Chronic pain"
@@ -96,26 +118,11 @@
     "@type": "MedicalSpecialty",
     "name": "Pain management"
   },
-  "converts": {
-    "@type": "DrugConversion",
-    "convertsFrom": [
-      "Morphine",
-      "Oxycodone",
-      "Hydrocodone",
-      "Fentanyl",
-      "Tramadol",
-      "Codeine",
-      "Hydromorphone"
-    ],
-    "convertsTo": "Morphine Milligram Equivalents (MME)"
-  },
   "featureList": [
     "Morphine equivalent dosing",
     "Fentanyl patch conversion",
     "Opioid rotation calculations",
-    "Chronic pain management tool",
-    "Palliative care dosage",
-    "Risk assessment support"
+    "Pain management support"
   ],
   "audience": {
     "@type": "Audience",
@@ -123,11 +130,9 @@
       "Physicians",
       "Pharmacists",
       "Nurse practitioners",
-      "Palliative care specialists",
       "Pain management specialists"
     ]
-  },
-  "keywords": "opioid converter, morphine equivalent calculator, equianalgesic dosing tool, pain medication converter, medical dosage calculator"
+  }
 }
 </script>
 </body>
